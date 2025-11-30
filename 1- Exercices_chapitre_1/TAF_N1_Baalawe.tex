@@ -1,0 +1,780 @@
+\documentclass[memoire, 12pt]{report}
+\usepackage[top = 1.9cm, bottom = 1.5cm, left = 1.9cm, right = 2.1cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem}
+%\usepackage{algorithm2e}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{multirow}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres r\'ef\'erences}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fvextra}
+\usepackage[babel=true]{csquotes}
+\setlength{\fboxrule}{0.01cm}
+\setlength{\fboxsep}{0.5cm}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{url}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{glossaries}
+%\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[bottom]{footmisc}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{glossaries}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{minted}
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+
+
+
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc} 
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+\title{Document_De_BAALAWE}
+\author{}
+\date{MOIS_ICI 2025}
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!blue,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{logoUY1-eps-converted-to-1.pdf}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{EXERCICES}}}\\
+		\Large{{\textbf{\textit{Philosophie et Fondements de l’Investigation Numérique}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{1cm}
+		\normalsize\textbf{Option }:\\
+		\normalsize				
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			\hspace{0.02cm} \textsl{\textbf{BAALAWE LIONEL JOSSELIN}, 24P822}\\\\
+			\vspace{0.1cm}
+			\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+			\hspace{0.02cm} \textsl{Expert Thierry MINKA}\\
+				
+               
+		\end{tabular}
+	\end{center}
+    
+	\vspace{4cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+	
+
+\section*{Le paradoxe de la transparence selon Byung-Chul Han}
+
+\section*{Introduction}
+
+À l’ère numérique, la transparence est devenue une valeur centrale des sociétés contemporaines. 
+Gouvernements, entreprises et individus sont incités à rendre visibles leurs actions, leurs données et même leurs émotions. 
+Le philosophe germano-coréen \textbf{Byung-Chul Han} analyse cette exigence comme un paradoxe : plus nous cherchons la transparence, plus nous fragilisons la confiance et l’intimité. 
+L’investigation numérique, discipline qui cherche la vérité dans l’espace digital, se situe précisément au cœur de cette tension entre visibilité totale et respect de la vie privée. 
+Comment comprendre ce paradoxe, et quelles solutions peut-on envisager pour le dépasser ?
+
+\section*
+
+Historiquement, la transparence est associée à des valeurs positives : elle garantit la reddition des comptes, réduit l’arbitraire du pouvoir et renforce la démocratie. 
+Dans le monde numérique, elle est également perçue comme une condition de sécurité : plus d’informations partagées équivalent à une meilleure traçabilité des actions, donc à une meilleure justice. 
+Ainsi, la surveillance algorithmique, les bases de données publiques et les technologies de traçage sont présentées comme des instruments de vérité.
+
+Cependant, Byung-Chul Han met en garde contre une telle absolutisation. 
+Selon lui, la transparence ne libère pas toujours : elle peut aussi devenir une forme de contrainte sociale, voire un nouvel outil de domination. 
+Quand tout doit être visible et mesurable, l’espace de l’intime se réduit drastiquement.
+
+
+Le paradoxe soulevé par Byung-Chul Han réside dans l’idée que \textbf{l’excès de transparence détruit la confiance qu’elle est censée renforcer}.
+
+\begin{itemize}
+    \item \textbf{Érosion de l’intimité} : plus les individus sont exposés à travers leurs données (messages privés, historiques de navigation, géolocalisation), plus ils perdent la maîtrise de leur identité numérique. Or, la confiance suppose un espace de secret et de vulnérabilité ; sans opacité, il n’y a plus de véritable relation humaine.  
+    \item \textbf{Multiplication des vérités} : à force de produire une transparence totale, on génère en réalité une confusion. Les informations brutes, sorties de leur contexte, peuvent être manipulées ou interprétées différemment, ce qui alimente la désinformation.  
+    \item \textbf{Surveillance et auto-censure} : une société de transparence permanente se rapproche d’une société de contrôle. L’individu, conscient d’être observé, adapte ses comportements, réduit sa liberté d’expression et se conforme à une norme implicite.  
+\end{itemize}
+\section*
+
+Ainsi, la quête de transparence, censée protéger, aboutit paradoxalement à un climat de méfiance et de contrôle généralisé.
+
+
+Face à ce paradoxe, il ne s’agit pas de rejeter la transparence mais de la réinscrire dans un cadre éthique. 
+Inspiré de la philosophie kantienne, un compromis est envisageable :
+
+\begin{itemize}
+    \item \textbf{Transparence proportionnée} : elle doit s’appliquer en priorité aux institutions publiques, garantes de l’intérêt général, et non s’imposer indistinctement à tous les citoyens.  
+    \item \textbf{Protection de l’intimité} : un droit fondamental à l’opacité doit être reconnu, permettant à chacun de préserver une sphère privée hors de la surveillance numérique.  
+    \item \textbf{Chaînes de confiance numériques} : plutôt que de tout rendre visible, il convient de mettre en place des protocoles cryptographiques garantissant la vérifiabilité sans divulgation totale (ex. preuves à divulgation nulle de connaissance, ZK-proofs).  
+\end{itemize}
+
+Ces approches permettent de réconcilier vérité et intimité, transparence et liberté.
+
+\section*{Conclusion}
+
+Le paradoxe de la transparence identifié par Byung-Chul Han révèle une tension fondamentale de la société numérique : la volonté de tout rendre visible peut finir par anéantir la confiance, l’intimité et même la vérité qu’elle prétend protéger. 
+L’investigation numérique doit donc évoluer vers un modèle qui conjugue rigueur, proportionnalité et respect de la sphère privée. 
+La véritable éthique du numérique n’est pas une transparence absolue, mais une transparence encadrée, orientée vers la justice et respectueuse de la dignité humaine.
+
+\newpage
+
+
+
+\section*{Application du paradoxe de la transparence à un cas concret}
+
+\section*
+
+\subsection*{Cas concret : transparence gouvernementale vs. vie privée des citoyens}
+
+Imaginons une enquête numérique menée par un gouvernement pour lutter contre la corruption 
+dans l’attribution des marchés publics. 
+Dans un souci de transparence, toutes les transactions financières des ministères, des entreprises 
+sous-traitantes et même des individus impliqués (fonctionnaires, entrepreneurs) sont publiées sur 
+une plateforme en libre accès.
+
+\begin{itemize}
+    \item \textbf{Aspect positif} : la transparence favorise la reddition des comptes. Les citoyens, journalistes et associations 
+    peuvent contrôler directement l’usage de l’argent public. Elle réduit le risque de dissimulation et de manipulation comptable.  
+    \item \textbf{Aspect négatif} : cette transparence peut empiéter sur la vie privée. Par exemple, si les salaires des agents publics 
+    ou les données personnelles des entrepreneurs (adresses, comptes bancaires, dépenses personnelles liées aux marchés) 
+    sont rendus visibles, cela crée une exposition excessive et parfois injustifiée.  
+\end{itemize}
+
+Ainsi, le paradoxe de Byung-Chul Han apparaît clairement : la transparence, censée renforcer la confiance, 
+engendre une perte d’intimité, des risques d’atteintes à la dignité et même un climat de méfiance généralisée.
+
+\subsection*{Résolution inspirée de l’éthique kantienne}
+
+L’éthique kantienne repose sur l’\textit{impératif catégorique} :  
+\begin{quote}
+    \og Agis uniquement d’après la maxime qui fait que tu peux vouloir en même temps 
+    qu’elle devienne une loi universelle. \fg
+\end{quote}
+
+Appliqué à ce cas :
+
+\begin{enumerate}
+    \item \textbf{Respect de la dignité humaine} : la transparence ne doit pas transformer les citoyens ou les fonctionnaires 
+    en simples \og objets d’observation \fg. Ils doivent toujours être considérés comme des fins en soi, non comme de simples moyens de contrôle.  
+
+    \item \textbf{Universalisation} : une politique de transparence qui exposerait totalement la vie privée de tous ne pourrait pas être universalisée 
+    sans nuire à la liberté humaine. En revanche, rendre publiques uniquement les données pertinentes aux fonds publics (contrats, montants, bénéficiaires institutionnels) 
+    est universalisable et conforme à l’impératif moral.  
+
+    \item \textbf{Proportionnalité et séparation des sphères} : la transparence doit s’appliquer principalement aux institutions et à l’usage des fonds collectifs, 
+    et non aux sphères privées des individus. Les données personnelles doivent rester protégées, sauf nécessité strictement démontrée par l’enquête.  
+\end{enumerate}
+
+\subsection*{Synthèse}
+
+Une résolution pratique inspirée de Kant consisterait à :
+\begin{itemize}
+    \item Publier toutes les informations liées aux marchés publics (contrats, budgets, prestataires) pour garantir la transparence institutionnelle.
+    \item Protéger les données personnelles des individus impliqués (comptes privés, vie familiale, localisation), car elles relèvent de la dignité humaine.
+    \item Mettre en place des mécanismes techniques (cryptographie, pseudonymisation) permettant de vérifier la régularité des transactions sans exposer inutilement les personnes.
+\end{itemize}
+
+Ainsi, on trouve un équilibre entre \textbf{transparence démocratique} et \textbf{respect de la vie privée}, fidèle à la logique kantienne où 
+la vérité et la justice ne doivent jamais se faire au détriment de la dignité humaine.
+
+\newpage
+
+\section*{Transformation ontologique du numérique}
+
+\subsection*{A — Comparaison : la conception de l’être chez Heidegger vs adaptation à l’ère numérique}
+
+Heidegger, dans \textit{Être et Temps}, place l’être au centre de la question philosophique en insistant sur le \textit{Dasein} : l’être-là humain qui se comprend dans ses possibilités, son souci, son rapport au monde et aux autres. Deux traits essentiels se dégagent :
+
+\begin{itemize}
+    \item \textbf{Temporalité} : l’existence est structurée par le temps (projet, retentissement, passé/avenir).
+    \item \textbf{Mise-en-œuvre (Gestell)} : la technique n’est pas neutre ; elle révèle le monde comme \og disponibilité \fg{} (\textit{standing-reserve}) et modifie la manière dont les choses et les humains se laissent rencontrer.
+\end{itemize}
+
+À l’ère numérique, ces traits prennent de nouvelles formes :
+
+\begin{itemize}
+    \item \textbf{Multiplicité temporo-spatiale} : l’« être » n’est plus uniquement incarné et temporellement linéaire ; il est doublé par des traces persistantes et réplicables (profils, journaux, copies dans le cloud). La temporalité devient superposée (instantané vs archivage indéfini).
+    \item \textbf{Révélation numérique} : la technique digitale révèle le monde en données et en métriques. Comme chez Heidegger, la technique façonne ce qui apparaît, mais ici l’humain lui-même est révélé comme profil exploitable (métriques comportementales, scores).
+    \item \textbf{Aliénation et dispersion} : le Dasein centré est désormais distribué ; l’identité est fragmentée entre plusieurs plateformes, rôles et traces.
+\end{itemize}
+
+En bref, Heidegger nous aide à voir que la technique reconfigure la modalité d’être ; le numérique transforme l’être en un \og être-par-la-trace \fg{}, un mode d’existence fondé sur la visibilité, la persistance et la quantification.
+
+\subsection*{B — Étude d’un profil social complet comme manifestation d’« être-par-la-trace »}
+
+Considérons un profil social type : photos, publications, \textit{likes}, historiques de localisation, interactions, métadonnées (horodatages, appareils), ainsi que données liées (achats, contacts). Ce profil constitue :
+
+\begin{itemize}
+    \item \textbf{Indexation de l’existence} : chaque interaction laisse une marque corrélée à des états, préférences et relations. L’individu « existe » aussi par ces marques.
+    \item \textbf{Persona performatif} : le profil ne reflète pas seulement l’individu, il le façonne (comportements anticipés, publicités ciblées, modélisations prédictives).
+    \item \textbf{Archivage et persistance} : contrairement à l’oralité fugace, la trace numérique perdure, permettant des reconstitutions futures (historique judiciaire, réputation sociale).
+\end{itemize}
+
+\textbf{Analyse} : Le profil social devient une \og ontologie secondaire \fg{} — il n’est pas qu’un miroir mais un acteur. Les algorithmes recommandent, les institutions évaluent. L’\textit{être-par-la-trace} signifie que l’identité est co-construite par les technologies qui la produisent, la mesurent et la redistribuent.
+
+\subsection*{C — Impact sur la notion de preuve légale}
+
+La transformation ontologique entraîne plusieurs conséquences pour la preuve numérique :
+
+\begin{itemize}
+    \item \textbf{Nature immatérielle et volatile} : la preuve n’est plus un objet tangible mais un agrégat de traces numériques (bits, journaux) susceptibles d’altération, suppression ou falsification.
+    \item \textbf{Contextualisation nécessaire} : une trace isolée a peu de valeur ; la chaîne de contexte (métadonnées, provenance, horodatage, intégrité) devient cruciale pour l’admissibilité judiciaire.
+    \item \textbf{Preuves probabilistes} : l’archétype de la preuve certaine s’affaiblit ; on raisonne en probabilités (corrélations, scores de confiance) plutôt qu’en certitudes absolues.
+    \item \textbf{Authenticité et opposabilité} : qui a généré la trace et dans quelles conditions ? Les mécanismes cryptographiques (horodatage signé, hachage, journaux immuables) deviennent essentiels pour garantir authenticité et non-répudiation.
+    \item \textbf{Éthique et droits} : l’usage des traces pose un problème de proportionnalité et de respect de la vie privée ; l’acquisition massive de données peut violer des droits fondamentaux et invalider une preuve malgré sa valeur factuelle.
+\end{itemize}
+
+\newpage
+
+\section*{Exercice 3 : Calcul d’Entropie de Shannon Appliquée}
+
+% Configuration du style Python
+\lstdefinestyle{python}{
+  language=Python,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue},
+  stringstyle=\color{red!60!black},
+  commentstyle=\color{green!50!black},
+  showstringspaces=false,
+  frame=single,
+  breaklines=true
+}
+
+
+
+L’entropie de Shannon mesure l’imprévisibilité d’un fichier :
+\[
+H(X) = - \sum_{i} p(x_i)\log_2 p(x_i)
+\]
+
+où $p(x_i)$ est la probabilité d’apparition du symbole $x_i$.
+
+\textbf{Objectif :} comparer trois types de fichiers (texte, image JPEG, fichier chiffré AES).  
+Résultats attendus :
+\begin{itemize}
+    \item Texte naturel : $H \approx 1.5$ bits/caractère
+    \item Image JPEG : $H \approx 7.0$--$7.5$ bits/octet
+    \item Fichier AES : $H \approx 7.9$--$8.0$ bits/octet
+\end{itemize}
+
+\textbf{Seuil de détection de chiffrement automatique :} $H > 7.5$.
+
+\begin{lstlisting}[style=python, caption={Calcul d’entropie de Shannon en Python}]
+import math
+from collections import Counter
+
+def shannon_entropy(data: bytes) -> float:
+    if not data:
+        return 0
+    freq = Counter(data)
+    n = len(data)
+    return -sum((count/n) * math.log2(count/n) for count in freq.values())
+
+files = {
+    "Texte": "document.txt",
+    "JPEG": "image.jpeg",
+    "AES": "fichier_chiffre.aes"
+}
+
+for name, path in files.items():
+    with open(path, "rb") as f:
+        data = f.read()
+    H = shannon_entropy(data)
+    print(f"{name}: H ≈ {H:.2f} bits/octet")
+\end{lstlisting}
+
+---
+
+\section*{Exercice 4 : Théorie des Graphes en Investigation Criminelle}
+
+On modélise un réseau de communications téléphoniques par un graphe orienté :  
+\begin{itemize}
+    \item Sommets = personnes
+    \item Arêtes = appels téléphoniques
+\end{itemize}
+
+Les métriques utilisées : centralité en degré, intermédiarité, proximité.  
+L’algorithme de Freeman permet d’identifier le \textbf{nœud critique}.
+
+\begin{lstlisting}[style=python, caption={Analyse de graphes en Python avec NetworkX}]
+import networkx as nx
+import matplotlib.pyplot as plt
+
+communications = [
+    ("Alice", "Bob"),
+    ("Bob", "Charlie"),
+    ("Alice", "Charlie"),
+    ("Charlie", "David"),
+    ("David", "Alice"),
+    ("Eve", "Alice"),
+    ("Eve", "Charlie"),
+]
+
+G = nx.DiGraph()
+G.add_edges_from(communications)
+
+deg_centrality = nx.degree_centrality(G)
+bet_centrality = nx.betweenness_centrality(G)
+closeness = nx.closeness_centrality(G)
+
+critical_node = max(bet_centrality, key=bet_centrality.get)
+
+print("Noeud critique (Freeman):", critical_node)
+
+plt.figure(figsize=(6,6))
+node_colors = [deg_centrality[n]*10 for n in G.nodes()]
+nx.draw(G, with_labels=True, node_size=1500,
+        node_color=node_colors, cmap=plt.cm.plasma)
+plt.show()
+\end{lstlisting}
+
+---
+
+\section*{Exercice 5 : Modélisation de l’Effet Papillon en Forensique}
+
+Une petite modification dans un log (±30s) peut entraîner un effet en cascade sur la reconstruction d’une timeline.  
+La divergence est mesurée par l’exposant de Lyapunov $\lambda$ :
+
+\[
+\delta(t) \approx \delta(0)e^{\lambda t}
+\]
+
+\begin{lstlisting}[style=python, caption={Simulation de l’effet papillon en Python}]
+import numpy as np
+import matplotlib.pyplot as plt
+
+np.random.seed(42)
+n = 1000
+timestamps = np.cumsum(np.random.exponential(scale=5, size=n))
+
+idx = np.random.randint(0, n)
+perturbation = np.random.choice([-30, 30])
+timestamps_perturbed = timestamps.copy()
+timestamps_perturbed[idx] += perturbation
+
+delta = np.abs(timestamps - timestamps_perturbed)
+lyapunov = np.mean(np.log(1 + delta))
+
+plt.plot(delta[:200], label="Différence cumulée")
+plt.xlabel("Événement")
+plt.ylabel("Divergence temporelle (s)")
+plt.title("Effet papillon en reconstruction forensique")
+plt.legend()
+plt.show()
+
+print(f"Exposant de Lyapunov effectif ≈ {lyapunov:.3f}")
+\end{lstlisting}
+
+---
+
+
+% Style listings Python
+\lstdefinestyle{python}{
+  language=Python,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue},
+  stringstyle=\color{red!60!black},
+  commentstyle=\color{green!50!black},
+  showstringspaces=false,
+  frame=single,
+  breaklines=true
+}
+
+
+
+\section*{Exercice 6 : Expérience de Pensée de Schrödinger Adaptée}
+
+On conçoit une version numérique du chat de Schrödinger : un fichier peut être dans un état \og présent \fg{} ou \og effacé \fg{}, mais avant l’analyse, l’investigateur ignore sa réalité.  
+On peut modéliser son état par une superposition :
+\[
+|\Psi\rangle = \alpha |Présent\rangle + \beta |Effacé\rangle.
+\]
+
+\subsection*{Impact sur la preuve}
+\begin{itemize}
+  \item La preuve devient \textbf{probabiliste} et non certaine.
+  \item Les juges devront accepter des preuves accompagnées d’un \textbf{intervalle de confiance}.
+\end{itemize}
+
+\subsection*{Protocole d’observation minimal-invasif}
+\begin{enumerate}
+  \item Utiliser des snapshots immuables en lecture seule.
+  \item Calculer immédiatement des hachages et les signer.
+  \item Journaliser toutes les opérations avec horodatage.
+  \item Minimiser les lectures directes en utilisant des attestations cryptographiques.
+\end{enumerate}
+
+---
+
+\section*{Exercice 7 : Calculs sur la Sphère de Bloch}
+
+État donné :
+\[
+|\psi\rangle = \cos\frac{\pi}{6}|0\rangle + e^{i\pi/4}\sin\frac{\pi}{6}|1\rangle
+= \tfrac{\sqrt{3}}{2}|0\rangle + \tfrac{1}{2} e^{i\pi/4}|1\rangle.
+\]
+
+\subsection*{Probabilités de mesure}
+\[
+P(0) = \left|\tfrac{\sqrt{3}}{2}\right|^2 = 0.75,
+\quad
+P(1) = \left|\tfrac{1}{2}\right|^2 = 0.25.
+\]
+
+\subsection*{Coordonnées Bloch}
+\[
+(x,y,z) = (\sin\theta \cos\phi, \sin\theta \sin\phi, \cos\theta) 
+= (0.612,\,0.612,\,0.5).
+\]
+
+\subsection*{Code de visualisation}
+\begin{lstlisting}[style=python, caption={Représentation d’un état sur la sphère de Bloch}]
+import numpy as np
+import matplotlib.pyplot as plt
+
+theta = np.pi/3
+phi = np.pi/4
+x = np.sin(theta)*np.cos(phi)
+y = np.sin(theta)*np.sin(phi)
+z = np.cos(theta)
+
+fig = plt.figure()
+ax = fig.add_subplot(111, projection='3d')
+u, v = np.mgrid[0:2*np.pi:100j, 0:np.pi:50j]
+xs = np.cos(u)*np.sin(v)
+ys = np.sin(u)*np.sin(v)
+zs = np.cos(v)
+ax.plot_surface(xs, ys, zs, alpha=0.1)
+ax.scatter([x],[y],[z],s=80,c='r')
+plt.show()
+\end{lstlisting}
+
+---
+
+\section*{Exercice 8 : Analyse du Théorème de Non-Clonage}
+
+\subsection*{Pourquoi le clonage est impossible}
+Supposons un opérateur $U$ tel que :
+\[
+U(|\psi\rangle|0\rangle) = |\psi\rangle|\psi\rangle.
+\]
+En comparant deux états non orthogonaux, on obtient :
+\[
+\langle \psi | \phi \rangle = \langle \psi | \phi \rangle^2,
+\]
+ce qui est absurde sauf si $\langle \psi | \phi \rangle \in \{0,1\}$.
+
+\subsection*{Conséquences forensiques}
+\begin{itemize}
+  \item Impossibilité de copier parfaitement une preuve quantique.
+  \item Obligation d’utiliser des engagements et horodatages classiques pour garantir l’opposabilité.
+\end{itemize}
+
+\subsection*{Alternative ZK-NR}
+\begin{enumerate}
+  \item Créer un engagement cryptographique (hash).
+  \item Produire une preuve Zero-Knowledge.
+  \item Signer l’engagement pour la non-répudiation.
+\end{enumerate}
+
+---
+
+\section*{Exercice 9 : Formalisation du Paradoxe de l’Authenticité Invisible}
+
+On définit : $A$ (authenticité), $C$ (confidentialité), $O$ (opposabilité).  
+Inégalité fondamentale :
+\[
+A \cdot C \le 1 - \delta.
+\]
+
+Exemple numérique :
+\begin{itemize}
+  \item Système public signé : $A=0.95,\ C=0.05 \Rightarrow \delta \approx 0.95$.
+  \item Système chiffré non signé : $A=0.6,\ C=0.7 \Rightarrow \delta \approx 0.58$.
+  \item Système ZK-NR : $A=0.85,\ C=0.6 \Rightarrow \delta \approx 0.49$.
+\end{itemize}
+
+Inégalité d’incertitude :
+\[
+\Delta A \cdot \Delta C \geq \frac{\hbar_{num}}{2}.
+\]
+
+---
+
+\section*{Exercice 10 : Implémentation Simplifiée ZK-NR}
+
+\begin{lstlisting}[style=python, caption={Prototype pédagogique de ZK-NR en Python}]
+import hashlib, time
+from cryptography.hazmat.primitives import hashes
+from cryptography.hazmat.primitives.asymmetric import rsa, padding
+
+def commit(data, nonce):
+    return hashlib.sha256(nonce + data).hexdigest()
+
+def gen_keys():
+    priv = rsa.generate_private_key(public_exponent=65537, key_size=2048)
+    return priv, priv.public_key()
+
+def sign(priv, msg):
+    return priv.sign(msg,
+        padding.PSS(mgf=padding.MGF1(hashes.SHA256()),
+                    salt_length=padding.PSS.MAX_LENGTH),
+        hashes.SHA256())
+
+def verify(pub, sig, msg):
+    try:
+        pub.verify(sig, msg,
+            padding.PSS(mgf=padding.MGF1(hashes.SHA256()),
+                        salt_length=padding.PSS.MAX_LENGTH),
+            hashes.SHA256())
+        return True
+    except Exception:
+        return False
+
+# Exemple
+data = b"secret doc"
+nonce = b"random123"
+C = commit(data, nonce).encode()
+priv, pub = gen_keys()
+sig = sign(priv, C)
+print("Commit:", C.decode())
+print("Signature valide?", verify(pub, sig, C))
+\end{lstlisting}
+
+---
+
+\section*{Exercice 11 : Étude de Cas — QuantumLeaks}
+
+\textbf{Scénario :} fuite de documents classifiés protégés par chiffrement post-quantique.  
+Preuves à conserver pour plus de 30 ans.
+
+\subsection*{Stratégie}
+\begin{enumerate}
+  \item \textbf{Acquisition immédiate} : image bit-à-bit, stockage en WORM.
+  \item \textbf{Engagement post-quantique} : signatures PQC (Dilithium, Falcon).
+  \item \textbf{Stockage redondant} : migration cryptographique planifiée.
+  \item \textbf{Documentation} : journaux signés, TPM, certificats.
+  \item \textbf{Accès contrôlé} : workflow légal, pseudonymisation partielle.
+\end{enumerate}
+
+
+\section*{Exercice 12 : Débat Philosophique Structuré}
+\subsection*{Sujet}
+\textit{« L’investigateur numérique peut-il rester neutre dans l’ère quantique ? »}
+
+\subsection*{Introduction}
+L’ère quantique, caractérisée par l’incertitude fondamentale et l’impossibilité du clonage parfait, remet en cause la neutralité supposée de l’investigateur numérique. Deux approches se confrontent : le réalisme et le constructivisme.
+
+\subsection*{Position réaliste}
+\begin{itemize}
+  \item Inspirée de Wheeler (\textit{it from bit}), la réalité existe indépendamment de l’observateur.
+  \item L’investigateur a pour rôle de révéler les faits de manière objective, en rapportant des probabilités mesurables.
+  \item La neutralité est donc possible : l’investigateur n’est qu’un témoin des probabilités quantiques.
+  \item \textbf{Trilemme éthique :} priorité donnée à la vérité (Vérité > Vie privée > Responsabilité sociale).
+\end{itemize}
+
+\subsection*{Position constructiviste}
+\begin{itemize}
+  \item Avec Heidegger, la technique est un mode de dévoilement : l’investigation n’est jamais neutre.
+  \item Avec Kuhn, l’interprétation des traces dépend de paradigmes conceptuels (outils, modèles juridiques).
+  \item La neutralité est impossible : l’investigateur choisit ce qu’il observe et construit la réalité de l’enquête.
+  \item \textbf{Trilemme éthique :} priorité donnée à la dignité humaine et à la protection des droits fondamentaux.
+\end{itemize}
+
+\subsection*{Synthèse}
+Une approche intégrative admet :
+\begin{itemize}
+  \item la nécessité d’outils rigoureux et de méthodes reproductibles (réalisme),
+  \item mais aussi la dimension située et contextuelle de l’observation (constructivisme).
+\end{itemize}
+L’investigateur est « neutre en intention » mais « situé en pratique ».
+
+\subsection*{Conclusion}
+Dans l’ère quantique, la neutralité absolue est un idéal régulateur, non une réalité empirique. L’investigateur doit reconnaître sa position située et arbitrer le trilemme éthique entre vérité, responsabilité et respect des droits.
+
+---
+
+\section*{Exercice 13 : Projet de Recherche Personnel}
+
+\subsection*{Thème choisi}
+\textbf{La fiabilité des preuves probabilistes issues de systèmes quantiques dans les procès judiciaires.}
+
+\subsection*{Hypothèse de recherche}
+Les preuves numériques quantiques, bien que probabilistes, peuvent être juridiquement fiables si elles sont accompagnées de mécanismes d’attestation et de redondance statistique.
+
+\subsection*{Protocole expérimental}
+\begin{enumerate}
+  \item \textbf{Simulation théorique :} modélisation d’un qubit mesuré dans différents états.
+  \item \textbf{Expérimentation numérique :} génération de séries de mesures avec bruit (simulateur quantique).
+  \item \textbf{Analyse statistique :} calcul des intervalles de confiance selon le nombre de mesures (théorème de Hoeffding).
+  \item \textbf{Traduction juridique :} formalisation des résultats en termes de seuils de confiance présentables en justice.
+\end{enumerate}
+
+\subsection*{Résultats attendus}
+\begin{itemize}
+  \item Détermination d’un nombre minimal de mesures pour rendre une preuve statistiquement acceptable.
+  \item Définition d’un cadre d’admissibilité probabiliste adapté aux tribunaux.
+\end{itemize}
+
+\subsection*{Plan d’article académique}
+\begin{enumerate}
+  \item \textbf{Introduction :} enjeux de la preuve quantique en contexte judiciaire.
+  \item \textbf{Cadre théorique :} Wheeler, incertitude de Heisenberg, non-clonage.
+  \item \textbf{Méthodologie :} simulation et protocoles statistiques.
+  \item \textbf{Résultats :} seuils de mesures et niveaux de confiance.
+  \item \textbf{Discussion :} implications juridiques et éthiques.
+  \item \textbf{Conclusion :} vers un standard de preuve quantique.
+\end{enumerate}
+
+---
+
+\end{document}
+
+

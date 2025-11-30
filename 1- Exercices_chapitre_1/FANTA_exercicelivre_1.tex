@@ -1,0 +1,583 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}      
+\usepackage{geometry}   
+\geometry{margin=2.5cm}
+\usepackage[myheadings]{fullpage}
+\DeclareUnicodeCharacter{0301}{\hspace{-1ex}\'{ }}
+% Package for headers 
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{hyperref}         
+
+% For figures and stuff
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+
+% Change for different font sizes and families
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+
+% Maths
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{lettrine}
+\renewcommand{\thesection}{\Roman{section}}
+
+\usepackage{booktabs} % Pour des tableaux de qualité
+\usepackage{longtable} % Pour les longs tableaux si nécessaire
+\usepackage{array} % Pour la mise en forme des colonnes
+\renewcommand{\contentsname}{Table des Matières}
+% Bibliography
+\usepackage{biblatex} 
+\addbibresource{references.bib}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}    
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2cm,bottom=1.5cm,left=2cm,right=2cm,marginparwidth=1.5cm]{geometry}
+\usepackage{lmodern}
+\usepackage[french]{babel}
+\usepackage{amsmath, amssymb}
+\usepackage{hyperref}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\lstset{
+  language=Python,
+  basicstyle=\ttfamily\footnotesize,
+  keywordstyle=\color{blue},
+  stringstyle=\color{orange},
+  commentstyle=\color{green!50!black},
+  frame=single,
+  breaklines=true,
+  showstringspaces=false
+}
+
+\begin{document}
+
+
+% === EN-TÊTE SUR UNE SEULE LIGNE ===
+\begin{center}\hspace*{-0.5cm}
+  \begin{tabular}{ccc}
+ 
+    {\large UNIVERSIT\'E DE YAOUND\'E I} & \multirow{8}{*}{\includegraphics[scale=0.50]{img/LOGO.png}} & \large{ THE UNIVERSITY OF YAOUNDE I}\\
+    %& & \\
+    \textbf{***} &    & \textbf{***} \\
+    %& & \\
+    \textcolor{-yellow}{\'ECOLE NATIONALE SUP\'ERIEURE}& & \textcolor{-yellow}{NATIONAL ADVANCED SCHOOL}\\ 
+    \textcolor{-yellow}{POLYTECHNIQUE DE YAOUND\'E}   & & \textcolor{-yellow}{OF ENGINEERING OF YAOUNDE} \\
+    %& & \\
+    \textbf{***}    & & \textbf{***} \\
+    %& & \\
+    D\'EPARTEMENT DE G\'ENIE& & DEPARTMENT OF COMPUTER \\ 
+    INFORMATIQUE & & ENGINEERING \\
+    \textbf{***} &    & \textbf{***} \\
+    \textcolor{-yellow}{HUMANITÉS NUMÉRIQUES} & & \textcolor{-yellow}{DIGITAL HUMANITIES}
+    \end{tabular}
+ 
+\end{center}
+\vspace{2cm}
+% Header and footer information
+
+\pagestyle{fancy}
+% === Titre principal ===
+\begin{center}
+\hrule height 2pt
+\vspace{0.4cm}
+{\LARGE \textbf{Philosophie et Fondements de l’Investigation Numérique}}
+\vspace{0.5cm}
+\hrule height 2pt
+\vspace{0.4cm}
+\end{center}
+\vspace{0.90cm}
+\begin{center}
+\large {Exercices des pages 13 à 16}
+
+\vspace{7cm}
+\textbf{Rédigé par :} & \\[0.3cm]
+\begin{tabular}{l@{\hspace{1cm}}l}
+FANTA YADON Félicité (chef) & 22P069 \\[0.3cm]
+\end{tabular}\\
+\textbf{Supervisé par :}\\[0.3cm]
+M. Thierry MINKA\\
+\date{}
+\end{center}
+\newpage
+\section{Partie 1 — Fondements Philosophiques et Épistémologiques}
+\subsection{Exercice 1 — Dissertation (Paradoxe de la transparence)}
+
+La modernité numérique a propulsé la transparence au rang d’impératif moral et administratif : on exige des institutions, des entreprises et des individus qu’ils « ouvrent » leurs actions. Byung-Chul Han montre que la transparence n’est pas neutre : elle transforme les relations de pouvoir, fragilise l’intimité et installe un régime où l’excès de visibilité finit par aliéner. Dans le contexte d’une investigation numérique, le paradoxe de la transparence consiste en ce que la quête d’une vérité publique et vérifiable entre en tension directe avec le droit à la confidentialité et la préservation de la dignité personnelle.  
+
+\textbf{Sur le plan pratique}, la transparence améliore la redevabilité : logs, journaux et traces numériques permettent de reconstituer des événements et d’attribuer des responsabilités. Mais cette même exposition génère des effets pervers : la sur-exposition des citoyens à un contrôle continu, la marchandisation des traces et la réduction des personnes à des profils traçables.  
+
+Cas concret : enquête sur la corruption municipale. Une autorité publie des « dumps » d’emails pour prouver une collusion. La diffusion révèle des informations personnelles non nécessaires (santé, opinions privées), ce qui porte atteinte à des tiers non impliqués. La transparence a servi la preuve mais a nui à l’intégrité privée.  
+
+\textbf{Résolution pratique inspirée de Kant} :  
+\begin{itemize}
+  \item ne diffuser que les éléments strictement nécessaires à la preuve (principe de minimisation),
+  \item comité d’éthique pour évaluer les conséquences de la publication,
+  \item techniques d’anonymisation sélective et divulgation contrôlée,
+  \item traçabilité des accès et durée de rétention limitée.
+\end{itemize}
+
+\textbf{Conclusion} : la transparence doit être réencadrée par une éthique de la dignité et des procédures institutionnalisées. L’investigateur devient non seulement un ingénieur de la preuve mais un gardien moral.
+
+\subsection{Exercice 2 — Transformation ontologique (Heidegger)}
+
+Heidegger voit la technique comme « dévoilement » (aletheia). À l’ère numérique, l’être se traduit par des traces persistantes : un « être-par-la-trace ». L’identité est donc médiatisée par des posts, likes, métadonnées.  
+
+\textbf{Impact sur la preuve légale} : les preuves sont distribuées, parfois modifiables. La validation exige donc :
+\begin{itemize}
+  \item intégrité cryptographique (hashes, chaînes de custody),
+  \item contextualisation (interprétation experte),
+  \item prudence judiciaire sur la fiabilité.
+\end{itemize}
+
+\section{Partie 2 — Mathématiques de l’Investigation}
+
+\subsection{Exercice 3 — Entropie et détection de chiffrement}
+
+\begin{lstlisting}
+import math
+from collections import Counter
+import sys
+
+def entropy_bytes(data: bytes) -> float:
+    if not data:
+        return 0.0
+    counts = Counter(data)
+    length = len(data)
+    ent = 0.0
+    for c in counts.values():
+        p = c / length
+        ent -= p * math.log2(p)
+    return ent
+
+def analyze_file(path):
+    with open(path, 'rb') as f:
+        data = f.read()
+    ent = entropy_bytes(data)
+    return ent
+
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print("Usage: python entropy_check.py <file>")
+        sys.exit(1)
+    path = sys.argv[1]
+    ent = analyze_file(path)
+    print(f"Entropy (bits/octet): {ent:.4f}")
+    if ent >= 7.7:
+        print("Probable chiffrement")
+    elif ent >= 6.5:
+        print("Compressé ou image")
+    else:
+        print("Texte naturel ou structuré")
+\end{lstlisting}
+
+\subsection{Exercice 4 — Graphes téléphoniques}
+
+\section{Partie 2 — Mathématiques de l’Investigation}
+
+\subsection{Exercice 4 — Graphes téléphoniques}
+
+L’objectif est de modéliser les communications téléphoniques sous forme de graphe orienté pondéré $G=(V,E,w)$ afin d’identifier les acteurs critiques d’un réseau.
+
+\paragraph{Méthodologie}
+\begin{enumerate}
+  \item Construire un graphe orienté pondéré $G(V,E,w)$ à partir des appels.
+  \item Calculer :
+    \begin{itemize}
+      \item le \textbf{degré} entrant et sortant,
+      \item l’\textbf{intermédiarité} (algorithme de Brandes),
+      \item la \textbf{proximité} (closeness centrality).
+    \end{itemize}
+  \item Identifier le nœud critique par intermédiarité maximale.
+  \item Visualiser avec \texttt{networkx} et \texttt{matplotlib}.
+\end{enumerate}
+
+\paragraph{Code Python illustratif}
+\begin{lstlisting}
+import networkx as nx
+import matplotlib.pyplot as plt
+import random
+
+# Création d'appels synthétiques
+nodes = [f'num_{i}' for i in range(1,21)]
+calls = [(random.choice(nodes), random.choice(nodes),
+          random.expovariate(1/60)) for _ in range(200)]
+
+# Graphe orienté pondéré
+G = nx.DiGraph()
+for src,dst,dur in calls:
+    if src != dst:
+        if G.has_edge(src,dst):
+            G[src][dst]['weight'] += dur
+        else:
+            G.add_edge(src,dst,weight=dur)
+
+# Calcul des métriques
+betw = nx.betweenness_centrality(G, weight='weight', normalized=True)
+closeness = nx.closeness_centrality(G, distance='weight')
+deg_centrality = nx.degree_centrality(G)
+
+critical = max(betw, key=betw.get)
+print("Noeud critique :", critical)
+
+# Visualisation
+pos = nx.spring_layout(G)
+nx.draw(G, pos, with_labels=True,
+        node_size=[5000*betw[n] for n in G],
+        node_color=list(betw.values()), cmap=plt.cm.viridis)
+plt.show()
+\end{lstlisting}
+
+\paragraph{Résultat attendu}
+Le nœud avec l’intermédiarité maximale est identifié comme \textbf{pivot stratégique} du réseau téléphonique.  
+
+---
+
+\subsection{Exercice 5 — Effet papillon et estimation de Lyapunov}
+
+On simule une timeline de 1000 événements corrélés. Une perturbation minime (±30s) entraîne un désordre croissant.  
+La divergence est modélisée par :
+\[
+\delta(t) \approx \delta(0)\,e^{\lambda t}, 
+\quad \ln \delta(t) = \ln \delta(0) + \lambda t
+\]
+où $\lambda$ est l’exposant de Lyapunov.
+
+\paragraph{Code Python de simulation}
+\begin{lstlisting}
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy import stats
+
+# Timeline originale
+N = 1000
+times = np.cumsum(np.random.normal(60, 5, N))
+
+# Perturbation
+pert = times.copy()
+pert[50:] += 5  # +5s après l'événement 50
+
+# Distance cumulative
+delta = np.cumsum(np.abs(times - pert))
+
+# Estimation lambda
+t = np.arange(N)
+ln_d = np.log(delta[delta>0])
+t_s = t[delta>0]
+slope, intercept, _, _, _ = stats.linregress(t_s, ln_d)
+print("Exposant de Lyapunov estimé :", slope)
+
+# Graphique
+plt.plot(t, delta)
+plt.yscale('log')
+plt.xlabel("Événement")
+plt.ylabel("δ(t)")
+plt.title("Effet papillon - croissance exponentielle")
+plt.show()
+\end{lstlisting}
+
+\paragraph{Interprétation}
+\begin{itemize}
+  \item $\lambda > 0$ : divergence exponentielle (sensibilité extrême).
+  \item $\lambda \approx 0$ : système stable.
+  \item $\lambda < 0$ : convergence (perturbation amortie).
+\end{itemize}
+
+---
+
+\section{Partie 3 — Révolution Quantique}
+
+\subsection{Exercice 6 — Chat de Schrödinger numérique}
+
+\paragraph{Concept}
+Dans l’informatique classique, un fichier est présent ou absent.  
+La métaphore quantique traduit une incertitude pratique (copies multiples, caches).  
+Dans un vrai système quantique, la mesure modifie l’état et rend la preuve intrinsèquement \textbf{probabiliste}.
+
+\paragraph{Implications pour la preuve}
+\begin{itemize}
+  \item Une mesure unique n’est pas suffisante : il faut répéter les mesures.
+  \item Le théorème de non-clonage interdit la duplication parfaite d’une preuve quantique.
+  \item La chaîne de custody doit inclure : \textbf{horodatage}, \textbf{paramètres de mesure}, \textbf{documentation complète}.
+\end{itemize}
+
+\subsection{Exercice 7 — Calcul sur la sphère de Bloch}
+
+État du qubit :
+\[
+|\psi\rangle = \cos\!\left(\tfrac{\pi}{6}\right)|0\rangle 
++ e^{i\pi/4}\sin\!\left(\tfrac{\pi}{6}\right)|1\rangle
+\]
+
+\paragraph{Calcul des probabilités en base Z}
+\[
+P(0) = \cos^2\!\left(\tfrac{\pi}{6}\right) = \tfrac{3}{4} = 0.75,
+\quad
+P(1) = \sin^2\!\left(\tfrac{\pi}{6}\right) = \tfrac{1}{4} = 0.25
+\]
+
+\paragraph{Vecteur de Bloch}
+\[
+(x,y,z) = (\sin\theta \cos\phi,\; \sin\theta \sin\phi,\; \cos\theta)
+\]
+avec $\theta=\pi/3$, $\phi=\pi/4$ :
+\[
+(x,y,z) \approx (0.612,\;0.612,\;0.5)
+\]
+
+\paragraph{Probabilités dans d’autres bases}
+\begin{itemize}
+  \item Base X : $P(+)=\tfrac{1+x}{2}\approx 0.806$.
+  \item Base Y : $P(i+)=\tfrac{1+y}{2}\approx 0.806$.
+\end{itemize}
+
+\paragraph{Conclusion}
+L’état est fortement biaisé vers $|0\rangle$ (75\%), mais aussi vers $|+\rangle$ et $|i+\rangle$ (80\%).  
+En pratique, plusieurs mesures dans différentes bases sont nécessaires pour reconstruire l’état.
+
+
+\section{Partie 4 — Paradoxe de l’Authenticité Invisible}
+
+Cette partie aborde une problématique centrale en investigation numérique : 
+comment concilier l’\textbf{authenticité} (la capacité de prouver l’origine et la véracité d’une donnée) 
+et la \textbf{confidentialité} (la protection des informations sensibles), 
+tout en garantissant l’\textbf{opposabilité} juridique (la possibilité que la preuve soit recevable devant un tribunal).  
+
+Le paradoxe réside dans le fait que plus une preuve est authentifiée et exposée, 
+moins elle est confidentielle, et inversement : protéger au maximum la confidentialité d’une donnée 
+peut réduire sa valeur probatoire et son opposabilité.
+
+\subsection{Exercice 9 — Formalisation Mathématique du Paradoxe}
+
+On définit trois grandeurs normalisées sur l’intervalle $[0,1]$ :
+\begin{itemize}
+  \item $A(P)$ : \textbf{Authenticité} de la preuve $P$ (degré de certitude sur son intégrité et sa source),
+  \item $C(P)$ : \textbf{Confidentialité} de la preuve $P$ (degré de protection des informations sensibles),
+  \item $O(P)$ : \textbf{Opposabilité} de la preuve $P$ (probabilité de recevabilité juridique).
+\end{itemize}
+
+La relation fondamentale proposée est :
+\[
+A(P) \cdot C(P) \leq 1 - \delta
+\]
+où $\delta$ représente un seuil de perte inévitable lié au paradoxe (zone d’incompatibilité).  
+
+\paragraph{Exemple numérique illustratif}
+\begin{itemize}
+  \item Preuve 1 : signature numérique classique  
+  $A = 0.95$, $C = 0.20$ $\Rightarrow A \cdot C = 0.19 \leq 1 - \delta$.  
+  Ici, la confidentialité est faible mais l’authenticité est très forte.  
+
+  \item Preuve 2 : protocole Zero-Knowledge (preuve de connaissance sans révélation)  
+  $A = 0.80$, $C = 0.90$ $\Rightarrow A \cdot C = 0.72$.  
+  Bon compromis entre authenticité et confidentialité, mais opposabilité parfois réduite (juges moins familiers).  
+
+  \item Preuve 3 : donnée chiffrée conservée sans clé publique  
+  $A = 0.40$, $C = 0.95$ $\Rightarrow A \cdot C = 0.38$.  
+  Forte confidentialité, mais faible authenticité : difficilement recevable.  
+\end{itemize}
+
+\paragraph{Lien avec l’incertitude quantique}
+L’analogie avec le principe d’incertitude s’exprime par l’inégalité suivante :
+\[
+\Delta A \cdot \Delta C \geq \frac{\hbar_{num}}{2}
+\]
+où $\Delta A$ et $\Delta C$ sont les incertitudes de mesure de l’authenticité et de la confidentialité, 
+et $\hbar_{num}$ est une constante numérique analogue à la constante de Planck, 
+spécifique au système de preuve numérique utilisé.  
+
+\textbf{Méthode expérimentale pour estimer $\hbar_{num}$ :}
+\begin{enumerate}
+  \item Collecter des jeux de preuves variées (signatures, hash, ZK, blockchain).
+  \item Mesurer $A$ et $C$ sur chaque preuve selon une grille définie (échelle $[0,1]$).
+  \item Estimer leurs écarts-types $\Delta A$ et $\Delta C$.
+  \item Vérifier la borne $\Delta A \cdot \Delta C$ et déduire une valeur empirique de $\hbar_{num}$.
+\end{enumerate}
+
+\subsection{Exercice 10 — Implémentation Simplifiée ZK-NR}
+
+Pour dépasser le paradoxe, on propose une implémentation simplifiée d’un protocole \textbf{Zero-Knowledge Non-Repudiation (ZK-NR)}.  
+L’objectif est de prouver la possession d’une information \textbf{sans la révéler}, 
+tout en assurant une non-répudiation (l’auteur ne peut pas nier avoir fourni la preuve).
+
+\paragraph{Étapes du protocole simplifié}
+\begin{enumerate}
+  \item \textbf{Commitment (engagement)} : l’investigateur publie un engagement cryptographique $E = H(nonce \, || \, secret)$.
+  \item \textbf{Challenge} : le vérificateur génère un défi basé sur $E$ et un horodatage.
+  \item \textbf{Response} : l’investigateur calcule une réponse dérivée du secret et du défi, sans dévoiler le secret.
+  \item \textbf{Verification} : le vérificateur confirme la validité de la réponse en fonction du commit et du défi.
+\end{enumerate}
+
+\paragraph{Code Python simplifié}
+\begin{lstlisting}
+import os, hashlib, time, hmac
+
+SECRET = b'secret_owner_key'
+
+def commit(secret_data: bytes, nonce: bytes=None):
+    if nonce is None:
+        nonce = os.urandom(16)
+    h = hashlib.sha256(nonce + secret_data).hexdigest()
+    return {'commit': h, 'nonce': nonce.hex()}
+
+def prove_knowledge(secret_data: bytes, commit_obj):
+    ts = str(int(time.time())).encode()
+    challenge = hashlib.sha256(commit_obj['commit'].encode() + ts).digest()
+    response = hmac.new(secret_data, challenge, hashlib.sha256).hexdigest()
+    return {'timestamp': ts.decode(), 'response': response}
+
+def verify(commit_obj, proof, public_hint: bytes=None):
+    challenge = hashlib.sha256(
+        commit_obj['commit'].encode() + proof['timestamp'].encode()
+    ).digest()
+    if public_hint is None:
+        return "Clé de vérification manquante"
+    expected = hmac.new(public_hint, challenge, hashlib.sha256).hexdigest()
+    return expected == proof['response']
+\end{lstlisting}
+
+\paragraph{Analyse du compromis}
+\begin{itemize}
+  \item \textbf{Authenticité} : assurée par l’engagement et la vérification HMAC.
+  \item \textbf{Confidentialité} : le secret n’est jamais révélé.
+  \item \textbf{Opposabilité} : journaux d’horodatage et signature électronique rendent la preuve recevable.
+  \item \textbf{Overhead computationnel} : faible dans cette version (quelques millisecondes par opération).
+\end{itemize}
+
+\paragraph{Conclusion de la Partie 4}  
+Le paradoxe Authenticité–Confidentialité peut être modélisé mathématiquement et contourné partiellement par des protocoles ZK-NR.  
+Cependant, un compromis reste inévitable : aucune preuve ne peut atteindre simultanément $A=1$, $C=1$ et $O=1$.  
+L’investigateur doit donc choisir un point d’équilibre en fonction du contexte légal et éthique de l’affaire.
+\newpage
+\section{Partie 5 — Intégration et Synthèse Avancée}
+
+Cette partie propose de mettre en relation les dimensions philosophiques, 
+mathématiques et techniques de l’investigation numérique à travers des cas pratiques, 
+des débats philosophiques et un projet de recherche personnel.  
+Elle illustre la capacité de l’investigateur à \textbf{intégrer plusieurs disciplines} 
+afin de répondre à des défis concrets et contemporains.
+
+\subsection{Exercice 11 — Étude de Cas Complexe : Affaire \og QuantumLeaks \fg}
+
+\paragraph{Scénario}
+Une fuite massive de documents classifiés survient, mais ceux-ci ont été 
+protégés par un chiffrement post-quantique.  
+L’enjeu principal est de préserver ces preuves pendant au moins 30 ans, 
+dans un contexte où l’informatique quantique progressera inévitablement.  
+
+\paragraph{Contraintes}
+\begin{itemize}
+  \item Assurer une \textbf{pérennité cryptographique} des preuves malgré l’évolution des algorithmes.
+  \item Garantir une \textbf{chaîne de conservation} fiable et opposable juridiquement.
+  \item Préserver la \textbf{confidentialité} des informations sensibles tout en permettant une vérification indépendante.
+\end{itemize}
+
+\paragraph{Plan de réponse technique et éthique}
+\begin{enumerate}
+  \item \textbf{Cryptographie hybride} : combiner signatures post-quantiques (Dilithium, Falcon) et schémas classiques éprouvés (RSA, ECDSA) pour garantir la transition.
+  \item \textbf{Horodatage et notarisation} : utiliser des services de timestamping électronique et blockchain permissionnée pour sceller l’existence des preuves.
+  \item \textbf{Redondance et migration} : stocker plusieurs copies distribuées juridiquement et prévoir des mises à jour cryptographiques tous les 5 ans.
+  \item \textbf{Éthique et confidentialité} : instaurer un comité d’éthique supervisant l’accès aux données, appliquer le principe de minimisation et recourir à l’anonymisation.
+  \item \textbf{Plan d’accès contrôlé} : définir des clés d’ouverture partagées (\textit{threshold cryptography}) afin que l’accès soit conditionné à la décision collective.
+\end{enumerate}
+
+\paragraph{Conclusion}  \\
+L’affaire \og QuantumLeaks \fg illustre l’importance d’une approche pluridisciplinaire, 
+alliant cryptographie post-quantique, gouvernance éthique et procédures légales solides.
+
+\subsection{Exercice 12 — Débat Philosophique Structuré}
+
+\paragraph{Sujet}\\
+\og L’investigateur numérique peut-il rester neutre dans l’ère quantique ? \fg
+
+\paragraph{Organisation du débat}
+Deux équipes sont formées :
+\begin{itemize}
+  \item \textbf{Équipe Réaliste (non-neutralité)} : soutient que l’investigateur ne peut jamais être neutre, car tout choix technique ou méthodologique introduit un biais.
+  \item \textbf{Équipe Constructiviste (neutralité procédurale)} : affirme que la neutralité parfaite est inatteignable, mais qu’une neutralité relative est possible grâce à des procédures rigoureuses.
+\end{itemize}
+
+\paragraph{Arguments des Réalistes}\\
+\begin{itemize}
+  \item Chaque outil technique (hash, graphe, protocole ZK) encode une vision particulière du monde.
+  \item L’investigateur agit toujours sous contraintes institutionnelles, politiques ou économiques.
+  \item L’interprétation des traces numériques est subjective, dépendante du contexte.
+\end{itemize}
+
+\paragraph{Arguments des Constructivistes}\\
+\begin{itemize}
+  \item Mise en place de \textbf{protocoles standardisés} et d’audits indépendants.
+  \item Utilisation des concepts de Kuhn (paradigmes), Wheeler (participation de l’observateur) et Heidegger (technique comme dévoilement) pour montrer qu’une \textbf{neutralité procédurale} est atteignable.
+  \item Importance de la \textbf{transparence méthodologique} : documenter chaque étape du processus réduit la subjectivité.
+\end{itemize}
+
+\paragraph{Synthèse du débat}\\
+\begin{itemize}
+  \item Neutralité absolue = impossible (biais techniques et contextuels).
+  \item Neutralité procédurale = possible, si l’investigateur adopte un cadre éthique et transparent.
+  \item Conclusion : viser une \og neutralité opérationnelle \fg plutôt qu’une neutralité absolue.
+\end{itemize}
+
+\subsection{Exercice 13 — Projet de Recherche Personnel}
+
+\paragraph{Choix du sujet}  \\
+\textbf{Titre proposé :} \og Mesurer l’impact des protocoles ZK-NR sur l’opposabilité juridique des preuves numériques à l’ère post-quantique \fg.
+
+\paragraph{Hypothèse de recherche}\\
+Les protocoles ZK-NR (Zero-Knowledge Non-Repudiation) permettent de concilier confidentialité et authenticité, 
+sans réduire significativement l’opposabilité juridique des preuves.
+
+\paragraph{Méthodologie proposée}
+\begin{enumerate}
+  \item \textbf{Revue de littérature} sur les preuves numériques, le non-clonage quantique, et les preuves à divulgation nulle de connaissance.
+  \item \textbf{Conception d’un prototype} Python simulant ZK-NR (basé sur hash et HMAC).
+  \item \textbf{Simulation de cas d’usage} : fuite de données, audit de logs, contrat numérique.
+  \item \textbf{Évaluation des indicateurs} : authenticité ($A$), confidentialité ($C$), opposabilité ($O$).
+  \item \textbf{Analyse expérimentale} : mesurer l’overhead computationnel, la scalabilité et la robustesse juridique.
+  \item \textbf{Production d’un rapport académique} avec résultats, discussion et recommandations.
+\end{enumerate}
+
+\paragraph{Apports attendus}\\
+\begin{itemize}
+  \item Définition d’une grille d’évaluation standardisée des preuves numériques.
+  \item Preuve de concept du protocole ZK-NR pour concilier les tensions du paradoxe.
+  \item Contribution à la doctrine juridique émergente sur la recevabilité des preuves quantiques.
+\end{itemize}
+\newpage
+\paragraph{Conclusion générale de la Partie 5} \\ 
+\paragraph*{Cette partie illustre la capacité de l’investigateur numérique à articuler 
+la technique, la philosophie et le droit.  
+Elle montre que l’avenir de l’investigation repose sur une approche interdisciplinaire 
+capable d’intégrer les défis quantiques et éthiques dans un cadre juridique robuste.}
+
+\end{document}
