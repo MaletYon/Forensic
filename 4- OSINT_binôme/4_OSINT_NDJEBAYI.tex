@@ -1,0 +1,525 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+\usepackage{listings}
+\usepackage{xcolor}
+\documentclass[memoire, 12pt]{report}
+\usepackage[top = 1.9cm, bottom = 1.5cm, left = 1.9cm, right = 2.1cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem}
+%\usepackage{algorithm2e}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{multirow}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres r\'ef\'erences}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[babel=true]{csquotes}
+\setlength{\fboxrule}{0.01cm}
+\setlength{\fboxsep}{0.5cm}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{url}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{glossaries}
+%\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[bottom]{footmisc}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{glossaries}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{minted}
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage[utf8]{inputenc}   % encodage du fichier source
+\usepackage[T1]{fontenc}      % encodage des polices
+\usepackage[french]{babel} 
+\usepackage{graphicx}
+\usepackage{float}% pour le français
+
+
+
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+
+
+
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc} 
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+
+\author{}
+
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!orange,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{enspy.png}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{RAPPORT}}}\\
+		\Large{{\textbf{\textit{investigation binome}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{0.1cm}
+		\normalsize\textbf{Option }:\\			
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			
+			\hspace{0.02cm} \textsl{\textbf{NDJEBAYI PATRICK N.}, 24P827}\\\\
+			
+			
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+	\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+	\hspace{0.02cm} \textsl{M. Thierry MINKA}
+	\end{center}
+	
+    
+	\vspace{2cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+				
+	\vfill%\null
+	
+\end{titlepage}
+
+
+\section*{Attestation Éthique}
+Je certifie que cette investigation a été réalisée dans le cadre strict d'un exercice académique, avec le consentement écrit préalable de la personne concernée, et dans le respect des lois sur la protection des données personnelles.
+
+\vspace{1cm}
+
+
+\tableofcontents
+\newpage
+
+\section{Introduction}
+\subsection{Cadre du Devoir}
+Ce rapport s'inscrit dans le cadre du cours d'Investigation Numérique. L'objectif pédagogique est de maîtriser les techniques légales d'OSINT (Open Source Intelligence) tout en respectant strictement le cadre éthique et légal.
+
+\subsection{Objectifs de l'Investigation}
+\begin{itemize}
+    \item Analyser l'empreinte numérique de mon binome NGWAMBE BEKWADI MARIELLA
+    \item Identifier les informations publiquement accessibles
+    \item Évaluer les risques potentiels liés à l'exposition des données
+    \item Appliquer les méthodologies d'investigation numérique 
+\end{itemize}
+
+\subsection{Cadre Éthique et Légal}
+Cette investigation respecte strictement :
+\begin{itemize}
+    \item Le consentement écrit obtenu préalablement
+    \item La loi Informatique et Libertés
+    \item Le RGPD (Règlement Général sur la Protection des Données)
+    \item Les principes éthiques de l'OSINT
+\end{itemize}
+
+\section{Connaissances Initiales sur le Binôme}
+\subsection{Informations Biographiques de Base}
+Avant l'investigation numérique, les informations suivantes étaient connues :
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Champ} & \textbf{Information} \\
+\hline
+Nom complet & NGWAMBE BEKWADI MARIELLA MAGUY \\
+\hline
+Date de naissance & 15 janvier 2005 \\
+\hline
+Email & ngwambemariella@gmail.com \\
+\hline
+Téléphone & 659 18 90 43 (WhatsApp) \\
+\hline
+Localisation & Yaoundé, Quartier ODZA-Auberge Bleu \\
+\hline
+Nationalité & Camerounaise \
+\hline
+Situation matrimoniale & En couple \
+
+\hline
+\end{tabular}
+\end{table}
+
+\subsection{Contexte Académique et Professionnel}
+\begin{itemize}
+    \item Étudiante en cybersécurité et investigation numérique
+    \item Formation à l'École Nationale Supérieure Polytechnique de Yaoundé (2024-2027)
+    \certifications : IFCF II, FCA II, Introduction à la Cybersécurité (Cisco)
+\end{itemize}
+
+\section{Méthodologie d'Investigation}
+\subsection{Approche Stratégique}
+L'investigation a suivi une approche méthodique en 4 phases :
+\begin{enumerate}
+    \item \textbf{Préparation} : Définition du cadre et collecte des informations de base
+    \item \textbf{Collecte} : Utilisation systématique des outils OSINT
+    \item \textbf{Analyse} : Croisement et vérification des informations
+    \item \textbf{Synthèse} : Rédaction du rapport final
+\end{enumerate}
+
+\subsection{Outils et Techniques Utilisés}
+\subsubsection{Recherche sur les Réseaux Sociaux}
+\begin{itemize}
+    \item LinkedIn : Analyse du profil professionnel
+    \item Facebook : Recherche par nom et analyse des relations
+    \item Recherche d'images inversée avec Google Images et Yandex
+\end{itemize}
+
+\subsubsection{Recherche par Identifiants}
+\begin{itemize}
+    \item Recherche par email avec Hunter.io et HaveIBeenPwned
+    \item Recherche par numéro de téléphone sur les annuaires inversés
+    \item Recherche de nom d'utilisage avec WhatsMyName
+\end{itemize}
+
+\subsubsection{Outils Techniques}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Outils} & \textbf{Objectif} \\
+\hline
+Google Dorks & Recherche avancée d'informations \\
+\hline
+Maltego & Cartographie des relations \\
+\hline
+theHarvester & Collecte d'emails et de sous-domaines \\
+\hline
+Shodan & Recherche de dispositifs connectés \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Résultats de l'Investigation}
+\subsection{Présence Numérique Identifiée}
+
+\subsubsection{Profil LinkedIn}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{5cm}|p{8cm}|}
+\hline
+\textbf{Élément} & \textbf{Détail} \\
+\hline
+Statut professionnel & Étudiante en Cybersecurity et investigation numérique \\
+\hline
+Centres d'intérêt & Réseaux, applications web, cybersécurité \\
+\hline
+Formation & École Nationale Supérieure Polytechnique de Yaoundé (2024-2027) \\
+\hline
+Certifications & IFCF II, FCA II, Introduction à la cybersécurité (Cisco) \\
+\hline
+Réseau & 43 relations \\
+\hline
+Relations en commun & FANTA YADON Félicité, Samuel JIANKAM + 3 autres \\
+\hline
+Localisation & Région du Centre, Cameroun \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Informations Biographiques Complètes}
+\begin{itemize}
+    \item \textbf{Nom complet} : NGWAMBE BEKWADI MARIELLA MAGUY
+    \item \textbf{Date de naissance} : 15 janvier 2005
+    \item \textbf{Email} : ngwambemariella@gmail.com
+    \item \textbf{Ville} : Yaoundé 
+    \item \textbf{Quartier} : ODZA -Auberge Bleu
+    \item \textbf{Nationalité} : Camerounaise
+    \item \textbf{Sexe} : Féminin
+    \item \textbf{Téléphone WhatsApp} : 659 18 90 43
+    \item \textbf{Activité 2024} : Vente de jeux naturels-CEO de MOKYO
+\end{itemize}
+
+\subsection{Analyse du Réseau de Relations}
+\subsubsection{Connexions Identifiées}
+\begin{itemize}
+    \item 43 relations sur LinkedIn
+    \item 3 relations en commun identifiées
+    \item Présence dans le réseau académique de l'ENSP Yaoundé
+\end{itemize}
+
+\subsubsection{Cartographie Sociale}
+L'analyse révèle une intégration dans :
+\begin{itemize}
+    \item Le milieu académique camerounais
+    \item La communauté de la cybersécurité
+    \item Le réseau entrepreneurial local et estudiantine.
+\end{itemize}
+
+\section{Analyse Comparative}
+\subsection{Corrélations et Confirmations}
+
+\subsubsection{Informations Confirmées}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{6cm}|p{6cm}|}
+\hline
+\textbf{Information initiale} & \textbf{Source de confirmation} \\
+\hline
+Statut d'étudiante & Profil LinkedIn et informations biographiques \\
+\hline
+Formation en cybersécurité & Profil LinkedIn et certifications \\
+\hline
+Localisation à Yaoundé & Multiple sources concordantes \\
+\hline
+\end{tabular}
+\end{table}
+
+\subsubsection{Nouvelles Découvertes}
+\begin{itemize}
+    \item \textbf{Certifications professionnelles} non mentionnées initialement
+    \item \textbf{Réseau professionnel étendu} de 43 relations
+    \item \textbf{Orientation entrepreneuriale} dans la cybersécurité
+    \item \textbf{Spécialisation technique} en réseaux et applications web
+\end{itemize}
+
+\subsection{Analyse des Risques Identifiés}
+\subsubsection{Exposition des Données Personnelles}
+\begin{itemize}
+    \item \textbf{Risque faible} : Informations professionnelles maîtrisées
+    \item \textbf{Risque modéré} : Numéro de téléphone accessible
+    \item \textbf{Risque contrôlé} : Email professionnel approprié
+\end{itemize}
+
+\subsubsection{Évaluation de l'Empreinte Numérique}
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{4cm}|p{4cm}|}
+\hline
+\textbf{Aspect} & \textbf{Niveau} & \textbf{Commentaire} \\
+\hline
+Exposition professionnelle & Élevée & Profil LinkedIn complet \\
+\hline
+Exposition personnelle & Faible & Données personnelles limitées \\
+\hline
+Risque d'usurpation & Faible & Cohérence des informations \\
+\hline
+Maîtrise globale & Bonne & Séparation vie pro/perso \\
+\hline
+\end{tabular}
+\end{table}
+
+\section{Recommandations de Sécurité}
+\subsection{Recommandations Immédiates}
+\begin{itemize}
+    \item \textbf{Revue des paramètres de confidentialité} sur LinkedIn
+    \item \textbf{Vérification régulière} de l'exposition des données
+    \item \textbf{Séparation maintenue} entre profils professionnels et personnels
+\end{itemize}
+
+\subsection{Recommandations à Long Terme}
+\begin{itemize}
+    \item \textbf{Formation continue} aux bonnes pratiques OSINT
+    \item \textbf{Surveillance proactive} de l'empreinte numérique
+    \item \textbf{Veille technologique} en cybersécurité
+\end{itemize}
+
+\section{Conclusion}
+\subsection{Synthèse des Principales Découvertes}
+Cette investigation a révélé une empreinte numérique bien structurée, avec une séparation claire entre la présence professionnelle sur LinkedIn et la vie personnelle. La personne investiguée démontre une bonne maîtrise de son identité numérique.
+
+\subsection{Retour d'Expérience Pédagogique}
+Cet exercice a permis de :
+\begin{itemize}
+    \item Maîtriser les outils et techniques d'OSINT
+    \item Comprendre l'importance de la protection des données
+    \item Développer une approche méthodique de l'investigation
+    \item Respecter le cadre éthique et légal
+\end{itemize}
+
+\subsection{Perspectives}
+L'évolution de l'empreinte numérique devra faire l'objet d'une surveillance continue, particulièrement dans le contexte du développement d'une carrière en cybersécurité.
+
+\section*{Annexes}
+\subsection*{Annexe A : Preuves d'Investigation}
+\begin{itemize}
+    \item Captures d'écran du profil LinkedIn
+    \item Formulaire de consentement signé
+    \tableaux de synthèse des données collectées
+\end{itemize}
+
+\subsection*{Annexe B : Bibliographie}
+\begin{itemize}
+    \item Cours d'Investigation Numérique - Supports pédagogiques
+    \item Guide des bonnes pratiques OSINT
+    \item RGPD - Règlement Général sur la Protection des Données
+\end{itemize}
+
+\end{document}

@@ -1,0 +1,141 @@
+% !TXS template
+\documentclass[french]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper]{geometry}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+
+\title{\textbf{INVESTIGATION NUMERIQUE D’UNE PERSONNE A PARTIR DES SOURCES OUVERTES (OSINT)}}
+\date{}
+\begin{document}
+\thispagestyle{empty}
+\begin{center}
+	\rule{1\textwidth}{2pt}\vspace{\baselineskip}
+	\vspace{\baselineskip}\huge\textbf{THEORIES ET PRATIQUES DE L'INVESTIGATION  NUMERIQUE.}
+	\rule{1\textwidth}{2pt}\vspace{\baselineskip}
+	\vspace{\baselineskip}
+	\vfill
+	\textbf{Enseignant: M.MINKA THIERRY.}\\
+	\vfill
+	Par l'étudiante: CHEUTCHEULONGA HILARY PAULA\\
+	Filière CIN 4\vfill
+	\vspace{\baselineskip}
+	\emph{\textbf{Année Academique: 2025-2026.}}
+	\rule{1\textwidth}{2pt}\vspace{\baselineskip}
+\end{center}
+\maketitle
+\paragraph{}
+L’investigation numérique, aussi appelée « digital forensics », consiste à rechercher, identifier, préserver et analyser des données numériques afin d’en tirer des éléments de preuve ou d’information. Elle peut être utilisée dans un cadre judiciaire, organisationnel ou éducatif. Elle repose sur des outils et méthodes permettant de reconstituer les traces laissées par une activité numérique sur Internet, des appareils électroniques ou des systèmes informatiques.
+Cette discipline s’articule autour de plusieurs étapes : la collecte de données, leur conservation sécurisée, leur analyse technique et la présentation des résultats sous forme de rapport. Les professionnels du domaine utilisent des outils comme Autopsy, FTK Imager ou EnCase pour extraire et examiner les données numériques sans les altérer.
+L’investigation numérique se distingue de l’OSINT car elle s’appuie souvent sur des sources privées ou in Dans le cadre du cours d’investigation numérique, il nous a été demandé d’effectuer une recherche d’informations sur notre voisine de banc ternes (disques durs, téléphones, journaux système), tandis que l’OSINT exploite uniquement des données ouvertes. Cependant, les deux approches sont complémentaires dans les enquêtes modernes.
+
+\section{Présentation de l'exercice}
+Dans le cadre du cours d’investigation numérique, il nous a été demandé d’effectuer une recherche d’informations sur notre voisine de banc, exclusivement via Internet et dans le respect du cadre légal.
+L’objectif de cet exercice est double :
+1.	apprendre à recueillir et analyser des informations accessibles publiquement ;
+2.	comprendre comment maîtriser et contrôler nos propres traces numériques
+
+\section{Méthodologie}
+Pour effectuer ce devoir, j’ai eu à apprendre comment procède, et connaitre les diffèrent outils qui me seront utile. Après plusieurs recherche et vidéos parcouru, j'ai décidé d'utilise OSINT (open source intelligence).
+Le renseignement d'origine sources ouvertes est le recueil et l'analyse d'information obtenue à partir de sources d'information publique. Il est principalement utilisé dans le cadre d'activités liées à la sécurité nationale, l'application de la loi et l'intelligence économique dans le secteur privé. L'ensemble de ces pratiques d’investigation provient de « la pluralité des définitions de l’enquête Osint, en fonction de sa pratique par des journalistes, des magistrats, des chercheurs ou des activistes ». Le concept de renseignement en sources ouvertes trouve son origine aux États-Unis.
+Les sources de ROSO peuvent être divisées en six catégories différentes de flux d'informations :
+1.	Les médias, journaux imprimés, magazines, radios, chaînes de télévision dans les différents pays ; Internet, les publications en ligne, les blogs, les groupes de discussion, les médias citoyens, YouTube et autres réseaux sociaux ;
+2.	Les données gouvernementales, rapports, budgets, auditions, annuaires, conférences de presse, sites web officiels et discours. Ces informations proviennent de sources officielles, mais sont bien publiquement accessibles et peuvent être utilisées librement et gratuitement ;
+3.	Les publications professionnelles et académiques, provenant de revues académiques, conférences, publications et thèses ;
+4.	Les données commerciales, imagerie satellite, évaluations financières et industrielles et bases de données ;
+5.	La littérature grise, rapports techniques, prépublications, brevets, documents de travail, documents commerciaux, travaux non publiés et lettres d'information.
+6.	Le renseignement d'origine sources ouvertes est différent de la recherche car il applique le processus associé au cycle du renseignement dans un but de recherche d'information pour répondre à des tâches spécifiques ou en support à la prise de décision, et non d'acquisition de connaissances.
+
+Les méthodes de recherche de ROSO sont devenues des méthodes de recherche complémentaires des études de terrain réalisées dans le cadre universitaire des sciences sociales comme en géographie et en géopolitique. L'Institut français de géopolitique de l'université Paris-VIII les intègre dans ses enseignements en définissant une méthodologie applicable aux travaux de ses étudiants et de ses chercheurs.
+
+\subsection*{Recueil de l'information}
+Contrairement aux représentations communes, le renseignement ne traite pas que des informations secrètes ou dissimulées, ce n'est pas toujours le cas puisque beaucoup d'informations essentielles au processus d'intelligence peuvent être trouvées dans l'espace public, ou peuvent être obtenues par des moyens non conventionnels. L'explosion de l'information augmente le nombre de sources accessible aux analystes. Même une action secrète a souvent des conséquences qui ne le sont pas ; il est donc parfois possible aux analystes de rassembler une image d'une activité cachée à partir de diverses sources ouvertes.
+Dans le renseignement en sources ouvertes, le recueil des informations est généralement différent du recueil dans d'autres disciplines de l'intelligence, où l'obtention de l'information brute à analyser peut-être une difficulté majeure, particulièrement si on doit l'obtenir de cibles non coopératives. Pour le renseignement en sources ouvertes, la difficulté principale est d'identifier les sources pertinentes et fiables dans la quantité considérable d'informations accessible publiquement. L'obtention de l'information elle-même est comparativement plus facile puisqu'elle est, par définition, accessible publiquement.
+Le renseignement d'origine humaine (over HUMINT) est parfois considéré comme une partie du ROSO. Le renseignement à source humaine est l'utilisation de sources d'information humaines non clandestines. Par exemple, l'interrogation de réfugiés, le débriefing de travailleurs légaux, et les rapports publics d'agents comme les attachés et les ambassadeurs.
+
+\subsection*{Limites}
+L'usage de ce type de sources d’information tombe sous le coup de plusieurs limites, qui peuvent être d'ordre éthique (asymétrie d'information), légal (obtention de sources dans un cadre délictueux, en utilisant notamment le piratage), méthodologique ou scientifique (risque pour les investigateurs de ROSO qui exploitent des sources sans procéder à leur évaluation et leur vérification préalable, d'être instrumentalisés).
+Bien que la pratique du ROSO soit généralement légale car elle se fonde sur des sources librement disponibles, elle peut impliquer des risques légaux, certaines sources confidentielles pouvant se retrouver par erreur accessibles au public. En 2014, la cour d'appel de Paris décide cependant que l'accès à des informations confidentielles en raison d'une faille de sécurité n'est pas condamnable.
+Le ROSO suppose également le respect de la législation en matière de diffusion de données personnelles (notamment le RGPD) et de la propriété intellectuelle des documents utilisés.
+
+\section{Procédure}
+En suivant l’osint Framework, j’ai commencé par les commende Google dorking suivant :
+john@exemple.com
+« John@exemple.com »
+« John@exemple.com » -test
+« John joe» site:instagram.com (Facebook, tiktok etc…)
+« John joe»- “site:instagram.com/john joe”
+« John joe» filetype.pdf OR filetype.xlsx OR filetype.docx
+Ces commandes ont été adaptées en remplaçant les noms et adresses par ceux de la personne concernée.
+En suite j’ai fait des recherches sur diffèrent sites en utilisant soit l’email ou le numéro de téléphone. Les sites parcourus sont: Spokeo, dehashed, whocalledme, socmint, epieos.com, socialsearcher.com, checkusername.com, thatsthem. Parmi ses sites, certain était payant, et d’autres géographiquement indisponible.
+\vfill
+\begin{tabular}{|l|l|l|}
+	\hline
+	Type d’outil & Outils / Sites utilisés & Résultat ou limite\\
+	\hline
+	Recherche d’identité & Google, Epieos, Thatsthem, Spokeo & Compte TikTok et LinkedIn identifiés.\\
+	\hline
+	Recherche d’email & Dehashed, Epieos, Spokeo & Epieos a donné des correspondances partielles.\\
+	\hline
+	Recherche d’image & TinEye, Google Images & Images reprises sur TikTok par d’autres utilisateurs.\\
+	\hline
+	Vérification téléphone & Whocalledme, Thatsthem & Résultats limités (sites payants ou restreints)\\
+	\hline
+\end{tabular}
+\vfill
+\section{Découvertes}
+Avec les requête Google dork, je n’ai rien trouvé en utilisant le nom civil. Mais en utilisant son surnom, j’ai trouvé un compte tiktok active relié à ce nom. Un compte qui cumule un grand nombre d’abonnés, de vus, de like sur un grand nombre de vidéos.
+Ensuite, j’ai fait une recherche avec son email et son numéro de téléphone sur plusieurs sites tels que :\\ 
+  - Spokeo et who called me : l’obtention des résultats était payant, avec un compte PayPal que je n’ai pas.\\
+  - Dehashed, thatsthem et socmint : le site était indisponible.\\
+  - Epieos : j’ai pu avoir des résultats des recherches à partir de l’email et le numéro de téléphone.\\
+\vfill
+\begin{tabular}{|l|l|l|}
+	\hline
+	Pointer & Interprétation & Informations\\
+	\hline
+	/id & Identifiant unique Google & 101331511771853837525 → identifiant de compte Google.\\
+	\hline
+	/services/google maps & Profil Google Maps public & Lien vers un compte Maps : Voir profil. Cela indique que la personne a probablement commenté, noté ou publié des lieux sur Google Maps.\\
+	\hline
+	/services/google calendar & Lien d’intégration public de Google Calendar & Ce lien : Lien calendrier suggère que le calendrier de l’utilisateur est partiellement ou totalement public, ce qui peut exposer des informations personnelles (événements, noms, contacts).\\
+	\hline
+	/services/google plus archive & Archive de Google+ via la Wayback Machine & Lien : Archive Google+. Cela révèle que l’utilisateur possédait un compte Google+, dont certaines traces sont toujours consultables.\\
+	\hline
+\end{tabular}
+\vfill
+\begin{tabular}{|l|l|}
+	\hline
+	Aspect & Analyse\\
+	\hline
+	Authenticité & Le numéro est confirmé comme existant et actif.\\
+	\hline
+	Confidentialité & Aucune donnée nominative n’est exposée, ce qui protège la vie privée de l’utilisateur.il n’est pas lié à des comptes publics détectables (Google, WhatsApp, Telegram, réseaux sociaux, etc.).\\
+	\hline
+	Utilisation OSINT & Le résultat “found = 1” sert de point de départ pour élargir l’enquête via d’autres outils OSINT spécialisés dans les numéros de téléphone (ex. Truecaller, Whocalledme, Numverify).\\
+	\hline
+	Limite d’Epieos & L’outil ne fournit ici qu’une confirmation d’existence, pas de profil complet.\\
+	\hline
+\end{tabular}
+\vfill
+-	Toneye : pour la recherche d’image. Ses images sont beaucoup utilisées par d’autres individus qui les prends sur le réseau social tiktok.\\
+-	Social searchers : avec les diffèrent nom d’utilisateurs à ma disposition j’ai trouvé un compte tiktok et LinkedIn de la concerné
+
+\section{Conclusion}
+L’OSINT constitue une méthode puissante d’investigation, permettant de collecter des informations pertinentes à partir de données publiques. Cependant, elle exige rigueur, vérification croisée des sources et respect du cadre légal. Dans le cadre de cette expérience, par faute de moyen j’ai pas pu recueillir autant d’information que possible mais du peu recueillit, je constate que ma camarade utilise rarement son nom civil sur le net ce qui lui donne une apparition minime de ce nom sur la toile mais avec connaissance de son surnom et autres information, nous pouvons apprendre beaucoup. Les résultats montrent que même une personne peu visible sous son vrai nom peut laisser des traces importantes via ses pseudonymes et activités sur les réseaux sociaux.
+\newpage
+\begin{thebibliography}{}
+	- CNIL (2023). Guide pratique de l’OSINT éthique.\\
+	- CCDCOE (2018). Open Source Intelligence Handbook. NATO Cooperative Cyber Defence Centre of Excellence.\\
+	- Lowenthal, M. M. (2019). Intelligence: From Secrets to Policy. CQ Press.\\
+	- NOC (2020). Open Source Intelligence Framework and Applications.\\
+    \url{- https://fr.wikipedia.org/wiki/Renseignement d\%27origine\_sources\_ouvertes}\\
+	\url{- https://osintframework.com/}\\
+	\url{- https://epieos.com/}\\
+	\url{- https://thunderbit.com/template/thatsthem-scraper}\\
+	\url{- https://www.social-searcher.com/}\\
+	\url{- https://www.osint.industries/post/social-media-intelligence-socmint-in-modern-investigations}\\
+	\url{- https://www.whocalledme.com/lander?oref=https\%3A\%2F\%2Fwww.google.com\%2F}\\
+\end{thebibliography}
+\end{document}

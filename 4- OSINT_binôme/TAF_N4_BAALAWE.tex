@@ -1,0 +1,378 @@
+\documentclass[memoire, 12pt]{report}
+\usepackage[top = 1.9cm, bottom = 1.5cm, left = 1.9cm, right = 2.1cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem}
+%\usepackage{algorithm2e}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{multirow}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres r\'ef\'erences}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fvextra}
+\usepackage[babel=true]{csquotes}
+\setlength{\fboxrule}{0.01cm}
+\setlength{\fboxsep}{0.5cm}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{url}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{glossaries}
+%\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[bottom]{footmisc}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{glossaries}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{minted}
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{setspace}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{csquotes}
+
+\setstretch{1.3}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue,
+    citecolor=black,
+
+}
+
+% Style des chapitres
+\titleformat{\chapter}[hang]{\bfseries\LARGE}{\thechapter.}{1em}{}
+
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!blue,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{logoUY1-eps-converted-to-1.pdf}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{Rapport d’investigation numérique}}}\\
+		\Large{{\textbf{\textit{Sujet : Enquête numérique sur TOUMPE ERIC}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{1cm}
+		\normalsize\textbf{Option }:\\
+		\normalsize				
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			\hspace{0.02cm} \textsl{\textbf{BAALAWE LIONEL JOSSELIN}, 24P822}\\\\
+			\vspace{0.1cm}
+			\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+			\hspace{0.02cm} \textsl{Expert Thierry MINKA}\\
+				
+               
+		\end{tabular}
+	\end{center}
+    
+	\vspace{1,2cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+
+\end{titlepage}
+
+% Sommaire
+\tableofcontents
+\newpage
+
+% Introduction
+\chapter{Introduction}
+Dans le cadre de ce devoir individuel, il est demandé de réaliser une \textbf{investigation numérique} sur son binôme, en appliquant les techniques d’\textbf{OSINT (Open Source Intelligence)}.  
+Le but est de comprendre comment les informations publiques disponibles sur Internet peuvent révéler des données personnelles, professionnelles ou sociales sur un individu.
+
+Ce rapport présente les différentes étapes de cette recherche, depuis la collecte d’informations initiales jusqu’à l’analyse critique des résultats obtenus.
+
+% Informations connues sur le binôme
+\chapter{Informations connues sur le binôme}
+
+Avant de débuter cette investigation numérique, certaines informations fiables étaient déjà connues au sujet de mon binôme, \textbf{Éric Toumpé}.
+
+\section{Profil général}
+Éric Toumpé est un étudiant camerounais inscrit à l'\textbf{École Nationale Supérieure Polytechnique de Yaoundé (ENSPY)}.  
+Il est reconnu comme une personnalité dynamique, engagée et influente au sein de la communauté estudiantine de l’école.
+
+\section{Fonctions et responsabilités}
+Il occupe le poste de \textbf{Président de l’Association des Étudiants de l’ENSPY}, rôle qui lui confère une visibilité importante dans la vie académique et associative.  
+Dans le cadre de ses fonctions, il a notamment :
+
+\begin{itemize}
+    \item Supervisé les élections des délégués de la 54\textsuperscript{e} promotion de l’ENSPY en septembre 2025.
+    \item Représenté les étudiants lors d’une \textbf{audience officielle avec le Recteur de l’Université de Yaoundé I}.
+    \item Conduit des échanges institutionnels avec le \textbf{Directeur Général du Port Autonome de Kribi}, relatifs aux activités de l’association et à l’organisation d’un voyage d’études.
+\end{itemize}
+
+\section{Informations personnelles supplémentaires}
+Certaines informations personnelles ont également pu être établies à partir de sources publiques :
+
+\begin{itemize}
+    \item Sexe : masculin
+    \item Date d'anniversaire : 20 janvier (année non divulguée publiquement)
+\end{itemize}
+
+\section{Coordonnées et affiliations professionnelles}
+Certaines informations publiques permettent également de situer Éric Toumpé dans son environnement professionnel et institutionnel :
+
+\begin{itemize}
+    \item Adresse : 1548, Yaoundé
+    \item Téléphone : 6 96 38 28 54
+    \item Affiliation : \textbf{Toumpé Intellectual Groups SARL}
+\end{itemize}
+
+\subsection*{Présentation de l'organisation}
+Selon le site officiel de Toumpé Intellectual Groups SARL :
+
+\begin{quote}
+"Depuis 2017, nous sommes une Académie Nationale d'orientation et de Référence à l'Excellence Scolaire ! Répondant aux défis majeurs du système éducatif Camerounais, TOumpé Intellectual Groups SARL œuvre dans l'enseignement général, technique industriel et technique commerciale. Soucieux d'une insertion de divers horizons, nous disposons de la section francophone et anglophone pour toutes les formations offertes. Nos formations : Cours en ligne, Cours de répétitions, Cours à domicile, Cours du soir. Notre devise : Orientation - Formation - Documentation."
+\end{quote}
+
+Cette affiliation montre que le binôme possède un profil à la fois académique et entrepreneurial, et qu’il est impliqué dans des activités éducatives à large échelle.
+
+% Méthodologie
+\chapter{Méthodologie d’investigation numérique}
+Pour cette enquête, nous avons utilisé une démarche structurée basée sur les principes de l’OSINT (Open Source Intelligence).  
+L’objectif était de recueillir uniquement des informations publiques sur Éric Toumpé, en respectant l’éthique et la légalité.
+
+\section{Outils et plateformes utilisées}
+\begin{itemize}
+    \item \textbf{Google et moteurs de recherche} : pour identifier des pages web, articles et profils liés à son nom.
+    \item \textbf{Facebook} : analyse de son profil personnel et des pages de ses entreprises.
+    \item \textbf{LinkedIn} : pour examiner son parcours académique, ses certifications et son expérience professionnelle.
+    \item \textbf{Recherche d'entreprise} : sites web et pages publiques de TOumpé Intellectual Groups SARL et TOumpé Digital Agency.
+    \item \textbf{Analyse croisée} : vérification de la cohérence des informations à travers différentes sources (articles, publications, profils sociaux).
+\end{itemize}
+
+\section{Procédure suivie}
+\begin{enumerate}
+    \item Recherche initiale de son nom complet sur Google et LinkedIn.
+    \item Identification et consultation de son profil Facebook personnel.
+    \item Analyse des pages publiques de ses entreprises et organisations.
+    \item Collecte des informations sur ses fonctions, certifications et engagements.
+    \item Croisement des données pour valider leur fiabilité.
+\end{enumerate}
+
+\section{Considérations éthiques}
+Toutes les informations collectées étaient disponibles publiquement et accessibles sans aucune intrusion dans sa vie privée.  
+Aucune donnée privée ou confidentielle n’a été utilisée dans ce rapport.
+
+% Résultats
+\chapter{Résultats obtenus}
+
+\section{Profil général et académique}
+Éric Toumpé est un étudiant camerounais à l'ENSPY, combinant ses études avec la direction de plusieurs organisations.  
+Ses certifications publiques incluent :
+\begin{itemize}
+    \item Gestion d'entreprises (HEC Montréal)
+    \item Technologie Web et sécurité informatique (Cisco Networking Academy)
+    \item Cloud Engineering (Google Cloud Education)
+    \item Communication des organisations (Organisation internationale de la Francophonie)
+\end{itemize}
+
+\section{Parcours professionnel et entrepreneurial}
+\begin{itemize}
+    \item Président de l’Association des Étudiants de l’ENSPY
+    \item Président-Directeur Général de TOumpé Intellectual Groups SARL
+    \item Président du Conseil d’Administration de TOumpé Digital Agency
+    \item Directeur Académique d’Intelligentsia Corporation
+    \item Vice-coordinateur national des Professeurs d’informatique du Cameroun
+\end{itemize}
+
+\section{Engagement et reconnaissance}
+\begin{itemize}
+    \item Réception par le Recteur de l’Université de Yaoundé I
+    \item Participation à des événements éducatifs et technologiques
+    \item Promotion active de la jeunesse et de l’éducation au Cameroun
+\end{itemize}
+
+\section{Présence sur les réseaux sociaux}
+\begin{itemize}
+    \item \textbf{Facebook (personnel)} : \url{https://www.facebook.com/toumpeeric/}, publications sur les activités académiques et entrepreneuriales.
+    \item \textbf{LinkedIn} : \url{https://cm.linkedin.com/in/toumpeeric}, parcours académique et certifications.
+    \item \textbf{Pages d’entreprise Facebook} : TOumpé Intellectual Groups SARL (\url{https://www.facebook.com/toumpeintellectual/})
+\end{itemize}
+
+\section{Coordonnées publiques}
+\begin{itemize}
+    \item Adresse : 1548, Yaoundé
+    \item Téléphone / WhatsApp : 6 96 38 28 54
+    \item E-mail : \texttt{toumpeintellectual@gmail.com}
+\end{itemize}
+
+% Comparaison et analyse critique
+\chapter{Comparaison et analyse critique}
+
+\section{Comparaison des informations connues et des résultats obtenus}
+Avant l’investigation, les informations suivantes étaient connues :
+\begin{itemize}
+    \item Éric Toumpé est un étudiant camerounais à l’ENSPY.
+    \item Il est président de l’Association des Étudiants de l’ENSPY et supervise des événements tels que les élections de délégués.
+    \item Il a été reçu en audience par des personnalités telles que le Recteur de l’Université de Yaoundé I.
+    \item Il est impliqué dans des activités entrepreneuriales et éducatives.
+\end{itemize}
+
+L’investigation numérique a permis de compléter ces informations avec des détails précis et vérifiables :
+\begin{itemize}
+    \item Ses fonctions exactes dans plusieurs entreprises et organisations : Président-Directeur Général de TOumpé Intellectual Groups SARL, Président du Conseil d’Administration de TOumpé Digital Agency, Directeur Académique d’Intelligentsia Corporation, Vice-coordinateur national des Professeurs d’informatique du Cameroun.
+    \item Son parcours académique et certifications supplémentaires : HEC Montréal, Cisco Networking Academy, Google Cloud Education, OIF.
+    \item Présence active sur les réseaux sociaux avec des profils publics sur Facebook et LinkedIn, ainsi que les pages de ses entreprises.
+    \item Coordonnées publiques accessibles (adresse, téléphone, e-mail professionnel).
+\end{itemize}
+
+
+\section{Analyse critique}
+\begin{enumerate}
+    \item \textbf{Validation des informations de départ} : les données initiales concernant ses fonctions et engagements académiques étaient correctes.
+    \item \textbf{Complément d’informations} : l’investigation a permis de détailler son parcours professionnel et entrepreneurial, ses certifications, et son empreinte numérique.
+    \item \textbf{Exposition publique} : Éric Toumpé dispose d’une présence numérique importante, notamment sur Facebook et LinkedIn, ce qui permet de suivre ses activités publiques et ses projets.
+    \item \textbf{Respect de la vie privée} : certaines informations sensibles, comme l’année exacte de naissance, restent non accessibles publiquement.
+\end{enumerate}
+
+\section{Enjeux et apprentissages}
+\begin{itemize}
+    \item La facilité avec laquelle des informations publiques peuvent être croisées pour dresser un profil détaillé.
+    \item L’importance de la prudence dans la gestion de son identité numérique.
+    \item Le rôle de l’OSINT comme outil d’analyse et de vérification des informations disponibles en ligne.
+\end{itemize}
+
+% Conclusion
+\chapter{Conclusion}
+Cette investigation numérique a permis de confirmer et d’enrichir les informations initialement connues sur Éric Toumpé.  
+Elle met en évidence la richesse des données publiques accessibles en ligne et l’importance de l’utilisation éthique des techniques d’OSINT.  
+Le rapport illustre également les enjeux de la visibilité numérique et de la protection de la vie privée dans un contexte académique et professionnel.
+
+\chapter*{Références}
+\begin{itemize}
+    \item Profils Facebook et LinkedIn d'Éric Toumpé : \url{https://www.facebook.com/toumpeeric/}, \url{https://cm.linkedin.com/in/toumpeeric}
+    \item Page Facebook de TOumpé Intellectual Groups SARL : \url{https://www.facebook.com/toumpeintellectual/}
+    \item Site officiel de TOumpé Intellectual Groups SARL, 2017-2025
+\end{itemize}
+
+\end{document}
+
+    
+
+
+    
