@@ -1,0 +1,241 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[french]{babel}
+\usepackage{helvet}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{array}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{eso-pic}
+
+\geometry{margin=2.5cm}
+\titleformat{\section}{\large\bfseries}{\thesection}{1em}{}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\footnotesize\textbf{Rapport du LAB N°1}}
+\fancyhead[R]{\footnotesize\textbf{Théories et Pratiques de l'Investigation Numérique}}
+\fancyfoot[C]{\thepage}
+
+\newcommand{\bordurepage}{
+    \begin{tikzpicture}[remember picture, overlay]
+    \draw[line width=4pt, rounded corners=10pt, color=blue!60] 
+        ($(current page.north west) + (1.5cm,-1.5cm)$) 
+        rectangle 
+        ($(current page.south east) + (-1.5cm,1.5cm)$);
+    \end{tikzpicture}
+}
+
+\begin{document}
+
+% Page de garde
+\begin{titlepage}
+	\bordurepage
+	\begin{tabular}{p{0.38\linewidth} p{0.2\linewidth} p{0.38\linewidth}}
+		\centering
+		\begin{footnotesize}
+			\textbf{RÉPUBLIQUE DU CAMEROUN}                   \\
+			******                                            \\
+			Paix \textendash{} Travail \textendash{} Patrie   \\
+			******                                            \\
+			\textbf{UNIVERSITÉ DE YAOUNDÉ I}                  \\
+			******                                            \\
+			ÉCOLE NATIONALE SUPÉRIEURE                        \\
+			POLYTECHNIQUE DE YAOUNDÉ                          \\
+			******                                            \\
+			\textbf{DEPARTEMENT DE GENIE INFORMATIQUE}        \\
+			******
+		\end{footnotesize}
+		 &
+		\centering
+		\vspace{0.5cm}
+		\includegraphics[width = 1 \linewidth]{Logo/Logo_ENSPY.png}
+		 &
+		\centering
+		\begin{footnotesize}
+			\textbf{REPUBLIC OF CAMEROON}                     \\
+			******                                            \\
+			Peace \textendash{} Work \textendash{} Fatherland \\
+			******                                            \\
+			\textbf{UNIVERSITY OF YAOUNDÉ I}                  \\
+			******                                            \\
+			NATIONAL ADVANCED SCHOOL                          \\
+			ENGINEERING OF YAOUNDE                            \\
+			******                                            \\
+			\textbf {COMPUTERS ENGINEERING DEPARTMENT}        \\
+			******
+		\end{footnotesize} \\
+	\end{tabular}
+	\centering
+	\vspace*{1cm}
+
+	% Titre principal
+	\noindent
+	\begin{tikzpicture}
+		\node[
+			draw=blue!60,
+			line width=4pt,
+			rounded corners=10pt,
+			inner sep=14pt,
+			text width=0.9\textwidth,
+			align=center
+		]{
+			{\Huge\bfseries Rapport du LAB N°1}
+		};
+	\end{tikzpicture}
+
+	\vspace{1cm}
+
+	% Sous-titre
+	{\Large \textbf{Configuration d'un Environnement Réseau Fonctionnel et Sécurisé}}
+
+	\vspace{0.5cm}
+
+	% Titre du cours
+	{\LARGE \textbf{Théories et Pratiques de l'Investigation Numérique}}
+
+	\vspace{2cm}
+
+	% Section auteurs
+	{\large Rédigé par :}
+
+	\vspace{0.5cm}
+
+	\begin{tabular}{|>{\centering\arraybackslash}m{8cm}
+		|>{\centering\arraybackslash}m{4cm}
+		|>{\centering\arraybackslash}m{3cm}|}
+		\hline
+		\textbf{Noms \& Prénoms} & \textbf{Filière} & \textbf{Matricule} \\
+		\hline
+		DSAMAGO JAFFO Trésor     & HN -- CIN 4      & 22P036             \\
+		\hline
+	\end{tabular}
+
+	\vfill
+
+	% Encadrement
+	\begin{Large}
+		\textbf{Sous la direction de :} \\
+		M. \textbf{MINKA MI NGUIDJOI Thierry Emmanuel} \\
+	\end{Large}
+
+	\vspace{1cm}
+
+	% Année académique
+	\textbf{Année académique : 2025--2026}
+\end{titlepage}
+
+\section{Objectifs du LAB}
+Le présent LAB vise à donner aux étudiants l’occasion de configurer une
+infrastructure réseau constituée d’un équipement de frontière, d’un réseau
+local et d’une DMZ. Les étudiants réviseront ainsi la configuration et le
+paramétrage d’équipements actifs, l’adressage réseau et le partage de
+ressources. Ce LAB s’inscrit dans un ensemble plus grand visant à réaliser
+l’investigation numérique dans une société après qu’elle a été victime d’un
+ransomware.
+
+\section{Préparation de l'infrastructure}
+Avant de créer et configurer notre infrastructure, nous avions commencé par
+créer les machines virtuelles, installer les images des équipements réseaux
+(Switch, Router, Parefeu) sur notre logiciel de simulation réseau : GNS3.
+\subsection{Création des machines virtuelles}
+Pour ce LAB, nous avons créés 03 machines virtuelles à savoir : \textbf{Windows
+	10} et \textbf{Windows 11}, qui serviront de machines clientes, \textbf{Ubuntu}
+et \textbf{Kali} qui serviront de serveurs à l'aide du Logiciel VM Workstation
+pro v17.52.
+\subsubsection{Machine virtuelle Windows}
+\begin{itemize}
+	\item \textbf{Nom de la machine :} Win 10
+	\item \textbf{Système d'exploitation :} Windows 10 Professional 22H2
+	\item \textbf{RAM :} 4 Go
+	\item \textbf{Processeur :} 2 cœurs
+	\item \textbf{Disque dur :} 60 Go
+\end{itemize}
+Pour la machine virtuelle WIndows 11, nous avons simplement cloner la machine virtuelle Windows 10, puis nous avons modifié le nom de la machine en \textbf{Win 11}.
+\subsubsection{Serveur Ubuntu}
+\begin{itemize}
+	\item \textbf{Nom de la machine :} Ubuntu
+	\item \textbf{Système d'exploitation :} Ubuntu 22.04 LTS
+	\item \textbf{RAM :} 4 Go
+	\item \textbf{Processeur :} 2 cœurs
+	\item \textbf{Disque dur :} 25 Go
+\end{itemize}
+Nous avons installé une application Web appélé \textbf{APPLICATION} sur le serveur Ubuntu, qui nous permettra de tester la connectivité entre les machines clientes et le serveur.
+\subsubsection{Machine virtuelle Kali}
+\begin{itemize}
+	\item \textbf{Nom de la machine :} Kali
+	\item \textbf{Système d'exploitation :} Kali Linux 2023.4
+	\item \textbf{RAM :} 4 Go
+	\item \textbf{Processeur :} 2 cœurs
+	\item \textbf{Disque dur :} 30 Go
+\end{itemize}
+\subsection{Equipements d'interconnexions}
+Pour l'interconnexion de nos machines virtuelles, nous avons utilisé les
+équipements suivants :
+\begin{itemize}
+	\item Un \textbf{Switch manageable CISCO 2960} pour la connexion de la machines
+	      cliente Win 10 et notre Parefeu.
+	\item Un \textbf{Routeur CISCO C7200} pour la connexion entre la DMZ et le réseau
+	      local (LAN).
+	\item Un \textbf{Parefeu FORTINET} pour la sécurisation de l'infrastructure réseau.
+\end{itemize}
+\section{Réalisation de l'infrastructure}
+\subsection{Table d'adressage réseau}
+La table d'adressage réseau est un tableau qui permet de définir les adresses
+IP des différentes machines de notre infrastructure. Voici la table d'adressage
+que nous avons utilisée :
+\begin{table}[h!]
+	\centering
+	\renewcommand{\arraystretch}{1.3} % augmente la hauteur des lignes
+	\caption{Plan d'adressage réseau}
+	\begin{tabular}{|l|c|c|c|c|}
+		\hline
+		\textbf{Machine} & \textbf{Adresse IP} & \textbf{Masque} & \textbf{Passerelle} & \textbf{Type} \\
+		\hline
+		Win\_10\_Client1 & 192.168.1.2         & 255.255.255.0   & 192.168.1.5 (FW1)   & Station       \\
+		\hline
+		Win\_10\_Client2 & 172.16.3.3          & 255.255.255.0   & 172.16.3.4 (R1)     & Station       \\
+		\hline
+		Kali\_1          & 172.16.4.4          & 255.255.255.0   & 172.16.4.5 (R1)     & Station       \\
+		\hline
+		Svr\_Ubuntu      & 192.168.2.2         & 255.255.255.0   & 192.168.2.5 (FW1)   & Serveur       \\
+		\hline
+	\end{tabular}
+\end{table}
+\subsection{Présentation de l'infrastructure}
+Pour la mise en place et la configuration de notre infrastructure, nous avons
+utilisé le logiciel GNS3 qui nous a permis de simuler les équipements réseaux.
+L'image ci après présente l'architecture de notre infrastructure réseau.
+\clearpage
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{Images/Infrastructure.png}
+	\caption{Architecture de l'infrastructure réseau}
+	\label{fig:infrastructure}
+\end{figure}
+\section{Recommandations}
+Après la configuration de notre infrastructure, nous avons effectué quelques
+tests de connectivité entre les machines clientes et le serveur. Nous avons
+donc constaté que 04 machines étaient connectées au réseau local (LAN) et 01
+machine était connectée à la DMZ. Nous avons donc recommandé les actions
+suivantes :
+\begin{itemize}
+	\item \textbf{Vérification de la connectivité :} S'assurer que toutes les machines
+	      sont correctement connectées au réseau et peuvent communiquer entre elles.
+	\item \textbf{Sécurisation du réseau :} Mettre en place des règles de sécurité sur le
+	      parefeu pour protéger les machines contre les attaques externes.
+	\item \textbf{Surveillance régulière:} Vérifier régulièrement l'etat de notre
+	      infrastructure pour détecter d'éventuelles anomalies ou pannes de fonctionnement
+	\item \textbf{Mises à jour régulières :} Assurer la mise à jour régulière des systèmes
+	      d'exploitation de chaque.
+\end{itemize}
+\end{document}
