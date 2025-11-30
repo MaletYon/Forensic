@@ -1,0 +1,217 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\geometry{margin=2.5cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+
+% En-tête et pied de page
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Résumé de Cours - Investigation Numérique}
+\fancyhead[R]{\small Page \thepage/\pageref{LastPage}}
+\fancyfoot[C]{\footnotesize MVONGO MEDJO Ordi Farel - 2025}
+
+\begin{document}
+
+% Page de titre
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    {\Huge\bfseries Résumé de Cours\\[0.5cm]
+    Théories et Pratiques de l'Investigation Numérique\par}
+    \vspace{2cm}
+    {\Large MVONGO MEDJO Ordi Farel\par}
+    \vspace{1cm}
+    {\large Public : Étudiants en Cybersécurité et Investigation Numérique\par}
+    \vspace{1cm}
+    {\large 16 Septembre 2025\par}
+    \vspace{2cm}
+    {\large Nombre de pages : 5\par}
+    \vfill
+\end{titlepage}
+
+\section*{I - Fondements Philosophiques et Cadre Éthique}
+
+\subsection*{1. Une Discipline à la Croisée des Chemins}
+L'investigation numérique est présentée non comme une simple technique, mais comme une discipline philosophique à part entière. Elle interroge les fondements de la vérité, de la confiance et de la justice à l'ère du numérique. L'être humain possède désormais un \textbf{double numérique}, une extension de son identité physique qui échappe partiellement à son contrôle.
+
+\subsection*{2. Le Paradoxe de l'Authenticité Invisible}
+Le manuel introduit un concept fondateur : il existe une tension fondamentale et mathématiquement formalisable entre :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{L'Authenticité} (prouver qu'une preuve est vraie et intègre)
+    \item \textbf{La Confidentialité} (ne pas révéler le contenu de la preuve)
+\end{itemize}
+Plus on cherche à prouver l'une, plus on tend à compromettre l'autre. Ce paradoxe est au cœur des défis de la preuve numérique moderne.
+
+\subsection*{3. Le Contrat Déontologique : Le Serment de l'Investigateur}
+Avant toute chose, l'étudiant doit souscrire à un engagement moral solennel. Ce serment, inspiré du serment d'Hippocrate, repose sur quatre piliers :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Intégrité} : Véracité des conclusions et transparence des méthodes.
+    \item \textbf{Proportionnalité} : Adéquation des moyens aux fins investigatrices.
+    \item \textbf{Responsabilité} : Acceptation des conséquences de ses actions.
+    \item \textbf{Service} : Mise des compétences au service de la justice et de la vérité.
+\end{itemize}
+La violation de ces engagements a des conséquences à la fois professionnelles (perte de crédibilité, sanctions juridiques) et morales.
+
+\subsection*{4. Le Trilemme CRO : Le Cadre Théorique Fondamental}
+L'auteur propose une contribution majeure : le \textbf{Trilemme CRO}. Il formalise l'impossibilité d'optimiser simultanément trois axes cruciaux pour toute preuve numérique :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{C}onfidentialité : Protection des données sensibles.
+    \item \textbf{R}eliabilité (Fiabilité) : Intégrité et authenticité de la preuve.
+    \item \textbf{O}pposabilité : Valeur probante et admissible en justice.
+\end{itemize}
+Toute construction cryptographique ou méthodologique devra faire des compromis entre ces trois pôles. Ce cadre sert de boussole pour évaluer les techniques et concevoir les systèmes de demain.
+
+\newpage
+
+\section*{II - Évolution Historique et Cadre Technique}
+
+\subsection*{1. Brève Histoire de la Discipline}
+L'investigation numérique a évolué en plusieurs ères :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Les Prémices (1970-1990)} : Premiers cas (The Creeper, les "414s") et prise de conscience.
+    \item \textbf{Professionnalisation (1990-2000)} : Opérations larges (Sundevil), arrestations médiatiques (Kevin Mitnick) et création des premiers standards.
+    \item \textbf{Standardisation (2000-2010)} : Affaires fondatrices (Enron, Gary McKinnon) qui ont poussé à la création de méthodologies et normes (ISO, NIST).
+    \item \textbf{Big Data \& Cloud (2010-2020)} : Gestion de volumes massifs de données (Panama Papers, Silk Road) et développement d'outils d'analyse avancée.
+    \item \textbf{Ère Post-Quantique \& IA (2020-Aujourd'hui)} : Préparation à la menace quantique et intégration de l'Intelligence Artificielle dans l'analyse.
+\end{itemize}
+
+\subsection*{2. Les Modèles Méthodologiques}
+Plusieurs modèles structurent l'investigation :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{DFRWS (2001)} : Identification, Préservation, Collection, Examination, Analysis, Presentation.
+    \item \textbf{Casey (2004)} : Modèle intégré incluant préparation et révision.
+    \item \textbf{ISO/IEC 27037:2012} : Norme internationale pour l'identification, la collecte et la préservation des preuves.
+    \item \textbf{NIST SP 800-86} : Guide pour l'intégration des techniques forensiques dans la réponse aux incidents.
+\end{itemize}
+
+\subsection*{3. L'Arsenal de l'Investigateur Moderne}
+L'analyse couvre une large gamme de techniques :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Acquisition \& Imagerie} : Création de copies forensiques avec validation par hash (SHA-256).
+    \item \textbf{Analyse de Mémoire (Volatility)} : Investigation de la mémoire vive pour détecter processus malveillants, connexions, etc.
+    \item \textbf{Anti-Anti-Forensique} : Techniques pour contourner le chiffrement, détecter la stéganographie ou l'obfuscation.
+    \item \textbf{Intelligence Artificielle} : Utilisation du Machine Learning pour classifier des logiciels malveillants et du Deep Learning pour l'analyse comportementale.
+\end{itemize}
+
+\newpage
+
+\section*{III - La Révolution Post-Quantique et le Protocole ZK-NR}
+
+\subsection*{1. La Menace Quantique}
+L'avènement de l'ordinateur quantique rend obsolètes les algorithmes cryptographiques actuels :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Algorithme de Shor} : Casse le RSA et l'ECC (cryptographie asymétrique).
+    \item \textbf{Algorithme de Grover} : Réduit de moitié la sécurité des clés symétriques (ex : AES-128 n'offre plus que 64 bits de sécurité).
+\end{itemize}
+La stratégie \textbf{"Harvest Now, Decrypt Later"} (Collecter maintenant, déchiffrer plus tard) est une menace crédible : des adversaires stockent dès aujourd'hui des communications chiffrées pour les déchiffrer quand l'ordinateur quantique sera disponible.
+
+\subsection*{2. La Cryptographie Post-Quantique (PQC)}
+Le NIST a sélectionné de nouveaux algorithmes résistants aux attaques quantiques :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{CRYSTALS-Kyber} : Pour l'échange de clés (Key Encapsulation Mechanism).
+    \item \textbf{CRYSTALS-Dilithium \& FALCON} : Pour les signatures numériques.
+\end{itemize}
+La migration vers une \textbf{cryptographie hybride} (combinaison d'algorithmes classiques et PQC) est essentielle pour une transition en douceur.
+
+\subsection*{3. Le Protocole ZK-NR : Une Solution Innovante}
+Pour résoudre le Paradoxe de l'Authenticité Invisible et répondre au Trilemme CRO, l'auteur propose le protocole \textbf{ZK-NR} (Zero-Knowledge Non-Repudiation). C'est une contribution majeure détaillée dans plusieurs articles (ePrint).
+
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Fonction} : Il permet de prouver l'authenticité et l'intégrité d'une preuve (document, log, etc.) \textbf{sans en révéler le contenu}, garantissant ainsi la confidentialité.
+    \item \textbf{Composants} : Il combine intelligemment plusieurs technologies :
+    \begin{itemize}
+        \item \textbf{Preuves Zero-Knowledge (STARKs)} : Pour la vérification sans divulgation.
+        \item \textbf{Signatures à seuil (BLS)} : Pour la non-répudiation distribuée.
+        \item \textbf{Signatures post-quantiques (Dilithium)} : Pour la résistance future.
+    \end{itemize}
+    \item \textbf{Application} : Il est parfait pour sécuriser la \textbf{chaîne de possession (Chain of Custody)} des preuves à l'ère quantique, en apportant une opposabilité juridique forte tout en préservant le secret de l'enquête.
+\end{itemize}
+
+\newpage
+
+\section*{IV - Analyse Cryptographique et Cadre Juridique}
+
+\subsection*{1. Analyse des Primitives selon le Trilemme CRO}
+Le manuel applique méthodiquement le cadre CRO pour évaluer et comparer les algorithmes cryptographiques. Ce tableau synthétique en est le résultat :
+
+\begin{table}[h!]
+\centering
+\footnotesize
+\begin{tabular}{|l|c|c|c|c|}
+\hline
+\textbf{Primitive Cryptographique} & \textbf{Confidentialité (C)} & \textbf{Fiabilité (R)} & \textbf{Opposabilité (O)} & \textbf{Résistance Quantique} \\
+\hline
+\textbf{AES-256} (Symétrique) & 0.95 & 0.90 & 0.30 & Non \\
+\hline
+\textbf{RSA-2048} (Asymétrique) & 0.85 & 0.90 & 0.95 & Non \\
+\hline
+\textbf{ECDSA} (Asymétrique) & 0.88 & 0.92 & 0.90 & Non \\
+\hline
+\textbf{CRYSTALS-Kyber} (PQC - KEM) & 0.92 & 0.85 & 0.40 & \textbf{Oui} \\
+\hline
+\textbf{CRYSTALS-Dilithium} (PQC - Sig.) & 0.20 & 0.94 & 0.75 & \textbf{Oui} \\
+\hline
+\textbf{zk-SNARKs} (Preuves ZK) & 0.98 & 0.75 & 0.40 & Non \\
+\hline
+\textbf{Protocole ZK-NR} (Hybride) & \textbf{0.85} & \textbf{0.90} & \textbf{0.88} & \textbf{Oui} \\
+\hline
+\end{tabular}
+\end{table}
+
+\textit{Conclusion : Aucune primitive n'est parfaite sur les 3 axes. Le choix doit être contextuel. Les architectures hybrides (comme ZK-NR) sont nécessaires pour approcher un optimum.}
+
+\subsection*{2. Cadre Juridique International et Camerounais}
+L'investigation s'inscrit dans un cadre légal strict :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Droit International} : Convention de Budapest (coopération), RGPD (protection des données, avec dérogations pour l'enquête).
+    \item \textbf{Droit Américain} : Federal Rules of Evidence (FRE), Computer Fraud and Abuse Act (CFAA).
+    \item \textbf{Droit Camerounais} : Régi principalement par la Loi N°2010/012 sur la cybersécurité et la cybercriminalité. Elle définit les procédures de perquisition, les infractions et les sanctions. L'expertise doit être réalisée par un \textbf{Expert Agréé} par le Ministère de la Justice.
+\end{itemize}
+
+\newpage
+
+\section*{V - Pratique Forensique et Conclusion Synthétique}
+
+\subsection*{1. Pratique Opérationnelle}
+Le manuel détaille la pratique avancée sur les différents systèmes :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Forensique Système (Windows/Linux/macOS)} : Analyse approfondie des artefacts (MFT, Prefetch, journals, logs unifiés) et de la mémoire (Volatility 3).
+    \item \textbf{Forensique Réseau} : Analyse de trafic (PCAP), détection de canaux cachés, analyse des protocoles chiffrés (TLS) et threat hunting.
+    \item \textbf{Gestion de Laboratoire} : Mise en place d'un lab, procédures opérationnelles standardisées (SOP), gestion de la chaîne de custody.
+\end{itemize}
+
+\subsection*{2. Étude de Cas Intégrée : L'Affaire CyberFinance Cameroun 2025}
+Un cas pratique complet illustre l'application de l'ensemble des concepts :
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Scénario} : Attaque par ransomware contre une institution financière.
+    \item \textbf{Déroulement} : Détection, réponse, investigation technique (analyse du malware, timeline), collecte de preuves avec application du protocole ZK-NR, attribution, remédiation et aspects juridiques camerounais.
+    \item \textbf{Conclusion} : Le cas démontre l'importance d'une méthodologie structurée, de l'utilisation d'outils adaptés et de la préparation à la menace quantique.
+\end{itemize}
+
+\subsection*{3. Conclusion Synthétique et Perspectives}
+
+\textbf{L'Investigation Numérique Moderne repose sur cinq piliers :}
+\begin{enumerate}[leftmargin=*]
+    \item \textbf{Une Éthique Indispensable} : La puissance technique exige une déontologie forte et un sens aigu des responsabilités.
+    \item \textbf{Un Cadre Théorique Solide} : Le Trilemme CRO et le Paradoxe de l'Authenticité Invisible fournissent une boussole pour évaluer les technologies et prendre des décisions éclairées.
+    \item \textbf{Une Menace Imminente} : La transition vers le post-quantique n'est pas une option. Il faut dès aujourd'hui préparer la migration cryptographique et les méthodes d'investigation.
+    \item \textbf{Une Innovation Continue} : Les protocoles comme ZK-NR montrent la voie pour concilier confidentialité, fiabilité et opposabilité dans les preuves numériques futures.
+    \item \textbf{Une Pratique Rigoureuse} : Maîtriser les outils et les méthodologies forensiques sur tous les types de systèmes et de preuves (disque, mémoire, réseau) reste fondamental.
+\end{enumerate}
+
+\textbf{En résumé, ce manuel forme des "philosophes-praticiens" du numérique, capables non seulement de maîtriser les outils techniques, mais aussi de comprendre les enjeux profonds, éthiques et théoriques, de leur pratique, pour servir la justice à l'ère post-quantique.}
+
+\label{LastPage}
+\end{document}

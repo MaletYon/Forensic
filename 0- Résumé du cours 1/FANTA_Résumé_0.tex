@@ -1,0 +1,452 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}      
+\usepackage{geometry}   
+\geometry{margin=2.5cm}
+\usepackage[myheadings]{fullpage}
+\DeclareUnicodeCharacter{0301}{\hspace{-1ex}\'{ }}
+% Package for headers 
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{multirow}
+
+% For figures and stuff
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+
+% Change for different font sizes and families
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+
+% Maths
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+
+% Bibliography
+\usepackage{biblatex} 
+\addbibresource{references.bib}
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2cm,bottom=1.5cm,left=2cm,right=2cm,marginparwidth=1.5cm]{geometry}
+\begin{document}
+
+
+% === EN-TÊTE SUR UNE SEULE LIGNE ===
+\begin{center}\hspace*{-0.5cm}
+  \begin{tabular}{ccc}
+ 
+    {\large UNIVERSIT\'E DE YAOUND\'E I} & \multirow{8}{*}{\includegraphics[scale=0.50]{img/LOGO.png}} & \large{ THE UNIVERSITY OF YAOUNDE I}\\
+    %& & \\
+    \textbf{***} &    & \textbf{***} \\
+    %& & \\
+    \textcolor{-yellow}{\'ECOLE NATIONALE SUP\'ERIEURE}& & \textcolor{-yellow}{NATIONAL ADVANCED SCHOOL}\\ 
+    \textcolor{-yellow}{POLYTECHNIQUE DE YAOUND\'E}   & & \textcolor{-yellow}{OF ENGINEERING OF YAOUNDE} \\
+    %& & \\
+    \textbf{***}    & & \textbf{***} \\
+    %& & \\
+    D\'EPARTEMENT DE G\'ENIE& & DEPARTMENT OF COMPUTER \\ 
+    INFORMATIQUE & & ENGINEERING \\
+    \textbf{***} &    & \textbf{***} \\
+    \textcolor{-yellow}{HUMANITÉS NUMÉRIQUES} & & \textcolor{-yellow}{DIGITAL HUMANITIES}
+    \end{tabular}
+ 
+\end{center}
+\vspace{2cm}
+% Header and footer information
+
+\pagestyle{fancy}
+% === Titre principal ===
+\begin{center}
+\hrule height 2pt
+\vspace{0.4cm}
+{\LARGE \textbf{Résumé  du cours d'Investigations Numériques}}
+\vspace{0.4cm}
+\hrule height 2pt
+\end{center}
+
+\vspace{2cm}
+
+\begin{center}
+\textbf{Rédigé par :}\\[0.3cm]
+FANTA YADON Félicité \hspace{0.5cm} 22P069\\[0.3cm]
+\textbf{Supervisé par :}\\[0.3cm]
+M. Thierry MINKA
+\end{center}
+
+
+
+\newpage
+
+\setlength\headheight{15pt} 
+\fancyhead[R]{Investigations Numériques}
+%\fancyfoot[R]{\thepage}
+
+%\fancyhead[R]{Investigations Numériques}
+%\fancyfoot[R]{\thepage}
+
+% Uncomment the next line if you want keywords/index terms after the abstract. 
+%\textit{\textbf{Keywords}: lorem, ipsum, dolor}
+
+% Bibliography usage
+% Whenever you find any source make sure to get the BibTEX citation. Add it to the references.bib file. To cite the reference, use \cite{TitleOfTheReference}
+
+
+ \textbf{Bien Au-Delà de la Technique}, l'investigation numérique n'est plus une simple discipline technique accessoire. 
+Elle s’est muée en \textit{philosophie pratique de la vérité à l’ère digitale}. 
+Ce document fondateur ne se contente pas de dresser un inventaire d’outils ou de procédures ; 
+il érige l’investigation en \textbf{savoir fondamental}, nécessaire pour naviguer les complexités d’un monde où notre existence est désormais \textbf{hybride, à la fois physique et numérique}.
+
+\vspace{0.5cm}
+
+Dans un univers saturé de données, où chaque clic laisse une empreinte, \textbf{l’investigation numérique devient l’art de rétablir la cohérence dans le chaos informationnel}. 
+Elle exige une posture intellectuelle nouvelle, qui dépasse la simple technicité : 
+celle d’un \textbf{gardien de l’intégrité numérique}, capable de distinguer l’authentique du fabriqué, le fait de l’opinion, le signal du bruit.
+
+\vspace{0.5cm}
+
+Le \textbf{postulat central} de cette œuvre est audacieux : 
+face à une \textbf{crise sans précédent de la vérité numérique} marquée par les \textit{deepfakes}, la \textit{désinformation massive} et les \textit{manipulations algorithmiques} à grande échelle 
+\textbf{l’investigateur moderne doit assumer un triple rôle} :
+
+\begin{itemize}
+    \item \textbf{Archéologue du digital}, pour exhumer les traces enfouies dans la masse de données et reconstituer le passé numérique avec rigueur ;
+    \item \textbf{Épistémologue pratique}, pour évaluer de manière critique la fiabilité des sources, des algorithmes et des preuves numériques ;
+    \item \textbf{Éthicien appliqué}, pour naviguer les dilemmes moraux engendrés par la collecte, l’analyse et l’exposition publique d’informations sensibles.
+\end{itemize}
+
+Ce livre n’est donc pas seulement un manuel : 
+\textbf{c’est un manifeste}, une \textbf{boussole intellectuelle} destinée à guider celles et ceux qui choisissent de porter cette responsabilité immense.
+
+\vspace{0.5cm}
+
+Sa \textbf{thèse est révolutionnaire} : 
+la \textbf{convergence simultanée de trois révolutions technologiques} ?le \textit{Big Data}, l’\textit{Intelligence Artificielle} et l’\textit{informatique quantique}  
+impose une \textbf{refonte radicale de nos méthodologies d’investigation}. 
+Ces technologies bouleversent notre rapport au temps (accélération des flux), à la preuve (multiplication et falsifiabilité des traces), et à la certitude (incertitude probabiliste des modèles).
+
+\vspace{0.5cm}
+
+La réponse proposée est le \textbf{Framework CRO} (Confidentialité – Reliability – Opposabilité) 
+et son \textbf{implémentation pratique, le protocole ZK-NR}, conçus pour résoudre un \textbf{trilemme longtemps considéré comme insoluble} : 
+comment garantir \textbf{à la fois} la confidentialité des données, la fiabilité des résultats et l’opposabilité juridique des preuves numériques.  
+
+Là où les approches classiques échouent à concilier ces trois impératifs, le CRO introduit une \textbf{nouvelle grammaire de l’investigation}, 
+fondée sur la traçabilité cryptographique, l’auditabilité continue et la vérifiabilité indépendante des analyses.
+
+\vspace{0.5cm}
+
+\noindent\textit{Cette} œuvre ne propose pas simplement une méthode, mais \textbf{une vision} : 
+faire de l’investigation numérique non plus un geste technique isolé, 
+mais un \textbf{acte de vérité}, à la fois \textbf{scientifique, éthique et humaniste}, 
+capable de soutenir la confiance dans un monde où tout peut être simulé, falsifié… ou effacé.
+
+
+\onehalfspacing
+
+Le concept le plus \textbf{brillant et novateur} de cet ouvrage est la formalisation du \textbf{Trilemme CRO} 
+(\textit{Confidentiality – Reliability – Opposability}). 
+Il démontre, à l'aide d'une \textbf{modélisation mathématique rigoureuse}, 
+qu'il est \textbf{impossible de maximiser simultanément ces trois impératifs} 
+pour toute preuve numérique : \textit{tout système de preuve doit faire un compromis, 
+qu’il soit explicite ou implicite.}
+
+\vspace{0.5cm}
+
+\noindent Les trois piliers du Trilemme sont définis ainsi :
+
+\begin{itemize}
+    \item \textbf{Confidentialité (C)} : Capacité à \textit{protéger la vie privée, les métadonnées sensibles et le contenu stratégique}, en restreignant l'accès aux seules parties autorisées.
+    \item \textbf{Fiabilité (R)} : Capacité à \textit{garantir l'intégrité, l'authenticité et la non-répudiation} des preuves numériques, en assurant leur traçabilité et leur résistance à la falsification.
+    \item \textbf{Opposabilité (O)} : Capacité à \textit{assurer la valeur probante, la recevabilité et l’admissibilité juridique} des preuves devant une autorité tierce (tribunal, auditeur, régulateur, etc.).
+\end{itemize}
+
+\vspace{0.5cm}
+
+\noindent \textbf{La tension fondamentale du Trilemme} est que toute tentative d’optimiser l’un de ces axes entraîne une fragilisation des deux autres.  
+Par exemple :
+\begin{itemize}
+    \item Un système \textbf{très confidentiel} (chiffrement fort, cloisonnement extrême) produit des preuves difficilement \textbf{opposables}, car non vérifiables par des tiers.
+    \item Un système \textbf{hautement fiable} et traçable génère une quantité importante de \textbf{métadonnées sensibles}, ce qui affaiblit la \textbf{confidentialité}.
+    \item Un système \textbf{fortement opposable} doit exposer des preuves dans un format lisible et vérifiable, ce qui peut compromettre à la fois leur \textbf{confidentialité} et leur \textbf{intégrité}.
+\end{itemize}
+
+\vspace{0.5cm}
+
+De ce dilemme émerge le \textbf{Paradoxe de l'Authenticité Invisible} :  
+\begin{quote}
+« \textit{Plus une preuve est authentique et vérifiable, plus elle tend à révéler d'informations compromettant la confidentialité. Inversement, plus une preuve préserve la confidentialité, plus son authenticité devient difficile à établir.} »
+\end{quote}
+
+\vspace{0.5cm}
+
+\noindent Ce paradoxe illustre une \textbf{contradiction structurelle au cœur de l’investigation numérique moderne} : 
+le besoin simultané de \textbf{prouver sans exposer}, de \textbf{convaincre sans divulguer}, 
+et de \textbf{valider sans révéler}.
+
+\vspace{0.5cm}
+
+La solution pratique proposée à ce paradoxe est l’émergence des \textbf{protocoles ZK-NR} 
+(\textit{Zero-Knowledge Non-Repudiation}), 
+directement inspirés des \textbf{preuves à divulgation nulle de connaissance (ZKP)}.
+
+\vspace{0.3cm}
+
+\noindent Ces protocoles permettent à un investigateur de :
+\begin{itemize}
+    \item \textbf{Prouver l’authenticité d’une information} (son existence, sa date, son intégrité, sa provenance),
+    \item \textbf{Sans jamais révéler le contenu de cette information} à un tiers vérificateur.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\noindent En d’autres termes, ils \textbf{transforment la preuve d’un objet à examiner en un processus à vérifier} :
+ce n’est plus la donnée qui est soumise à examen, 
+mais un \textbf{engagement cryptographique} et un \textbf{protocole de vérification publique} 
+qui attestent de sa validité sans l’exposer.
+
+\vspace{0.3cm}
+
+\noindent Cette approche constitue une \textbf{avancée conceptuelle majeure} : 
+elle permet de \textbf{réconcilier partiellement les trois axes du Trilemme CRO} 
+et d’\textbf{élever le niveau de confiance dans l’investigation numérique}, 
+même dans des environnements hostiles ou juridiquement sensibles.
+
+\vspace{0.5cm}
+
+\noindent En somme, le ZK-NR incarne un \textbf{changement de paradigme} : 
+passer d’une logique de \textit{preuve exposée} à une logique de \textit{preuve démontrée}, 
+où l’investigateur n’est plus un simple collecteur de données, 
+mais un \textbf{architecte de la confiance numérique}.
+
+
+\onehalfspacing
+
+L'ouvrage se distingue par son \textbf{approche résolument globale et contextuelle}. 
+Plutôt que de proposer un modèle unique, il met en lumière une \textbf{mosaïque de pratiques forensiques} adaptées aux réalités 
+\textbf{juridiques, culturelles et technologiques} propres à chaque région du monde.
+
+\noindent Cette démarche repose sur une série de \textbf{cas d'usage emblématiques} qui illustrent la diversité des contextes d'application et les défis spécifiques que doit relever l’investigation numérique contemporaine :
+
+\vspace{0.3cm}
+    
+\vspace{0.5cm}
+
+\noindent Cette \textbf{« mosaïque forensique »} démontre que :
+\begin{itemize}
+    \item L’\textbf{excellence forensique n’a pas de modèle unique},
+    \item La \textbf{coopération internationale} et l’\textbf{adaptabilité contextuelle} 
+    sont les véritables clés de la réussite.
+\end{itemize}
+
+\vspace{0.3cm}
+
+\noindent Dans cette perspective, le \textbf{framework CRO} agit comme un \textbf{langage universel d’évaluation et d’harmonisation}, 
+permettant de \textbf{relier des pratiques hétérogènes autour de principes communs}, 
+tout en respectant la diversité des environnements où se déploie l’investigation numérique.
+
+\onehalfspacing
+
+La \textbf{menace quantique n'est pas de la science-fiction}. 
+Les algorithmes de  rendront obsolètes la majorité des cryptosystèmes classiques 
+
+Pire encore, la stratégie dite \textit{« Harvest Now, Decrypt Later »} signifie que 
+\textbf{des adversaires stockent déjà des données chiffrées aujourd’hui dans l’espoir de les déchiffrer demain} à l’aide d’ordinateurs quantiques matures.
+
+\vspace{0.5cm}
+
+\noindent Face à ce danger, l’ouvrage \textbf{sonne l’alarme} et propose un \textbf{plan de migration concret vers la cryptographie post-quantique (PQC)}.  
+
+\vspace{0.3cm}
+
+\noindent Il introduit également une \textbf{architecture de sécurité novatrice}, appelée 
+\textbf{Q2CSI (Quantum Composable Contextual Security Infrastructure)}, 
+qui \textbf{sépare dialectiquement les préoccupations en trois couches indépendantes} :
+
+\begin{itemize}
+    \item \textbf{Couche IRON} : Fiabilité et intégrité temporelle des preuves.
+    \item \textbf{Couche GOLD} : Confidentialité et préservation sémantique des données.
+    \item \textbf{Couche CLAY} : Opposabilité et ancrage institutionnel des résultats.
+\end{itemize}
+
+\vspace{0.5cm}
+
+\noindent Cet ouvrage dépasse le cadre d’un simple manuel technique : 
+\textbf{c’est un véritable traité de philosophie appliquée pour le XXI\textsuperscript{e} siècle numérique.}  
+
+    \item \textbf{Une Vision Prospective} : Une préparation indispensable à l’avènement de l’ordinateur quantique 
+    et à ses implications disruptives sur les chaînes de confiance numériques.
+    
+    \item \textbf{Un Langage Universel} : Le \textbf{framework CRO} et les \textbf{protocoles ZK-NR}, 
+    permettant d’évaluer, de concevoir et de communiquer sur la sécurité et la fiabilité des preuves digitales.
+
+L’ère numérique dans laquelle nous sommes entrés n’est plus une simple mutation technologique ; elle constitue une transformation ontologique de notre rapport au monde, aux autres et à nous-mêmes. L’information est devenue la matière première de nos sociétés, et sa manipulation, son interprétation et sa conservation façonnent désormais le réel aussi puissamment que l’acier ou le pétrole en d’autres temps. C’est dans ce contexte qu’émerge la nécessité impérieuse d’une discipline nouvelle, plus large que la technique, plus rigoureuse que l’opinion : \textbf{l’investigation numérique comme philosophie appliquée de la vérité}.
+
+Cet ouvrage a démontré que l’investigation numérique ne saurait être réduite à un ensemble d’outils, de procédures ou de protocoles figés. Elle constitue une \textbf{démarche intellectuelle et éthique}, qui exige de l’investigateur qu’il soit à la fois \textbf{archéologue du digital} capable d’exhumer les traces enfouies dans l’immensité des données , \textbf{épistémologue pratique} apte à évaluer avec méthode la fiabilité de ce qu’il observe et \textbf{éthicien appliqué}  conscient des dilemmes moraux que soulève toute recherche de la vérité. 
+À travers ces trois figures, l’investigation numérique devient un art de discerner le vrai sans trahir le juste, et de produire des certitudes tout en respectant les droits fondamentaux.
+
+Mais cette quête se heurte à un défi central : le \textbf{trilemme CRO (Confidentialité, Fiabilité, Opposabilité)}. Cet ouvrage en a proposé une formalisation inédite, démontrant qu’il est impossible de maximiser simultanément ces trois impératifs, et qu’un équilibre doit être recherché en conscience. C’est là qu’interviennent les \textbf{protocoles ZK-NR}, inspirés des preuves à divulgation nulle de connaissance, qui permettent de prouver l’authenticité d’une information sans en révéler le contenu. 
+Cette avancée conceptuelle transforme la preuve, d’un objet passif à examiner, en un \textbf{processus dynamique à vérifier} une révolution silencieuse, mais décisive, dans l’histoire de la justice numérique.
+
+L’ouvrage a également souligné que l’excellence forensique n’est jamais universelle : elle est toujours \textbf{contextuelle et située}, enracinée dans les cultures juridiques, les infrastructures techniques et les dynamiques sociales propres à chaque région du monde. Des enquêtes menées dans la \emph{Silicon Valley} aux cyberattaques sur les réseaux énergétiques en \emph{Europe}, des manipulations électorales en \emph{Inde} aux fraudes mobiles en \emph{Afrique de l’Ouest}, les cas étudiés ont montré que la coopération internationale et l’adaptabilité contextuelle sont les conditions mêmes de la réussite. Le \textbf{framework CRO} s’impose ici comme un langage universel, permettant d’harmoniser des pratiques hétérogènes sans les uniformiser.
+
+Enfin, cet ouvrage a tiré la sonnette d’alarme sur une menace émergente : \textbf{la cryptographie post-quantique}. Les algorithmes de Shor et de Grover promettent de rendre obsolètes la plupart des cryptosystèmes actuels d’ici 2035, et la stratégie \og Harvest Now, Decrypt Later\fg{} menace déjà la confidentialité des données sensibles. En réponse, une \textbf{architecture Q2CSI} a été proposée, structurant la sécurité numérique en trois couches dialectiques (IRON, GOLD, CLAY), afin d’anticiper et d’absorber le choc quantique à venir.
+
+En définitive, ce livre n’est pas seulement un manuel technique ni même un traité de cybersécurité avancée. Il est \textbf{un manifeste pour une gouvernance éthique de la vérité numérique}. Il appelle à former une nouvelle génération de professionnels : des \textbf{gardiens de l’intégrité informationnelle}, capables de conjuguer rigueur scientifique, discernement moral et responsabilité citoyenne. 
+Car dans un monde où la frontière entre le réel et le digital s’estompe chaque jour davantage, préserver la vérité devient un acte de justice et la justice, un acte de lucidité.
+
+\end{document}
+
+
+Aliquam erat volutpat. Morbi cursus lectus odio, et fermentum urna hendrerit at. Nunc lobortis massa sed neque tempus, sed auctor ante placerat. Aliquam finibus metus lacinia arcu mollis faucibus. Nulla lacinia velit metus. Aenean feugiat dictum ante, a bibendum tellus commodo quis. Sed porta interdum sapien, ut pellentesque felis rhoncus eu. Proin et gravida odio. Fusce lacinia commodo mauris et porttitor.
+
+Quisque volutpat sagittis nisl non euismod. Nulla eu dolor justo. Pellentesque erat quam, vehicula et ultrices quis, interdum in libero. Donec at tellus et sem accumsan porta non dapibus nunc. Nulla faucibus nulla ut dolor tincidunt vestibulum. Pellentesque in commodo enim. Vestibulum feugiat, lorem quis vehicula iaculis, mauris tellus faucibus metus, volutpat semper metus sapien vitae ipsum. \ref{fig:Confidence_1}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/plot.png}
+    \caption{Some plot}
+    \label{fig:Confidence_1}
+\end{figure}
+
+The overall working of the system is explained in Figure \ref{fig:Confidence_2}.Aliquam erat volutpat. Morbi cursus lectus odio, et fermentum urna hendrerit at. Nunc lobortis massa sed neque tempus, sed auctor ante placerat. Aliquam finibus metus lacinia arcu mollis faucibus. Nulla lacinia velit metus. Aenean feugiat dictum ante, a bibendum tellus commodo quis. Sed porta interdum sapien, ut pellentesque felis rhoncus eu. Proin et gravida odio. Fusce lacinia commodo mauris et porttitor.
+
+Quisque volutpat sagittis nisl non euismod. Nulla eu dolor justo. Pellentesque erat quam, vehicula et ultrices quis, interdum in libero. Donec at tellus et sem accumsan porta non dapibus nunc. Nulla faucibus nulla ut dolor tincidunt vestibulum. Pellentesque in commodo enim \cite{hendrycks2019using}. Vestibulum feugiat, lorem quis vehicula iaculis, mauris tellus faucibus metus, volutpat semper metus sapien vitae ipsum.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{img/plot2.png}
+    \caption{Some Plot 2}
+    \label{fig:Confidence_2}
+\end{figure}
+
+
+
+\section{Challenges}
+
+Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead. De carne lumbering animata corpora quaeritis. Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas.
+
+\section{Results}
+
+
+Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead. De carne lumbering animata corpora quaeritis. Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas.
+
+%Mention constraints, other challenges
+
+
+Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead. De carne lumbering animata corpora quaeritis. Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas.
+
+%Plots plots plots
+% All plots taken from overleaf pgfplots package page
+The ROC-AUC curves are also plotted for each type of blahblah- blahblah1 (fig \ref{fig:Bad_Positioning}), blahblah2 (fig \ref{fig:Bad_Intensity}), blahblah3 (fig \ref{fig:Wrong_Orientation}), blahblah4 (fig \ref{fig:Unusual}).
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/plot.png}
+    \caption{ROC Curve: Random Plot 2}
+    \label{fig:Bad_Intensity}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/plot2.png}
+    \caption{ROC Curve: Random Plot 2}
+    \label{fig:Bad_Positioning}
+  \end{minipage}
+\end{figure}
+
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/plot3.png}
+    \caption{ROC Curve: Random Plot 2}
+    \label{fig:Wrong_Orientation}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/plot4.png}
+    \caption{ROC Curve: Random Plot 2}
+    \label{fig:Unusual}
+  \end{minipage}
+\end{figure}
+
+
+
+
+
+\section{Conclusions}
+
+Say what you did in the internship. Lollipop soufflé gummi bears lemon drops cake marzipan. Danish biscuit biscuit donut bonbon pastry jelly apple pie. Candy dessert apple pie liquorice fruitcake liquorice. Sweet fruitcake sweet roll wafer gingerbread tiramisu liquorice sugar plum. Pudding gummies candy canes cake muffin. Chocolate bar gummies marzipan lollipop pastry cheesecake topping tiramisu. Marshmallow chocolate bar donut dessert shortbread. Apple pie ice cream cake soufflé tiramisu cake caramels marshmallow tootsie roll. Candy canes danish lollipop bear claw candy canes halvah cotton candy danish powder. Toffee chocolate cake jelly cheesecake oat cake dessert caramels apple pie. Pastry jelly-o sweet tart tart marzipan. Shortbread marzipan oat cake candy canes sweet roll chocolate cake cake chupa chups.
+
+
+
+\section{Reflection}
+
+% Discussion about the internship as well as your performance and what you learnt from the experience. 
+
+Icing halvah sugar plum donut lollipop soufflé pastry donut. Chocolate cake donut sweet brownie sugar plum carrot cake bear claw lollipop chocolate. Jelly-o candy canes bonbon donut bear claw chocolate. Cheesecake cotton candy cookie candy canes cake apple pie. Candy canes carrot cake marshmallow chocolate shortbread macaroon cupcake candy canes. Jelly-o toffee dragée sugar plum tootsie roll powder. Apple pie brownie soufflé pastry jelly-o. Pastry macaroon gingerbread candy jujubes powder cake ice cream donut. Muffin jelly-o oat cake chocolate cake gingerbread bear claw marzipan jelly-o candy. Ice cream liquorice fruitcake liquorice pie dragée chocolate bar croissant apple pie. Powder cake dragée danish danish jujubes gingerbread. Biscuit tiramisu tart bear claw sweet pastry brownie chocolate cake croissant. Muffin jujubes sugar plum danish cotton candy sweet roll gummi bears carrot cake tootsie roll.
+
+\section{Acknowledgements}
+
+I would like to thank my internship supervisor at External Company, FirstName LastName, for closely working with me and supervising me, hosting regular meetings (twice a week) with me to see my progress. I would like to thank FirstName2 LastName2, External Company, for helping out with my work. I would also like to thank FirstName3 LastName3, and FirstName4 LastName4, who were involved in the interviews and selection process for the internship position, for giving me an opportunity to work in External Company. I would like to thank First LastName, from Radboud University, for acting as my internal assessor for this internship. I would also like to thank BlahBlah LastName, the internship coordinator for the Artificial Intelligence Masters Course, for helping me find the internal assessor, and also helping me with all the documentation and administration part of the internship. Finally, I would like to thank Radboud University, for giving me an opportunity to work in an external company environment as a part of my Master's course. 
+
+
+%****** Extra package work if needed
+% To add math, use
+%\begin{equation}
+ %Helpful links    https://www.overleaf.com/learn/latex/Mathematical_expressions
+%\end{equation}
+
+%To add hyperlinks, use 
+%For further references see \href{http://www.overleaf.com}{Something Linky} or go to the next url: \url{http://www.overleaf.com}
+
+% It's also possible to link directly any word or \hyperlink{thesentence}{any sentence} in you document.
+
+% Tables 
+
+% \begin{table}[h!]
+% \centering
+%  \begin{tabular}{||c c c c||} 
+%  \hline
+%  Col1 & Col2 & Col2 & Col3 \\ [0.5ex] 
+%  \hline\hline
+%  1 & 6 & 87837 & 787 \\ 
+%  2 & 7 & 78 & 5415 \\
+%  3 & 545 & 778 & 7507 \\
+%  4 & 545 & 18744 & 7560 \\
+%  5 & 88 & 788 & 6344 \\ [1ex] 
+%  \hline
+%  \end{tabular}
+% \end{table}
+
+% Images
+
+% upload your images to the img folder. To print them in the document, uncomment the following
+% \begin{figure}[h]
+%     \centering
+%     \includegraphics[width=0.25\textwidth]{/img/YourImageTitle}
+%     \caption{a nice plot}
+%     \label{fig:mesh1}
+% \end{figure}
+
+% As you can see in the figure \ref{fig:mesh1}, the 
+% function grows near 0. Also, in the page \pageref{fig:mesh1} 
+% is the same example.
+\newpage
+\printbibliography
+\end{document}
