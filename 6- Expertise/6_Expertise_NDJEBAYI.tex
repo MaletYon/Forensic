@@ -1,0 +1,390 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{ulem}
+\geometry{margin=2.5cm}
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{left=2.5cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{setspace}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{enumitem}
+\usepackage{float}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{arrows.meta, positioning, shapes.geometric}
+\usepackage{listings}
+\usepackage{xcolor}
+\documentclass[memoire, 12pt]{report}
+\usepackage[top = 1.9cm, bottom = 1.5cm, left = 1.9cm, right = 2.1cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem}
+%\usepackage{algorithm2e}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{multirow}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres r\'ef\'erences}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[babel=true]{csquotes}
+\setlength{\fboxrule}{0.01cm}
+\setlength{\fboxsep}{0.5cm}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{url}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{glossaries}
+%\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[bottom]{footmisc}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{glossaries}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{minted}
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage[utf8]{inputenc}   % encodage du fichier source
+\usepackage[T1]{fontenc}      % encodage des polices
+\usepackage[french]{babel} 
+\usepackage{graphicx}
+\usepackage{float}% pour le français
+
+
+
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+
+
+
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc} 
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+
+\author{}
+
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!orange,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{enspy.png}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{RAPPORT}}}\\
+		\Large{{\textbf{\textit{Expertise Judiciaire}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{0.1cm}
+		\normalsize\textbf{Option }:\\			
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			
+			\hspace{0.02cm} \textsl{\textbf{NDJEBAYI PATRICK N.}, 24P827}\\\\
+			
+			
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+	\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+	\hspace{0.02cm} \textsl{M. Thierry MINKA}
+	\end{center}
+	
+    
+	\vspace{2cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+				
+	\vfill%\null
+	
+\end{titlepage}
+
+\title{Rapport d'Analyse : Ordonnance de Renvoi - Affaire Martinez Zogo}
+\author{Service d'Expertise Judiciaire}
+\date{29 février 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Synthèse des Éléments d'Investigation Numérique}
+
+\subsection*{A. Données de Géolocalisation Téléphonique}
+\begin{itemize}
+\item Localisation des suspects à \textbf{Ebogo (Soa)} le 23 janvier 2023 vers 23h01
+\item Trajectoire de \textbf{TONGUE NANA}, \textbf{DAOUDA} et \textbf{LAMFU Johnson} vers le lieu du crime
+\item Présence simultanée des suspects sur les lieux du crime et du décès
+\item Déplacements coordonnés entre les différents groupes d'intervention
+\end{itemize}
+
+\subsection*{B. Exploitation des Listings d'Appels Téléphoniques}
+\begin{itemize}
+\item Historique des communications entre \textbf{MARTINEZ ZOGO} et \textbf{SAVOM MARTIN} peu avant l'enlèvement
+\item Appels entre \textbf{BIDZONGO MBEDE} et \textbf{AMOUGOU BELINGA} après la rencontre avec la victime
+\item Échanges téléphoniques entre \textbf{DANWE JUSTIN} et les différents membres du commando
+\item Messages WhatsApp utilisés pour la coordination des opérations
+\end{itemize}
+
+\subsection*{C. Données de Messagerie et Réseaux Sociaux}
+\begin{itemize}
+\item Transmission de fiches de localisation par \textbf{WhatsApp} (SAÏWANG YVES vers DANWE JUSTIN)
+\item Messages texte entre \textbf{AMOUGOU BELINGA} et \textbf{ARTHUR ESSOMBA}
+\item Communications via le groupe de coordination de la mission
+\end{itemize}
+
+\subsection*{D. Preuves Vidéo et Surveillance}
+\begin{itemize}
+\item Images de vidéosurveillance urbaine de Yaoundé montrant:
+\begin{itemize}
+\item Véhicule de \textbf{BIDZONGO MBEDE} au siège d'« Ambitude FM »
+\item Embarquement de \textbf{MARTINEZ ZOGO} dans le véhicule
+\item Rencontres entre \textbf{DANWE JUSTIN} et \textbf{SAVOM MARTIN}
+\end{itemize}
+\item Captures d'écran de l'historique d'appels du téléphone de la victime
+\end{itemize}
+
+\subsection*{E. Données Bancaires et Transactions}
+\begin{itemize}
+\item Historique des transactions du compte de \textbf{SAVOM MARTIN}
+\item Retrait d'argent au guichet automatique de l'Hôtel de Ville de Yaoundé
+\item Transferts d'argent entre \textbf{AMOUGOU BELINGA} et \textbf{DANWE JUSTIN} (2.000.000 FCFA)
+\item Paiements aux membres du commando après l'opération
+\end{itemize}
+
+\section*{Éléments Fournis par l'Expert Judiciaire}
+
+\subsection*{A. Reconstitution Chronologique des Événements}
+\begin{itemize}
+\item Timeline détaillée des déplacements des suspects
+\item Séquencement des appels téléphoniques avant, pendant et après les faits
+\item Cartographie des lieux et trajectoires des différents groupes
+\end{itemize}
+
+\subsection*{B. Analyse Technique des Communications}
+\begin{itemize}
+\item Corrélation entre les appels et les déplacements géolocalisés
+\item Analyse du contenu des messages échangés
+\item Identification des réseaux de communication criminels
+\end{itemize}
+
+\subsection*{C. Expertise Médico-Légale Corrélée}
+\begin{itemize}
+\item Rapports d'autopsie du Dr EKANI Boukar (Hôpital de District de SOA)
+\item Constatations du Dr MOGUE BOPDA Tidiane (Médecin légiste)
+\item Corrélation entre l'heure du décès et les présences géolocalisées
+\end{itemize}
+
+\subsection*{D. Documentation des Preuves Numériques}
+\begin{itemize}
+\item Copies certifiées des listings d'appels
+\item Export des données de géolocalisation avec horodatage
+\item Captures d'écran des messages et transactions
+\end{itemize}
+
+\section*{Éléments Complémentaires Recommandés}
+
+\subsection*{A. Analyse Technique Approfondie}
+\begin{itemize}
+\item \textbf{Analyse des métadonnées des fichiers échangés}
+\item \textbf{Récupération des messages supprimés} sur les applications de messagerie
+\item \textbf{Authentification des captures d'écran} par hash cryptographique
+\item \textbf{Analyse des journaux système} des téléphones saisis
+\end{itemize}
+
+\subsection*{B. Investigation Numérique Élargie}
+\begin{itemize}
+\item \textbf{Exploitation des données des opérateurs téléphoniques} sur une période plus longue
+\item \textbf{Analyse des réseaux sociaux} des suspects pour établir les motivations
+\item \textbf{Expertise financière approfondie} des flux d'argent liés à l'affaire
+\item \textbf{Investigation sur les autres moyens de communication} (email, applications cryptées)
+\end{itemize}
+
+\subsection*{C. Renforcement des Preuves Techniques}
+\begin{itemize}
+\item \textbf{Procès-verbal de conformité} des outils d'analyse utilisés
+\item \textbf{Certification des outils de géolocalisation} par l'ANRT
+\item \textbf{Contre-expertise indépendante} des données techniques
+\item \textbf{Documentation de la chaîne de custody} des preuves numériques
+\end{itemize}
+
+\subsection*{D. Corrélations Multi-sources}
+\begin{itemize}
+\item \textbf{Recoupement avec les données de vidéosurveillance} des banques
+\item \textbf{Analyse des données de téléphonie} sur l'ensemble du réseau criminel
+\item \textbf{Investigation sur les autres victimes potentielles} du même modus operandi
+\item \textbf{Expertise psychologique numérique} des comportements en ligne
+\end{itemize}
+
+\vspace{1cm}
+
+\noindent\textbf{Conclusion :} Les éléments d'investigation numérique présentés constituent une base solide pour la décision de renvoi. Le renforcement par les éléments complémentaires recommandés permettrait de consolider davantage la preuve technique.
+
+\end{document}

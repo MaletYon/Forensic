@@ -1,0 +1,238 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{graphicx}
+\usepackage{xcolor}      % pour les couleurs
+\usepackage{geometry}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\geometry{margin=2.5 cm}
+
+\begin{document}
+	\begin{titlepage}
+		\begin{tikzpicture}[remember picture,overlay]
+			\draw[line width=2pt,blue]
+			($(current page.north west) + (1cm,-1cm)$) rectangle
+			($(current page.south east) + (-1cm,1cm)$);
+		\end{tikzpicture}
+		
+		
+		% --- Logos et textes bilingues ---
+		\noindent
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			{\small\textbf{REPUBLIQUE DU CAMEROUN}} \\  
+			******\\
+			{Paix – Travail – Patrie} \\
+			******\\
+			{\small\textbf {MINISTÈRE DE L’ENSEIGNEMENT SUPÉRIEUR}}\\
+			******\\ 
+			Université de Yaoundé I \\ 
+			*****\\
+			{\small\textbf{ÉCOLE NATIONALE SUPÉRIEURE POLYTECHNIQUE}} \\ 
+			******\\
+			Département de Génie Informatique \\
+			******
+			
+			
+		\end{minipage}
+		\hfill
+		\begin{minipage}{0.45\textwidth}
+			\centering
+			{\small\textbf{REPUBLIC OF CAMEROON}} \\ 
+			******\\
+			Peace – Work – Fatherland \\
+			*******\\
+			{\small\textbf{MINISTRY OF HIGHER EDUCATION}} \\
+			******\\ 
+			University of Yaoundé I \\ 
+			******\\
+			{\small\textbf{NATIONAL ADVANCED SCHOOL OF ENGINEERING}} \\
+			****** \\
+			Computer Engineering Department \\
+			******
+			
+		\end{minipage}
+		\begin{center}
+			\includegraphics[width=3 cm]{poooo.png} % logo centré
+		\end{center}
+		
+		
+		\vspace{1cm}
+		
+		% --- Encadré principal  ---
+		\begin{center}
+			
+			\colorbox{blue!70}{\parbox{1\textwidth}{\centering
+					\textbf{\color{white}{SEC 4031 \quad INTRODUCTION AUX TECHNIQUES D'INVESTTGATION NUMERIQUE}}
+			}}
+			
+			\vspace{0.5cm}
+			
+			\colorbox{gray!30}{\parbox{0.9\textwidth}{\centering
+					\textbf{ORDONNANCE DE RENVOIE JPAB}
+			}}
+		\end{center}
+		
+		\vspace{1cm}
+		
+		% --- Infos filière ---
+		\noindent
+		\textbf{Filière :} HUMANITÉS NUMÉRIQUES \\[0.5cm]
+		\textbf{Niveau :} IV
+		
+		\vspace{1cm}
+		
+		% --- Auteurs ---
+		\noindent
+		\textbf{Rédigé par :} \\[0.5cm]
+		\quad          NGUEMO VOUFO AURELLE SANDRA \hfill 22P067\hfill CIN4
+		
+		\vspace{2cm}
+		
+		% --- Superviseur ---
+		\begin{center}
+			Sous la supervision de : \\
+			\textbf{\hfill Mr. MINKA}\\[1.5 cm]
+			\textbf{ANNEE ACADEMIQUE:2025-2026}
+		\end{center}
+		
+	\end{titlepage}
+	
+		
+		\tableofcontents
+		\newpage
+		
+		\section{Introduction}
+		
+		Cette ordonnance de renvoi du Tribunal Militaire de Yaoundé (Cameroun), datée du 29 février 2024, signée par le Colonel-Magistrat NZIE Pierrot Narcisse, contre plusieurs accusés dont Jean-Pierre Amougou Belinga, Danwe Justin, Eko Eko Léopold Maxime, et Ebo’o Clément Jules, présente une analyse exhaustive des éléments d'investigation numérique utilisés dans l'affaire Martinez Zogo, ainsi que les éléments manquants qui auraient pu renforcer l'instruction.
+		
+		\newpage
+		
+		\section{Éléments d'Investigation Numérique Présents dans le Dossier}
+		
+		\subsection{Données de Géolocalisation Exploitées}
+		
+			Localisation par antennes cellulaires:
+			\begin{itemize}
+				\item Position de TONGUE NANA à Ebogo à 23h01
+				\item Déplacements de SAVOM MARTIN de Bibey à Yaoundé
+				\item Présence simultanée de suspects aux lieux des crimes
+			\end{itemize}
+			
+			Traçage des véhicules :
+			\begin{itemize}
+				\item Déplacements du véhicule PRADO fourni par ENGWELE NGWELE
+				\item Itinéraires des différentes équipes opérationnelles
+			\end{itemize}
+	
+		
+		\subsection{Analyse des Communications Téléphoniques}
+		
+		\begin{itemize}[leftmargin=*]
+		\item \textbf{Historique des appels} : Dernier appel de Martinez Zogo à SAVOM MARTIN,	Communications entre DANWE JUSTIN et AMOUGOU BELINGA
+			
+		
+		\item \textbf{Messages texte et WhatsApp} : Échanges de fiches techniques par WhatsApp, Messages entre AMOUGOU BELINGA et ARTHUR ESSOMBA
+			
+		\end{itemize}
+		
+		
+		\subsection{Données Financières Numériques}
+		
+		\begin{itemize}[leftmargin=*]
+		\item \textbf{Transactions bancaires} :
+		\begin{itemize}
+			\item Retrait de SAVOM MARTIN la nuit du crime
+			\item Paiements aux membres du commando par DANWE JUSTIN
+			\item Virement de 2 millions FCFA de AMOUGOU BELINGA
+		\end{itemize}
+		
+		\item \textbf{Preuves de rémunération} :
+		\begin{itemize}
+			\item 20.000 FCFA versés à SAÏWANG YVES
+			\item 15.000 FCFA versés à HEUDJI GUY SERGE
+			\item Paiement de location du véhicule PRADO
+		\end{itemize}
+		\end{itemize}
+		
+		Ces éléments numériques ont joué un rôle central dans l’établissement des faits, la confirmation des présences, des communications et des transactions financières liées à l’enlèvement, la torture et l’assassinat de Martinez Zogo.
+		\newpage
+		\section{Éléments d'Investigation Numérique Omisses}
+		
+		\subsection{Analyse Incomplète de la Périphérie Numérique}
+		
+		\begin{itemize}[leftmargin=*]
+			\item \textbf{Absence d'analyse des appareils secondaires} : Ordinateurs portables, tablettes des suspects, ou autres téléphones mobiles personnels ou professionnels
+			
+			\item \textbf{Manque d'exploration des sauvegardes cloud} : Comptes iCloud, Google Drive, Synchronisation automatique des données supprimées
+				
+		\end{itemize}
+		
+	
+		
+		\subsection{Investigation Insuffisante des Communications}
+		
+		\begin{itemize}[leftmargin=*]
+			\item \textbf{Applications cryptées non investiguées} : Telegram, WhatsApp chiffré
+			
+			\item \textbf{Réseaux sociaux superficiellement analysés} : Messages privés sur Facebook, Twitter, Groupes secrets ou conversations archivées
+		\end{itemize}
+		
+		\subsection{Limites dans la Reconstruction Numérique}
+		
+		\begin{itemize}[leftmargin=*]
+			\item \textbf{Modélisation 3D absente} : Pas de reconstruction virtuelle des scènes de crime ce qui rend impossible de visualiser les coïncidences spatio-temporelles
+			
+			
+		
+		\end{itemize}
+		
+		\subsection{Investigation Financière Numérique Approfondie}
+		
+	
+Corrélations financières manquantes : Analyse des patterns de transactions, liens entre mouvements financiers et actions spécifiques
+\newpage
+\section{Impact des Omissions sur l'Instruction}
+
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Faiblesse probatoire} : Certaines charges pourraient être affaiblies
+	\item \textbf{Contestations techniques} : La défense pourrait discréditer les méthodes
+	\item \textbf{Doutes raisonnables} : Incertitudes sur l'exhaustivité de l'enquête
+	\item \textbf{Risques d'annulation} : Possibilité de nullités procedurelles
+\end{itemize}
+
+\section{Recommandations pour les Futures Expertises}
+
+\subsection{Approche Méthodologique}
+
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Élargir le périmètre d'investigation} à tous les dispositifs connectés
+	\item \textbf{Documenter systématiquement} la chaîne de custody
+\end{itemize}
+
+\subsection{Outils et Techniques}
+
+Utiliser des outils forensics avancés :  Logiciels spécialisés en analyse cloud et outils de reconstruction spatio-temporelle
+
+
+\newpage
+
+\section{Conclusion}
+
+Bien que l'expertise judiciaire réalisée ait fourni des preuves numériques substantielles permettant l'émission de l'ordonnance de renvoi, les omissions identifiées représentent des opportunités manquées de renforcer davantage le dossier. Une investigation numérique plus exhaustive aurait pu permettre :
+
+\begin{itemize}
+	\item Une reconstitution plus précise des événements
+	\item L'identification d'éventuels autres participants, une preuve technique incontestable
+\end{itemize}
+
+Ces recommandations visent à améliorer les futures expertises judiciaires numériques pour des instructions encore plus solides et exhaustives.
+
+\end{document}
+			
