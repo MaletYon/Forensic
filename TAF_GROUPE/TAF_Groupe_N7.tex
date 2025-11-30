@@ -1,0 +1,487 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}      
+\usepackage{geometry}   
+\geometry{margin=2.5cm}
+\usepackage[myheadings]{fullpage}
+\DeclareUnicodeCharacter{0301}{\hspace{-1ex}\'{ }}
+% Package for headers 
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{hyperref}         
+
+% For figures and stuff
+\usepackage{graphicx, wrapfig, subcaption, setspace, booktabs}
+\usepackage[T1]{fontenc}
+
+% Change for different font sizes and families
+\usepackage[font=small, labelfont=bf]{caption}
+\usepackage{fourier}
+\usepackage[protrusion=true, expansion=true]{microtype}
+
+% Maths
+\usepackage{amsmath,amssymb}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage[colorinlistoftodos]{todonotes}
+\usepackage[colorlinks=true, allcolors=blue]{hyperref}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{a4paper, margin=1in}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{lettrine}
+\renewcommand{\thesection}{\Roman{section}}
+
+\usepackage{booktabs} % Pour des tableaux de qualité
+\usepackage{longtable} % Pour les longs tableaux si nécessaire
+\usepackage{array} % Pour la mise en forme des colonnes
+\renewcommand{\contentsname}{Table des Matières}
+% Bibliography
+\usepackage{biblatex} 
+\addbibresource{references.bib}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}    
+
+%% Language and font encodings
+\usepackage[english]{babel}
+\usepackage{csquotes}
+
+
+\newcommand{\HRule}[1]{\rule{\linewidth}{#1}}
+\onehalfspacing
+\setcounter{tocdepth}{5}
+\setcounter{secnumdepth}{5}
+
+%% Sets page size and margins
+\usepackage[a4paper,top=2cm,bottom=1.5cm,left=2cm,right=2cm,marginparwidth=1.5cm]{geometry}
+\begin{document}
+
+
+% === EN-TÊTE SUR UNE SEULE LIGNE ===
+\begin{center}\hspace*{-0.5cm}
+  \begin{tabular}{ccc}
+ 
+    {\large UNIVERSIT\'E DE YAOUND\'E I} & \multirow{8}{*}{\includegraphics[scale=0.50]{img/LOGO.png}} & \large{ THE UNIVERSITY OF YAOUNDE I}\\
+    %& & \\
+    \textbf{***} &    & \textbf{***} \\
+    %& & \\
+    \textcolor{-yellow}{\'ECOLE NATIONALE SUP\'ERIEURE}& & \textcolor{-yellow}{NATIONAL ADVANCED SCHOOL}\\ 
+    \textcolor{-yellow}{POLYTECHNIQUE DE YAOUND\'E}   & & \textcolor{-yellow}{OF ENGINEERING OF YAOUNDE} \\
+    %& & \\
+    \textbf{***}    & & \textbf{***} \\
+    %& & \\
+    D\'EPARTEMENT DE G\'ENIE& & DEPARTMENT OF COMPUTER \\ 
+    INFORMATIQUE & & ENGINEERING \\
+    \textbf{***} &    & \textbf{***} \\
+    \textcolor{-yellow}{HUMANITÉS NUMÉRIQUES} & & \textcolor{-yellow}{DIGITAL HUMANITIES}
+    \end{tabular}
+ 
+\end{center}
+\vspace{2cm}
+% Header and footer information
+
+\pagestyle{fancy}
+% === Titre principal ===
+\begin{center}
+\hrule height 2pt
+\vspace{0.4cm}
+{\LARGE \textbf{PRÉSENTATION DÉTAILLÉE DU PROTOCOLE ZK-NR : RL ET POSITIONNEMENT DANS L’INVESTIGATION NUMÉRIQUE MODERNE}
+\vspace{0.5cm}
+\hrule height 2pt
+\vspace{0.4cm}
+\includegraphics[scale=0.30]{img/iacrlogo_small.png}}
+\end{center}
+
+\vspace{0.90cm}
+\begin{center}
+\textbf{Rédigé par :} & \\[0.3cm]
+\begin{tabular}{l@{\hspace{1cm}}l}
+FANTA YADON Félicité (chef) & 22P069 \\[0.3cm]
+GHOUMO DONFACK Olivia Shelsie & 22P023 \\[0.3cm]
+MAKEU TENKU Stely Belva & 24P826 \\
+\end{tabular}\\
+\vspace{1cm}
+\textbf{Supervisé par :}\\[0.3cm]
+M. Thierry MINKA
+\end{center}
+
+
+\newpage
+
+\setlength\headheight{15pt} 
+\fancyhead[R]{Investigations Numériques}
+%\fancyfoot[R]{\thepage}
+
+%\fancyhead[R]{Investigations Numériques}
+%\fancyfoot[R]{\thepage}
+
+% Uncomment the next line if you want keywords/index terms after the abstract. 
+%\textit{\textbf{Keywords}: lorem, ipsum, dolor}
+
+% Bibliography usage
+% Whenever you find any source make sure to get the BibTEX citation. Add it to the references.bib file. To cite the reference, use \cite{TitleOfTheReference}
+
+
+ 
+
+\tableofcontents
+
+\newpage
+
+\section*{Introduction}
+\addcontentsline{toc}{section}{Introduction}
+
+\lettrine{À} l'ère du numérique, la cryptographie s'est imposée comme un pilier fondamental de la sécurité des communications. Nous maîtrisons aujourd'hui les mécanismes de chiffrement – qu'ils soient symétriques ou asymétriques – qui permettent de protéger la confidentialité de nos échanges. Grâce au chiffrement asymétrique utilisant des paires de clés publiques et privées, nous pouvons sécuriser nos données contre l'interception et prévenir les attaques de type man-in-the-middle.
+
+Toutefois, la simple confidentialité ne suffit plus. Dans un monde où les transactions numériques ont acquis une importance juridique et économique considérable, trois questions cruciales demeurent : Comment garantir l'authenticité d'un message ? Comment empêcher son expéditeur de nier l'avoir envoyé ? Et surtout, comment donner à ces preuves numériques une valeur légale opposable devant un tribunal ?
+
+\textbf{Prenons deux scénarios révélateurs :} 
+
+\begin{itemize}
+
+    \item Dans le premier, Alice envoie un message à Bob pour lui proposer un rendez-vous. Malgré le chiffrement, un attaquant pourrait intercepter ce message et en envoyer un autre, totalement différent et potentiellement menaçant, en se faisant passer pour Alice. Bob recevrait alors un message qu'il croirait authentique, sans aucun moyen de vérifier sa provenance réelle.
+
+    \item Dans le second scénario, Alice envoie un message compromettant à Bob, qui décide de porter plainte. Alice nie catégoriquement être l'auteure de ce message. Sans mécanisme d'authentification robuste, comment Bob pourrait-il prouver devant un juge que ce message provient effectivement d'Alice ? Et inversement, comment Alice pourrait-elle se protéger contre une fausse accusation ?
+
+\end{itemize}
+    
+C'est précisément à cette intersection entre cryptographie et droit que se situe notre exposé : l'opposabilité légale de la cryptographie. Nous explorerons comment les technologies \textbf{cryptographiques} notamment les \textbf{ signatures numériques} et les \textbf{infrastructures à clés publiques}  peuvent non seulement résoudre ces problèmes techniques d'authentification et de non-répudiation, mais aussi acquérir une valeur probatoire reconnue par les systèmes juridiques.
+\newpage
+\section{Concepts Clés}
+
+
+\subsection{La non-répudiation numérique}
+
+
+La non-répudiation est le fait de s'assurer qu'un contrat, notamment un contrat signé via internet, ne peut être remis en cause par l'une des parties. 
+
+Dans le domaine de la sécurité des systèmes d'information, la non-répudiation signifie la possibilité de vérifier que l'envoyeur et le destinataire sont bien les parties qui disent avoir respectivement envoyé ou reçu le message. Autrement dit, la non-répudiation de l'origine prouve que les données ont été envoyées, et la non-répudiation de l'arrivée prouve qu'elles ont été reçues.
+
+\subsubsection{Les enjeux de la non-répudiation numérique:}
+
+La non-répudiation numérique a diverses enjeux, certains étant: 
+
+\begin{itemize}
+    \item\textbf{Sécurité des Transactions Électroniques} : La non-répudiation est essentielle pour sécuriser les transactions en ligne (e-commerce, banque, contrats électroniques). Elle permet de prouver l’origine et l’intégrité des données échangées, limitant ainsi les risques de fraude ou de litige.
+
+    \item \textbf{ Valeur Juridique des Preuves Numériques}: En cas de conflit, la non-répudiation fournit des preuves irréfutables devant les tribunaux. Par exemple, une signature électronique qualifiée a la même valeur qu'une signature manuscrite.
+
+    \item \textbf{Confiance dans les Systèmes Numériques} : Elle renforce la confiance des utilisateurs et des entreprises dans les systèmes numériques, en garantissant que les engagements pris ne peuvent être reniés. Cela est crucial pour l’adoption massive des services en ligne.
+
+    \item \textbf{ Protection contre la Fraude et l’Usurpation} : La non-répudiation permet de détecter et de prévenir les tentatives d’usurpation d’identité ou de falsification de documents, en associant de manière indissociable une action à son auteur.
+
+    \item \textbf{Conformité Réglementaire} : De nombreux secteurs (banque, santé, administration) sont soumis à des réglementations strictes exigeant la non-répudiation pour la traçabilité et l’auditabilité des actions (ex : RGPD, normes ISO 27001).
+
+    \subsubsection{Les Outils de la non-répudiation numérique : }
+
+    \begin{itemize}
+        \item \textbf{La Signature Numérique :}
+        La signature numérique repose sur un mécanisme cryptographique asymétrique, où une paire de clés (une privée et une publique) est générée à partir d’algorithmes reconnus comme RSA.
+
+        La clé privée, strictement confidentielle et détenue par le signataire, permet de produire une signature unique sur un document, tandis que la clé publique, accessible à tous, sert à vérifier cette signature. 
+
+        Concrètement, le document est d’abord transformé en une empreinte numérique via une fonction de hachage, puis cette empreinte est chiffrée avec la clé privée pour générer la signature. Le destinataire, en utilisant la 
+        clé publique du signataire, peut déchiffrer la signature, recalculer l’empreinte du document reçu, et comparer les deux. Si elles correspondent, l’authenticité du signataire et l’intégrité du document sont confirmées.
+
+        \item \textbf{Le certificat électronique :}
+        Il agit comme une pièce d’identité numérique en associant de manière indissociable une identité (qu’il s’agisse d’une personne, d’un serveur ou d’une organisation) à une clé publique.
+
+        Le certificat électronique est émis par une autorité de certification de confiance, ce certificat contient non seulement la clé publique, mais aussi des informations d’identification, une période de validité, et la signature numérique de l’autorité de certification. La confiance dans le certificat repose sur une chaîne de certification, où chaque autorité de certification est elle-même certifiée par une autorité de certification de niveau supérieur, jusqu’à une autorité de certification racine. La validation d’un certificat implique la vérification de sa signature et de son statut de révocation, via des protocoles comme OCSP ou des listes CRL. Sans certificat valide, la clé publique ne peut être considérée comme fiable, ce qui compromettrait l’ensemble du système de signature et d’authentification.
+        \item \textbf{L’horodatage numérique : } 
+        Ceci apporte une dimension temporelle essentielle à la non-répudiation, en attestant qu’un document ou une transaction existait à une date et une heure précises. Pour ce faire, un serveur d’horodatage (TSA - Timestamp Authority Server) reçoit une empreinte du document, y appose une marque temporelle signée, et renvoie un jeton d’horodatage conforme à la RFC 3161. Ce jeton, qui inclut l’empreinte, la date/heure UTC, et la signature du TSA, peut être vérifié ultérieurement pour prouver que le document n’a pas été modifié depuis son horodatage. Ce mécanisme est particulièrement crucial dans les contextes juridiques ou réglementaires, où la preuve de l’antériorité d’un document peut être déterminante.
+
+        \item \textbf{La fonction de hachage : }
+        Elle joue un rôle central dans la garantie de l’intégrité des données. Elle transforme un document de taille arbitraire en une chaîne de caractères de longueur fixe, appelée empreinte, qui agit comme une signature unique du contenu. Les algorithmes de hachage, tels que SHA-256 ou SHA-3, sont conçus pour être déterministes, irréversibles et résistants aux collisions, ce qui signifie qu’il est pratiquement impossible de retrouver le document original à partir de son empreinte ou de trouver deux documents produisant la même empreinte. Toute modification, même minime, du document original entraîne une empreinte totalement différente, permettant ainsi de détecter instantanément toute altération. Cette propriété est exploitée dans les signatures numériques, les protocoles de sécurité, et les systèmes de preuve d’intégrité, comme les blockchains.
+        
+        
+    \end{itemize}
+
+\end{itemize}
+
+\newpage
+
+\section{État de l'art et travaux récents}
+
+
+
+\subsection{ Présentation synthétique des articles}
+
+\begin{itemize}
+
+ \textbf{Exploration de ZK-NR : Vision Globale et Applications} \\
+    \\
+    Le protocole \textbf{ZK-NR} (Zero-Knowledge Non-Repudiation) est une architecture cryptographique modulaire en couches, axée sur la \textbf{non-répudiation préservant la confidentialité} pour la co-production de services numériques publics. Il combine des primitives post-quantiques (STARKs, signatures BLS à seuil, Dilithium) pour créer des preuves sécurisées, vérifiables et surtout \textbf{auditables}, sans jamais révéler de contenu sensible. Modélisé dans Tamarin, il s'adresse spécifiquement aux environnements réglementés (finance, e-gouvernement) en offrant des attestations juridiquement admissibles, comblant le fossé entre la sécurité cryptographique et les exigences institutionnelles.
+
+    \item \textbf{Le Trilemme CRO : Équilibre entre Confidentialité, Fiabilité et Opposabilité} \\
+    Le \textbf{Trilemme CRO} formalise une incompatibilité fondamentale pour tout système de preuve post-quantique : il est impossible de satisfaire simultanément la \textbf{Confidentialité} ($\text{Priv}$), la \textbf{Fiabilité} ($\text{Rel}$) et l'\textbf{Opposabilité Juridique} ($H_{\text{Opp}}$). Une borne d'impossibilité est établie par la formule : $H_{\text{Opp}} \leq f(\text{Priv}, \text{Rel}) + \eta_q(C) + \text{negl}(\lambda)$. Cette analyse théorique, validée empiriquement ($\Gamma_{\text{CRO}} > 0,8$), sert de fondation théorique aux architectures cherchant à minimiser cette violation, définissant ainsi les contraintes de base pour des protocoles comme ZK-NR.
+    
+    \item \textbf{Q2CSI : Infrastructure de Sécurité Quantique Composable et Contextuelle} \\
+    \textbf{Q2CSI} (Quantum-to-Classical Security Infrastructure) est un cadre en couches conçu pour résoudre le Trilemme CRO en décomposant la sécurité en trois strates isolées mais composables : \textit{Fer} (Fiabilité), \textit{Or} (Confidentialité) et \textit{Argile} (Opposabilité). Ce cadre abstrait étend le modèle de Composabilité Universelle (UC) en intégrant des contraintes entropiques, lui permettant d'atteindre une violation du trilemme significativement réduite ($\Gamma_{\text{CRO}} < 0,4$). Basé sur des primitives minimales (IND-CCA2, EUF-CMA), Q2CSI propose la première architecture formelle pour des protocoles post-quantiques juridiquement vérifiables.
+
+    \item \textbf{Design ZK-NR / Formalizing ZK-NR : Cadre Théorique et Modélisation} \\
+    La formalisation du protocole \textbf{ZK-NR} s'attache à son design théorique et à sa modélisation. En s'appuyant directement sur les contraintes du trilemme CRO, cette contribution détaille comment des primitives spécifiques (engagements Merkle, STARKs, etc.) sont agencées pour atteindre l'équilibre requis entre \textbf{responsabilité} et \textbf{confidentialité}. Cette phase inclut une preuve de concept et une modélisation dans l'outil \textbf{Tamarin}, fournissant des artefacts pratiques sans encore proposer de preuves formelles de sécurité, lesquelles sont réservées à des travaux futurs.
+
+    \item \textbf{Le Problème AIIP : Problématiques d'Authenticité et d'Intégrité des Preuves} \\
+    Le \textbf{Problème d'Inversion Itérée Affine (AIIP)} est l'hypothèse cryptographique fondamentale du cadre CASH. Reposant sur la difficulté de résoudre des équations quadratiques multivariées (MQ) et des logarithmes discrets sur des courbes hyperelliptiques de genre élevé (HCDLP), l'AIIP garantit l'\textbf{authenticité} et l'\textbf{intégrité} des preuves dans les systèmes post-quantiques. Il sert de base de sécurité pour les trois primitives CASH (CEE, AOW, SH), offrant une résilience prouvée contre les adversaires quantiques et assurant la solidité des preuves.
+
+    \item \textbf{CEE : Cryptographic Evidence Explainability (Lien vers la Confidentialité)} \\
+    L'\textbf{Expansion Entropique Chaotique (CEE)} est une fonction à sens unique post-quantique, basée sur l'itération de cartes polynomiales. Sa sécurité repose sur l'AIIP. CEE est le composant du cadre CASH dédié à la \textbf{Confidentialité} (Privacy), assurant une expansion entropique qui atteint une min-entropie prédictible et une distance statistique minimale par rapport à l'uniforme. Bien que son mécanisme soit plus lent que des solutions classiques comme l'AES, elle assure la résilience quantique nécessaire pour la préservation de l'entropie sémantique des données.
+
+    \item \textbf{AOW : Affine One-Wayness (Lien vers la Fiabilité)} \\
+    L'\textbf{Affine One-Wayness (AOW)} est le primitif CASH focalisé sur la \textbf{Fiabilité} (Reliability) via la vérification temporelle post-quantique. Basé sur l'AIIP, AOW permet une liaison temporelle robuste intégrée aux preuves STARKs. Il garantit ainsi l'ordonnancement d'événements et la synchronisation distribuée, résistant aux fautes byzantines. AOW répond directement à la propriété de fiabilité du trilemme CRO en assurant l'intégrité et la non-contestabilité du temps de production de la preuve.
+
+    \item \textbf{SH : Semantic Holder (Lien vers l'Opposabilité)} \\
+    Le \textbf{Semantic Holder (SH)} est le composant CASH dédié à l'\textbf{Opposabilité Juridique} (Opposability). Basé sur l'AIIP, SH garantit des interprétations juridiques vérifiables des preuves. Il permet l'extraction algébrique des traces d'itération polynomiale, assurant un score d'opposabilité élevé ($\Omega \geq 0,60$) grâce à la préservation de l'entropie et à l'\textbf{explicabilité institutionnelle}. SH est essentiel pour les applications réglementaires comme les contrats intelligents juridiques et l'audit.
+
+\end{itemize}
+
+
+
+\subsection{ Synthèse comparative}
+
+L'ensemble des travaux présentés forme un écosystème de recherche cohérent, centré sur la construction d'une sécurité cryptographique post-quantique qui respecte les exigences institutionnelles de confiance et de droit.
+
+\begin{table}[H]
+\centering
+\caption{Points Communs et Hypothèses Fondamentales}
+
+\renewcommand{\arraystretch}{1.2} % aère un peu les lignes
+\begin{tabular}{>{\centering\arraybackslash}m{3.5cm} | >{\raggedright\arraybackslash}m{11cm}}
+\toprule
+\textbf{Caractéristique} & \textbf{Description et Travaux Concernés} \\
+\midrule
+\textbf{Sécurisation des Preuves} & Tous les travaux ont pour but de garantir l'intégrité et l'authenticité des preuves cryptographiques (ZK-NR, Q2CSI, CEE, AOW, SH). \\
+\midrule
+\textbf{Non-Répudiation} & Objectif partagé par l'ensemble des protocoles (notamment ZK-NR, AOW, SH) d'assurer que les parties ne peuvent contester leurs actions ou la validité des preuves générées. \\
+\midrule
+\textbf{Résilience Post-Quantique} & Hypothèse de sécurité essentielle pour tous les travaux. Elle est principalement assurée par la dureté de l'\textbf{AIIP} (AIIP, CEE, AOW, SH) ou par l'intégration de primitives connues pour leur résistance (Dilithium dans ZK-NR). \\
+\midrule
+\textbf{Opposabilité Juridique} & Intégration d'une dimension institutionnelle (Opposability, $H_{\text{Opp}}$ dans CRO) pour que les preuves soient admissibles, auditable et explicables (SH, ZK-NR). \\
+\midrule
+\textbf{Fondement Théorique} & Tous les composants (CEE, AOW, SH) et les cadres (ZK-NR, CASH) sont alignés sur la gestion des contraintes établies par le \textbf{Trilemme CRO}. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+%\subsubsection{Différences d'Approche et Focalisation Spécifique}
+
+\begin{table}[H]
+\centering
+\caption{Différences d'Approche et Rôle Spécifique}
+\label{tab:differences}
+\begin{tabular}{>{\centering\arraybackslash}m{2.5cm} | >{\centering\arraybackslash}m{2.5cm} | >{\raggedright\arraybackslash}m{10cm}}
+\toprule
+\textbf{Travail} & \textbf{Niveau} & \textbf{Contribution Spécifique (Axe CRO)} \\
+\midrule
+\textbf{Trilemme CRO} & \textbf{Théorique} & \textbf{Contrainte} : Définit l'impossibilité de satisfaire simultanément C, R, O. Établit la borne $\Gamma_{\text{CRO}}$. \\
+\midrule
+\textbf{Q2CSI} & \textbf{Architecture} & \textbf{Cadre de Solution} : Propose un modèle modulaire (\textit{Fer-Or-Argile}) pour composer des primitives (UC model) et minimiser $\Gamma_{\text{CRO}}$. \\
+\midrule
+\textbf{AIIP} & \textbf{Hypothèse} & \textbf{Fondation Cryptographique} : Garantit l'authenticité et l'intégrité des preuves contre les attaques quantiques (base de CASH). \\
+\midrule
+\textbf{CEE} & \textbf{Primitive} & \textbf{Confidentialité (C)} : Assure la préservation de l'entropie sémantique par expansion chaotique post-quantique. \\
+\midrule
+\textbf{AOW} & \textbf{Primitive} & \textbf{Fiabilité (R)} : Garantie de la vérification temporelle et de l'ordonnancement dans les systèmes distribués. \\
+\midrule
+\textbf{SH} & \textbf{Primitive} & \textbf{Opposabilité (O)} : Offre l'explicabilité institutionnelle et l'extraction algébrique nécessaires à l'admissibilité juridique. \\
+\midrule
+\textbf{ZK-NR} & \textbf{Protocole} & \textbf{Application Pratique} : Intègre les primitives dans une architecture concrète avec preuve de concept (Tamarin) pour des usages réglementés. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\newpage
+
+\section{Acteurs et Communauté Scientifique}
+
+L’écosystème scientifique et industriel autour des preuves à divulgation nulle de connaissance (Zero-Knowledge), de la cryptographie post-quantique et de l’investigation numérique est porté par plusieurs pôles de recherche et d’innovation.  
+
+\subsection{Pôle A : Zero-Knowledge et STARKs}
+Parmi les figures majeures, on retrouve \textbf{Eli Ben-Sasson}, co-inventeur des ZK-STARK et cofondateur de la société \textbf{StarkWare}, à l’origine de solutions telles que StarkEx et StarkNet. Ses travaux se situent au croisement de la théorie cryptographique et du déploiement industriel à grande échelle. Dans le même domaine, \textbf{Alessandro Chiesa}, professeur à UC Berkeley puis à l’EPFL, a participé à la création de la bibliothèque \textbf{libsnark} et au protocole \textbf{Zerocash}, pionniers dans l’ingénierie des SNARKs. Le chercheur \textbf{Jens Groth} est quant à lui connu pour le schéma \textbf{Groth16}, une construction de preuves succinctes particulièrement influente dans la communauté (Crypto 2016). Enfin, \textbf{Matthew D. Green} (Université Johns Hopkins) s’est distingué par ses contributions aux systèmes \textbf{Zerocash/Zcash} et par ses analyses critiques des systèmes cryptographiques appliqués.  
+
+\subsection{Pôle B : Cryptographie Post-Quantique}
+La cryptographie post-quantique s’impose comme une priorité face aux menaces posées par l’ordinateur quantique. Des chercheurs tels que \textbf{Daniel J. Bernstein (DJB)}, co-auteur des signatures \textbf{SPHINCS} et \textbf{SPHINCS+}, jouent un rôle clé dans la conception de schémas résistants au quantique. Le \textbf{NIST}, à travers son processus de standardisation (PQC), fédère une grande partie de cette recherche en évaluant et sélectionnant les algorithmes de la future génération de signatures et de chiffrement, notamment \textbf{CRYSTALS}, \textbf{SPHINCS+}, \textbf{FALCON} et \textbf{HQC}.  
+
+\subsection{Pôle C : Sécurité Formelle et Composabilité}
+Ce pôle, davantage théorique, concerne la sécurité formelle et la composabilité. Dans ce domaine, \textbf{Ran Canetti} est une figure incontournable grâce à la création du cadre de la \textbf{Universal Composability (UC)}, qui permet de formaliser la sécurité des protocoles cryptographiques dans des environnements complexes et modulaires.  
+
+\subsection{Pôle D : Investigation Numérique et Opposabilité Juridique}
+Le lien entre cryptographie et investigation numérique se manifeste dans les travaux de \textbf{Eoghan Casey}, auteur de l’ouvrage de référence \textit{Digital Evidence and Computer Crime}, qui a largement contribué à définir les standards de la preuve numérique dans les enquêtes judiciaires. Ses travaux illustrent l’importance de relier les garanties cryptographiques aux exigences légales d’opposabilité.  
+
+\subsection{Pôle E : Projets et Entreprises}
+Plusieurs entreprises et projets jouent également un rôle moteur. \textbf{StarkWare} incarne la traduction industrielle des STARKs, en travaillant sur la scalabilité et la mise en production de ces preuves dans l’écosystème blockchain. \textbf{Zooko Wilcox-O’Hearn}, fondateur de \textbf{Zcash} et de l’\textbf{Electric Coin Company}, est un acteur clé de la mise en œuvre pratique des protocoles Zero-Knowledge appliqués à la confidentialité des transactions.  
+
+\subsection{Pôle F : Groupes Académiques et Industriels}
+Enfin, un sixième pôle regroupe les grandes équipes académiques et industrielles. Des institutions comme le \textbf{MIT}, \textbf{Berkeley}, le \textbf{Technion} ou encore l’\textbf{INRIA} participent activement à la recherche sur les SNARKs, les STARKs et leurs applications. Dans le domaine post-quantique, les groupes impliqués dans le développement de \textbf{CRYSTALS}, \textbf{FALCON}, \textbf{HQC} et \textbf{SPHINCS+} représentent une force collective d’innovation. Les dépôts collaboratifs tels que \textbf{arkworks} ou \textbf{libsnark} illustrent la dynamique communautaire qui anime la cryptographie contemporaine.  
+
+
+\newpage
+\section{Rôle du ZK-NR dans l'Investigation Numérique}
+\subsection{Besoins des enquêteurs}
+Dans le cadre des enquêtes numériques, les magistrats et les forces de l’ordre se heurtent à plusieurs contraintes majeures :
+
+\begin{itemize}
+    \item \textbf{Garantir l’intégrité des preuves collectées} : une preuve numérique est par nature volatile et altérable. Les enquêteurs doivent donc s’assurer que le contenu d’un disque dur, d’un message électronique ou d’un log réseau n’a subi aucune modification entre sa collecte et sa présentation au tribunal.
+    
+    \item \textbf{Prouver la non-répudiation des actes} : il ne suffit pas de montrer qu’une donnée existe ; il faut aussi démontrer de façon irréfutable que l’acte est bien attribuable à une personne donnée (ex. : un e-mail signé électroniquement par l’auteur présumé).
+    
+    \item \textbf{Préserver la confidentialité des données sensibles} : certaines enquêtes impliquent des données personnelles ou stratégiques. Il est indispensable de protéger ces informations tout en permettant une vérification cryptographique de leur validité.
+    
+    \item \textbf{Assurer la traçabilité et la chaîne de possession (chain of custody)} : chaque mouvement d’une preuve (collecte, transfert, stockage, analyse) doit être enregistré de manière fiable et opposable.
+\end{itemize}
+
+\section{Apports du ZK-NR et CLO}
+
+Les innovations récentes, notamment le protocole \textbf{ZK-NR (Zero-Knowledge Non-Repudiation)} et le cadre \textbf{CLO (Cryptographic Legal Opposability)}, répondent à ces besoins :
+
+\subsection{Besoins des enquêteurs}
+
+Dans le cadre des enquêtes numériques, les magistrats et les forces de l’ordre se heurtent à plusieurs contraintes majeures :
+
+\begin{itemize}
+    \item \textbf{Garantir l’intégrité des preuves collectées} : une preuve numérique est par nature volatile et altérable. Les enquêteurs doivent donc s’assurer que le contenu d’un disque dur, d’un message électronique ou d’un log réseau n’a subi aucune modification entre sa collecte et sa présentation au tribunal.
+   \item \textbf{Prouver la non-répudiation des actes} : il ne suffit pas de montrer qu’une donnée existe ; il faut aussi démontrer de façon irréfutable que l’acte est bien attribuable à une personne donnée (exemple : un e-mail signé électroniquement par l’auteur présumé).
+    \item \textbf{Préserver la confidentialité des données sensibles} : certaines enquêtes impliquent des données personnelles ou stratégiques. Il est indispensable de protéger ces informations tout en permettant une vérification cryptographique de leur validité.
+    \item \textbf{Assurer la traçabilité et la chaîne de possession (chain of custody)} : chaque mouvement d’une preuve (collecte, transfert, stockage, analyse) doit être enregistré de manière fiable et opposable.
+\end{itemize}
+
+\subsection{Apports du ZK-NR et CLO}
+
+Les innovations récentes, notamment le protocole \textbf{ZK-NR (Zero-Knowledge Non-Repudiation)} et le cadre \textbf{CLO (Cryptographic Legal Opposability)}, répondent à ces besoins :
+
+\begin{itemize}
+    \item \textbf{Création d’attestations invisibles mais vérifiables} : grâce aux preuves à divulgation nulle de connaissance (Zero-Knowledge Proofs), un enquêteur peut prouver l’existence ou la validité d’une information (exemple : une transaction frauduleuse) sans révéler les données sensibles associées.
+    \item \textbf{Transformation de la chaîne de possession en un processus certifié cryptographiquement} : chaque transfert ou manipulation de la preuve est scellé par une signature et une preuve cryptographique, garantissant que la chaîne de possession n’a subi aucune altération.
+    \item \textbf{Résilience face aux attaques quantiques} : l’usage de primitives post-quantiques (Dilithium, SPHINCS+) permet d’anticiper la menace des ordinateurs quantiques, qui pourraient casser les schémas classiques RSA ou ECC.
+    \item \textbf{Opposabilité juridique renforcée} : ZK-NR et CLO ajoutent une dimension institutionnelle, permettant de produire des preuves numériques qui respectent à la fois les standards cryptographiques et les exigences juridiques de recevabilité.
+\end{itemize}
+
+\subsection{Cas pratiques}
+
+\begin{itemize}
+ \textbf{Cyberfraude bancaire – Cameroun, 2022}\\
+ \\
+
+\textbf{Contexte :} Le parquet de Yaoundé a instruit une affaire de fraude où des cybercriminels avaient réussi à pirater les systèmes d'une banque locale via du phishing et des malwares.\\
+
+\textbf{Investigation numérique :}
+\begin{itemize}
+    \item Analyse des logs de connexion pour identifier les IP utilisées.
+    \item Exploitation des empreintes numériques laissées dans les transactions.
+    \item Usage de techniques de corrélation d'adresses blockchain pour retracer les flux d'argent converti en crypto-actifs.
+\end{itemize}
+\begin{itemize}
+
+\textbf{Résultat :} Plusieurs suspects ont été arrêtés. Les preuves numériques (hash des disques durs, échanges WhatsApp et courriels piégés) ont été présentées devant le tribunal.\\
+
+\textbf{Lien cryptographie :} Hashage SHA-256 pour l'intégrité des preuves et conservation en base scellée par signatures électroniques.
+
+\textbf{ Cyberescroquerie BEC (Business Email Compromise) – Yaoundé, 2021}\\
+\\
+
+\textbf{Contexte :} Une société étrangère opérant au Cameroun a porté plainte après avoir été victime d'une escroquerie par e-mails usurpés (faux ordres de virement signés au nom du DG).\\
+
+\textbf{Investigation numérique :}
+\begin{itemize}
+    \item Extraction des entêtes d’e-mails falsifiés pour tracer les serveurs relais.
+    \item Corrélation avec les journaux des fournisseurs d’accès internet pour identifier les cybercriminels.
+    \item Exploitation de l’analyse forensique des ordinateurs saisis (présence de logiciels de spoofing).
+\end{itemize}
+
+\textbf{Résultat :} Les preuves collectées ont démontré l’usurpation et ont permis de récupérer une partie des fonds.\\
+
+\textbf{Lien cryptographie :} Absence de signature numérique légale (PKI) facilitant la fraude, soulignant la pertinence de solutions comme ZK-NR/CLO.\\
+
+\textbf{Affaire “SIMBOX” – Cameroun, 2019}\\
+\\
+
+\textbf{Contexte :} Des fraudeurs installaient des SIMBOX pour détourner le trafic téléphonique international et le faire passer pour des appels locaux, causant des pertes colossales aux opérateurs et à l’État.\\
+
+\textbf{Investigation numérique :}
+\begin{itemize}
+    \item Géolocalisation des équipements frauduleux via analyse réseau.
+    \item Saisie et imagerie forensique des serveurs utilisés pour la redirection des appels.
+    \item Vérification cryptographique des journaux de trafic fournis par les opérateurs.
+\end{itemize}
+
+\textbf{Résultat :} Démantèlement d’un réseau international avec des ramifications en Afrique de l’Ouest.\\
+
+\textbf{Lien cryptographie :} Utilisation de preuves scellées par empreintes numériques pour empêcher toute contestation devant le parquet.\\
+
+\textbf{ Cas international – Affaire EncroChat (Europe, 2020)}\\
+\\
+\textbf{Contexte :} EncroChat fournissait des téléphones “chiffrés” à des milliers de criminels. Les autorités ont réussi à infiltrer le système.\\
+
+\textbf{Investigation numérique :}
+\begin{itemize}
+    \item Exploitation des failles dans le chiffrement propriétaire.
+    \item Récupération massive de communications chiffrées (drogue, assassinats commandités, blanchiment).
+\end{itemize}
+
+\textbf{Résultat :} Plus de 6 500 arrestations en Europe.\\
+
+\textbf{Lien cryptographie :} Montre comment le chiffrement, mal implémenté, peut être retourné contre les criminels.
+
+\end{itemize}
+
+\section{Positionnement dans l’investigation numérique moderne}
+
+Dans le paysage actuel de l’investigation numérique, où la dématérialisation des échanges et la complexité des environnements techniques augmentent, l’intégration de mécanismes cryptographiques avancés n’est plus un luxe mais une nécessité.
+
+\begin{itemize}
+    \item \textbf{Par rapport aux méthodes traditionnelles} : les approches classiques reposaient principalement sur le hashing (SHA-256, MD5) et les signatures électroniques simples. Si elles restent utiles, elles montrent leurs limites face aux menaces quantiques ou aux exigences légales internationales.
+    \item \textbf{Apport des nouvelles approches} : ZK-NR, CLO et les primitives CASH (CEE, AOW, SH) permettent de franchir un cap en conciliant sécurité technique et recevabilité juridique.
+    \item \textbf{Vers une convergence crypto-légale} : l’investigation numérique moderne n’est pas seulement un défi technique, c’est aussi un enjeu d’opposabilité. L’enquêteur doit produire des preuves exploitables devant des juges, dans des contextes nationaux ou transfrontaliers. Les technologies cryptographiques émergentes assurent cette convergence entre rigueur scientifique et valeur juridique.
+\end{itemize}
+\end{itemize}
+\newpage
+\section*{Conclusion}
+\addcontentsline{toc}{section}{Conclusion}
+L’évolution de la cryptographie, de simple outil de protection des communications à instrument d’opposabilité juridique, transforme profondément le champ de l’investigation numérique.
+
+Désormais, les enquêteurs ne cherchent pas seulement à sécuriser ou à cacher les informations, mais à produire des preuves \textbf{authentiques, vérifiables, inaltérables et légalement recevables}. Les protocoles comme ZK-NR, les cadres comme CLO, ainsi que les primitives post-quantiques, ouvrent la voie à une nouvelle génération de pratiques forensiques où la preuve numérique devient incontestable devant un tribunal.
+
+Ainsi, l’investigation numérique moderne ne se limite plus à collecter des données, mais s’inscrit dans une démarche intégrée où la cryptographie devient le \textbf{garant de la vérité numérique}.
+ \newpage
+\bibliographystyle{plain} 
+\section*{Références}
+\addcontentsline{toc}{section}{Références}
+\begin{enumerate}
+    \item Thierry Emmanuel Minka Minguidoi, Mani Onana Flavien Serge, Djotio Ndié Thomas, \textit{Exploring ZK-NR: A Layered Cryptographic Architecture for Explainable Non-Repudiation}, Cryptology ePrint Archive, Paper 2025/1138. \href{https://eprint.iacr.org/2025/1138}{https://eprint.iacr.org/2025/1138}
+
+    \item Thierry Emmanuel Minka Minguidoi et coauthors, \textit{The CRO Trilemma: Incompatibility Between Confidentiality, Reliability, and Legal Opposability}, Cryptology ePrint Archive, Paper 2025/1348. \href{https://eprint.iacr.org/2025/1348}{https://eprint.iacr.org/2025/1348}
+
+    \item Thierry Emmanuel Minka Minguidoi et coauthors, \textit{Q2CSI 2025: Quantum-Compliant Cryptographic Systems Investigation}, Cryptology ePrint Archive, Paper 2025/1380. \href{https://eprint.iacr.org/2025/1380}{https://eprint.iacr.org/2025/1380}
+
+    \item Thierry Emmanuel Minka Minguidoi et coauthors, \textit{Design ZK-NR: Layered Post-Quantum Protocol for Legally Explainable Zero-Knowledge Non-Repudiation}, Cryptology ePrint Archive, Paper 2025/1422. \href{https://eprint.iacr.org/2025/1422}{https://eprint.iacr.org/2025/1422}
+
+    \item Thierry Emmanuel Minka Minguidoi et coauthors, \textit{Formalizing ZK-NR: UC-Security Under Contextual Entropy Constraints}, Cryptology ePrint Archive, Paper 2025/1529. \href{https://eprint.iacr.org/2025/1529}{https://eprint.iacr.org/2025/1529}
+
+    \item Thierry Emmanuel Minka Minguidoi et coauthors, \textit{The AIIP Problem: Post-Quantum Hardness via Affine Iterated Inversion}, Cryptology ePrint Archive, Paper 2025/1590. \href{https://eprint.iacr.org/2025/1590}{https://eprint.iacr.org/2025/1590}
+
+    \item Thierry Emmanuel Minka Minguidoi et coauthors, \textit{Chaotic Entropic Expansion (CEE): Post-Quantum Data Confidentiality Primitive}, Cryptology ePrint Archive, Paper 2025/1615. \href{https://eprint.iacr.org/2025/1615}{https://eprint.iacr.org/2025/1615}
+
+    \item Thierry Emmanuel Minka Minguidoi et coauthors, \textit{Affine One-Wayness (AOW): Post-Quantum Temporal Verification via Polynomial Iteration}, Cryptology ePrint Archive, Paper 2025/1662. \href{https://eprint.iacr.org/2025/1662}{https://eprint.iacr.org/2025/1662}
+
+    \item Thierry Emmanuel Minka Minguidoi et coauthors, \textit{SH: Post-Quantum Secure Hashing and Signature Constructions}, Cryptology ePrint Archive, Paper 2025/1708. \href{https://eprint.iacr.org/2025/1708}{https://eprint.iacr.org/2025/1708}
+
+    \item Cyberfraude bancaire – Cameroun, 2022 : \href{https://www.businessincameroon.com/public-management/0703-12393-cameroon-lost-xaf12-2-bln-to-cybercrime-in-2021-antic?utm_source=chatgpt.com}{businessincameroon.com}
+    
+    \item Cyberescroquerie BEC – Yaoundé, 2021 : \href{https://lefinancierdafrique.com/15598/cybercriminalite-afriland-first-bank-denonce-lutilisation-de-son-label-pour-des-arnaques/?utm_source=chatgpt.com}{lefinancierdafrique.com}
+    
+    \item Affaire SIMBOX – Cameroun, 2019 : \href{https://www.agenceecofin.com/law/0509-32083-sim-box-fraud-fcfa-13-billion-in-losses-for-cameroon-telecom-operators-in-2015-already?utm_source=chatgpt.com}{agenceecofin.com}
+    
+    \item Affaire EncroChat – Europe, 2020 : \href{https://www.europol.europa.eu/media-press/newsroom/news/dismantling-encrypted-criminal-encrochat-communications-leads-to-over-6-500-arrests-and-close-to-eur-900-million-seized?utm_source=chatgpt.com}{europol.europa.eu}
+\end{enumerate}
+
+
+
+\end{document}
