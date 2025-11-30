@@ -1,0 +1,596 @@
+\documentclass[memoire, 12pt]{report}
+\usepackage[top = 1.9cm, bottom = 1.5cm, left = 1.9cm, right = 2.1cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem}
+%\usepackage{algorithm2e}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{multirow}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres r\'ef\'erences}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[babel=true]{csquotes}
+\setlength{\fboxrule}{0.01cm}
+\setlength{\fboxsep}{0.5cm}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{url}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{glossaries}
+%\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[bottom]{footmisc}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{glossaries}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{minted}
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+
+\usepackage[utf8]{inputenc}   % encodage du fichier source
+\usepackage[T1]{fontenc}      % encodage des polices
+\usepackage[french]{babel}    % pour le français
+
+
+
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+
+
+
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc} 
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+\title{Document_De_NDJEBAYI_PATRICK_N}
+\author{}
+\date{MOIS_ICI 2025}
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!orange,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{enspy.png}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{RAPPORT}}}\\
+		\Large{{\textbf{\textit{Note de Lecture}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{0.1cm}
+		\normalsize\textbf{Option }:\\			
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			
+			\hspace{0.02cm} \textsl{\textbf{NDJEBAYI PATRICK N.}, 24P827}\\\\
+			
+			
+		\end{tabular}
+	\end{center}
+	
+	\begin{center}
+	\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+	\hspace{0.02cm} \textsl{M. Thierry MINKA}
+	\end{center}
+	
+    
+	\vspace{2cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+	
+\end{titlepage}
+\tableofcontents
+\newpage
+
+\begin{document}
+
+\section {Section 1 : Introduction à l'Investigation Numérique dans la Police Judiciaire}
+
+L'investigation numérique, ou \textit{digital forensic}, est une discipline consistant à collecter, analyser, conserver et présenter des preuves numériques issues de supports électroniques (ordinateurs, téléphones, réseaux, etc.) afin de soutenir des enquêtes judiciaires, administratives ou privées. Dans un monde de plus en plus numérisé et confronté à la cybercriminalité, cette discipline revêt une importance croissante, particulièrement dans le domaine policier.
+
+La question centrale abordée est la suivante : en quoi l’investigation numérique constitue-t-elle un outil indispensable pour la police judiciaire dans la lutte contre la criminalité moderne ? Pour y répondre, l’analyse s’articulera autour de trois axes principaux :
+\begin{itemize}
+    \item Les apports essentiels de l’investigation numérique à la police judiciaire ;
+    \item Ses principaux domaines d’application ;
+    \item Les outils, défis et limites de cette pratique.
+\end{itemize}
+
+Cette introduction pose les bases d’une réflexion approfondie sur le rôle stratégique de l’investigation numérique dans les enquêtes contemporaines.
+
+
+\section {Section 2 : Protocole ZK-NR et son Positionnement dans l'Investigation Numérique Moderne}
+
+Cette section présente le protocole ZK-NR (Zero-Knowledge Non-Repudiation), une architecture cryptographique modulaire visant à assurer une non-répudiation préservant la confidentialité pour les services numériques publics.
+
+\subsection{Concepts Fondamentaux}
+La \textbf{non-répudiation numérique} garantit qu'un expéditeur ou un destinataire ne peut nier avoir participé à une transaction. Ses principaux outils incluent :
+\begin{itemize}
+    \item Les \textbf{signatures numériques} pour l'authentification et l'intégrité
+    \item Les \textbf{certificats électroniques} pour l'identification des parties
+    \item L'\textbf{horodatage numérique} pour la preuve temporelle
+    \item Les \textbf{fonctions de hachage} pour l'intégrité des données
+\end{itemize}
+
+\subsection{Cadre Théorique et Innovations}
+Le protocole ZK-NR s'appuie sur plusieurs avancées théoriques :
+\begin{itemize}
+    \item Le \textbf{Trilemme CRO} qui établit l'impossibilité de satisfaire simultanément Confidentialité, Fiabilité et Opposabilité Juridique
+    \item Le cadre \textbf{Q2CSI} qui propose une architecture modulaire pour minimiser cette incompatibilité
+    \item Les primitives cryptographiques \textbf{CEE, AOW et SH} assurant respectivement confidentialité, fiabilité et opposabilité juridique
+\end{itemize}
+
+\subsection{Apports pour l'Investigation Numérique}
+ZK-NR répond aux besoins spécifiques des enquêteurs :
+\begin{itemize}
+    \item \textbf{Garantie d'intégrité} des preuves collectées
+    \item \textbf{Non-répudiation} des actes numériques
+    \item \textbf{Préservation de la confidentialité} des données sensibles
+    \item \textbf{Traçabilité} via une chaîne de possession cryptographique
+\end{itemize}
+
+\subsection{Positionnement dans l'Investigation Moderne}
+ZK-NR représente une avancée significative par rapport aux méthodes traditionnelles :
+\begin{itemize}
+    \item Il combine \textbf{sécurité post-quantique} et \textbf{recevabilité juridique}
+    \item Il permet de produire des \textbf{preuves vérifiables sans révéler d'informations sensibles}
+    \item Il s'inscrit dans une \textbf{convergence entre exigences techniques et légales}
+\end{itemize}
+
+En conclusion, le protocole ZK-NR ouvre la voie à une nouvelle génération de pratiques forensiques où la preuve numérique devient à la fois techniquement robuste et légalement incontestable.
+
+\section{Section 3 : Les 10 cas africains les plus importants de hacking}
+
+Cette section présente une analyse des dix cyberattaques les plus significatives survenues en Afrique entre 2015 et 2025, mettant en lumière les défis de la cybersécurité sur le continent.
+
+\subsection{Contexte de la cybersécurité en Afrique}
+L'Afrique connaît une révolution numérique rapide mais fait face à d'importantes vulnérabilités :
+\begin{itemize}
+    \item Faible maturité institutionnelle en matière de cybersécurité
+    \item Pénurie d'expertise locale (moins d'1 expert/100 000 habitants)
+    \item Infrastructures obsolètes et dépendance technologique extérieure
+    \item Augmentation de 300\% des cyberattaques en 10 ans (INTERPOL 2024)
+\end{itemize}
+
+\subsection{Méthodologie d'investigation}
+L'analyse s'appuie sur une approche structurée en 5 étapes :
+\begin{enumerate}
+    \item Identification de l'incident
+    \item Collecte des preuves
+    \item Préservation de l'intégrité
+    \item Analyse technique (Autopsy, FTK, Wireshark)
+    \item Rédaction du rapport
+\end{enumerate}
+
+\subsection{Cas emblématiques analysés}
+\begin{itemize}
+    \item \textbf{Transnet (Afrique du Sud, 2021)} : Ransomware paralysant les ports, 60M\$ de pertes
+    \item \textbf{CNSS (Maroc, 2025)} : Fuite de données de 2 millions de salariés
+    \item \textbf{Eneo (Cameroun, 2024)} : Attaque sur le fournisseur d'électricité national
+    \item \textbf{GhostLocker 2.0 (Égypte, 2024)} : Ransomware ciblant 30 organisations
+    \item \textbf{Pegasus (Maroc, 2020-2021)} : Logiciel espion contre des personnalités
+    \item \textbf{Banques ivoiriennes} : Phishing et RAT, 6M€ de pertes
+    \item \textbf{Santé tunisien (2021)} : DDoS et ransomware affectant les hôpitaux
+    \item \textbf{Ethiopian Airlines (2023)} : Compromission du système de réservation
+    \item \textbf{MTN Nigeria (2018)} : Fraude au mobile money (8M\$)
+    \item \textbf{Banque centrale du Nigeria (2015-2016)} : Intrusion SWIFT longue durée
+\end{itemize}
+
+\subsection{Recommandations}
+Pour renforcer la cybersécurité africaine :
+\begin{itemize}
+    \item Former massivement les experts en forensic numérique
+    \item Créer des CERT/CSIRT régionaux
+    \item Harmoniser les lois via la Convention de Malabo
+    \item Développer un cloud souverain africain
+    \item Renforcer la gouvernance numérique des entreprises publiques
+\end{itemize}
+
+\subsection{Conclusion}
+L'avenir numérique de l'Afrique dépend de sa capacité à sécuriser ses infrastructures et à former ses talents. La cybersécurité doit devenir une responsabilité partagée pour assurer un développement numérique durable.
+
+\section{Section 4 : Les trois meilleurs logiciels de rédaction de mémoire}
+
+Cette section présente une analyse comparative des trois principaux logiciels utilisés pour la rédaction académique : Overleaf, Microsoft Word et Zotero.
+
+\subsection{Overleaf : L'excellence académique par \LaTeX}
+\begin{itemize}
+    \item \textbf{Type} : Éditeur \LaTeX\ en ligne collaboratif
+    \item \textbf{Atouts} : Qualité typographique exceptionnelle, gestion avancée des références croisées, collaboration en temps réel, modèles académiques prêts à l'emploi
+    \item \textbf{Limites} : Courbe d'apprentissage significative, édition hors ligne limitée
+    \item \textbf{Public cible} : Domaines scientifiques et techniques (mathématiques, physique, informatique)
+\end{itemize}
+
+\subsection{Microsoft Word : Le référencement en traitement de texte}
+\begin{itemize}
+    \item \textbf{Type} : Traitement de texte universel
+    \item \textbf{Atouts} : Interface familière, gestion avancée des styles, génération automatique des tables, suivi des modifications
+    \item \textbf{Limites} : Gestion bibliographique native limitée, risques d'instabilité sur les longs documents
+    \item \textbf{Public cible} : Étudiants débutants, sciences humaines et sociales
+\end{itemize}
+
+\subsection{Zotero : Le spécialiste de la bibliographie}
+\begin{itemize}
+    \item \textbf{Type} : Gestionnaire de références open-source
+    \item \textbf{Atouts} : Capture automatique des métadonnées, intégration avec Word et Overleaf, gestion de milliers de styles de citation, synchronisation cloud
+    \item \textbf{Limites} : Nécessite un apprentissage modéré
+    \item \textbf{Public cible} : Tous les profils académiques nécessitant une gestion rigoureuse des références
+\end{itemize}
+
+\subsection{Combinaisons gagnantes recommandées}
+\begin{itemize}
+    \item \textbf{Profil débutant} : Word + Zotero (accessibilité et gestion bibliographique)
+    \item \textbf{Profil scientifique} : Overleaf + Zotero (qualité professionnelle et rigueur scientifique)
+    \item \textbf{Profil collaboratif} : Overleaf + Zotero Groups (travail d'équipe optimisé)
+\end{itemize}
+
+\subsection{Conclusion}
+Le choix optimal dépend du profil de l'étudiant et des exigences du mémoire. Aucun outil seul ne couvre tous les besoins, mais les combinaisons stratégiques permettent d'atteindre l'excellence académique. La maîtrise des outils doit servir la substance intellectuelle du travail et non la remplacer.
+
+\section{Section 5 : Algorithmes de reconnaissance faciale}
+
+Cette section présente une analyse approfondie des algorithmes de reconnaissance faciale, de leur fonctionnement technique aux enjeux éthiques et juridiques dans le contexte de l'investigation numérique.
+
+\subsection{Fonctionnement et architecture des systèmes biométriques}
+\begin{itemize}
+    \item \textbf{Enrôlement} : Capture et stockage des caractéristiques faciales dans une base de données
+    \item \textbf{Identification} : Recherche 1-N pour retrouver une identité parmi tous les profils enregistrés
+    \item \textbf{Vérification} : Comparaison 1-1 pour confirmer une identité déclarée
+    \item \textbf{Architecture modulaire} : Acquisition → Extraction → Correspondance → Décision
+\end{itemize}
+
+\subsection{Méthodes de reconnaissance}
+\begin{itemize}
+    \item \textbf{Méthodes globales} : Utilisent l'ensemble du visage (PCA/Eigenfaces, LDA, SVM)
+    \item \textbf{Méthodes locales} : Se concentrent sur des régions spécifiques (yeux, nez, bouche)
+    \item \textbf{Méthodes hybrides} : Combinent approches globales et locales
+    \item \textbf{Détecteurs de points d'intérêt} : SIFT, HOG, SURF pour l'extraction de caractéristiques
+\end{itemize}
+
+\subsection{Avantages et limites techniques}
+\begin{itemize}
+    \item \textbf{Atouts} : Rapidité, automatisation, capacité à traiter de grands volumes de données
+    \item \textbf{Limites} : Performance dégradée en conditions réelles (lumière, angles), architecture "boîte noire", problèmes d'interopérabilité
+\end{itemize}
+
+\subsection{Enjeux sécuritaires et éthiques}
+\begin{itemize}
+    \item \textbf{Vulnérabilités} : Attaques adversariales, deepfakes, protection des données biométriques
+    \item \textbf{Impact éthique} : Atteinte à la vie privée, biais algorithmiques, discrimination
+    \item \textbf{Enjeux juridiques} : Conformité légale, responsabilité, supervision et traçabilité
+\end{itemize}
+
+\subsection{Recommandations pour le contexte camerounais}
+\begin{itemize}
+    \item \textbf{Technique} : Documentation des pipelines, tests locaux, approches hybrides
+    \item \textbf{Sécurité} : Tests d'intrusion, anti-spoofing multi-sensoriel, chiffrement des templates
+    \item \textbf{Éthique} : Études d'impact, audits de biais, communication transparente
+    \item \textbf{Juridique} : Base légale claire, alignement sur la loi sur les données personnelles
+    \item \textbf{Opérationnel} : Validation humaine obligatoire, procédures documentées, déploiement progressif
+\end{itemize}
+
+\subsection{Conclusion}
+La reconnaissance faciale représente un outil puissant pour l'investigation numérique mais nécessite un encadrement strict pour concilier efficacité opérationnelle, sécurité technique et respect des droits fondamentaux. Son déploiement au Cameroun doit s'accompagner d'un cadre juridique robuste et de procédures de contrôle rigoureuses.
+
+\section{Section 6 : Deepfake Vocal - Enjeux et Investigation}
+
+Cette section analyse les deepfakes vocaux, leur évolution technologique et leurs implications pour l'investigation numérique.
+
+\subsection{Évolution des deepfakes audios}
+\begin{itemize}
+    \item \textbf{1930-1990} : Premières reproductions vocales électroniques (Voder, vocoders)
+    \item \textbf{2000-2015} : Modèles statistiques HMM pour une synthèse plus naturelle
+    \item \textbf{2016} : Révolution avec WaveNet (DeepMind) et le deep learning
+    \item \textbf{2016-2017} : Premiers démonstrations publiques (Adobe VoCo, Lyrebird)
+    \item \textbf{2017-2020} : Démocratisation avec outils open-source (SV2TTS)
+    \item \textbf{2019-aujourd'hui} : Usage malveillant (fraudes, usurpation d'identité)
+\end{itemize}
+
+\subsection{Contextes d'utilisation}
+\begin{itemize}
+    \item \textbf{Applications légitimes} : Accessibilité pour personnes handicapées, doublage audiovisuel, assistants vocaux, préservation de voix
+    \item \textbf{Applications malveillantes} : Escroqueries financières, usurpation d'identité, manipulation politique, falsification de preuves
+\end{itemize}
+
+\subsection{Enjeux pour l'investigation numérique}
+\begin{itemize}
+    \item \textbf{Atteinte au triptyque CRO} : 
+    \begin{itemize}
+        \item Confidentialité compromise par la diffusion non autorisée
+        \item Fiabilité remise en question des preuves audio
+        \item Opposabilité juridique fragilisée
+    \end{itemize}
+    \item \textbf{Complexification de la vérification} : Nécessité de techniques avancées de détection
+    \item \textbf{Besoin de compréhension technique} : Maîtrise des réseaux neuronaux et vocodeurs essentielle
+\end{itemize}
+
+\subsection{Cas pratique : MINIMAX Audio}
+\begin{itemize}
+    \item Plateforme de synthèse vocale par IA permettant le clonage vocal
+    \item Processus : Voice Clone → Text To Speech → Génération de deepfakes
+    \item Résultat : Rendu réaliste indétectable à l'oreille humaine
+    \item Applications détournées : Escroqueries, usurpation, désinformation
+\end{itemize}
+
+\subsection{Contre-mesures et prévention}
+\begin{itemize}
+    \item \textbf{Détection technologique} : Outils d'analyse des anomalies vocales
+    \item \textbf{Sensibilisation} : Formation des utilisateurs aux risques
+    \item \textbf{Cadre légal} : Lois spécifiques et watermarking obligatoire
+    \item \textbf{Sécurisation} : Authentification multi-facteur et reconnaissance dynamique
+    \item \textbf{Éthique} : Charte de transparence et respect du consentement
+\end{itemize}
+
+\subsection{Conclusion}
+Les deepfakes vocaux représentent une double facette : opportunité d'innovation et menace sécuritaire. Leur encadrement nécessite une approche multidimensionnelle combinant solutions techniques, cadre juridique et éthique pour préserver l'intégrité des preuves numériques.
+
+
+\section{Section 7 : Simulation de Falsification de Conversations WhatsApp}
+
+Cette section présente une étude pratique sur la falsification de conversations WhatsApp et ses implications pour l'investigation numérique.
+
+\subsection{Mise en situation}
+\begin{itemize}
+    \item Scénario : Relation extra-conjugale entre un enseignant (Paul KENGNE) et son étudiante
+    \item Éléments fournis : 7 captures d'écran WhatsApp et 2 photos compromettantes
+    \item Contenu des échanges : Messages affectifs, sexuels explicites, promesses de quitter l'épouse
+\end{itemize}
+
+\subsection{Méthodologie de falsification}
+\begin{itemize}
+    \item \textbf{Chatsmock} : Application web pour générer de fausses conversations WhatsApp
+    \begin{itemize}
+        \item Définition des participants (noms, photos de profil)
+        \item Génération de messages avec date/heure personnalisées
+        \item Statut de lecture modifiable
+    \end{itemize}
+    \item \textbf{Adobe Photoshop} : Retouche graphique pour améliorer le réalisme
+    \begin{itemize}
+        \item Correction des détails graphiques (alignement, couleurs)
+        \item Insertion d'images supplémentaires
+        \item Adaptation à l'interface d'un smartphone réel
+    \end{itemize}
+\end{itemize}
+
+\subsection{Limites et comparaison d'outils}
+\begin{itemize}
+    \item \textbf{Limites de Chatsmock} :
+    \begin{itemize}
+        \item Interface pas toujours à jour avec les dernières versions WhatsApp
+        \item Fonctionnalités limitées (pas de notes vocales, appels, réactions)
+        \item Export uniquement en format image
+        \item Détection possible par analyse forensique
+    \end{itemize}
+    \item \textbf{Outils alternatifs} : FakeChat, WhatsFake, Photoshop, outils forensiques détournés
+\end{itemize}
+
+\subsection{Impact sur l'investigation numérique}
+\begin{itemize}
+    \item Baisse de fiabilité des captures d'écran comme preuves
+    \item Difficulté accrue pour les experts en analyse forensique
+    \item Risques de manipulation judiciaire et disciplinaire
+    \item Multiplication des faux dossiers et preuves corrompues
+\end{itemize}
+
+\subsection{Recommandations}
+\begin{itemize}
+    \item Vérification technique des métadonnées et signatures numériques
+    \item Sensibilisation des acteurs judiciaires aux falsifications
+    \item Utilisation d'outils spécialisés de détection de manipulations
+    \item Privilégier les données brutes des bases de données plutôt que captures d'écran
+    \item Renforcement du cadre légal sur l'acceptabilité des preuves numériques
+\end{itemize}
+
+\subsection{Conclusion}
+La facilité de falsification des conversations WhatsApp démontre la fragilité des preuves numériques basées sur des captures d'écran. L'investigation numérique doit adopter des méthodes de vérification rigoureuses et des techniques avancées pour garantir l'intégrité des preuves dans un environnement où la manipulation devient de plus en plus accessible.
+
+\section{Section 8 : Conception et Analyse d'un Faux Profil TikTok}
+
+Cette section présente une étude pratique sur la création d'un faux profil TikTok à des fins pédagogiques d'investigation numérique.
+
+\subsection{Démarche méthodologique}
+\begin{itemize}
+    \item \textbf{Création du profil} : Utilisation d'un service de messagerie temporaire (temp-mail.org) pour préserver l'anonymat
+    \item \textbf{Identité} : Profil "InnoTrends" avec la bio : \textit{"Découvre ce que les hackers ne veulent pas que tu saches"}
+    \item \textbf{Approche éthique} : Cadre strictement pédagogique sans usurpation réelle
+\end{itemize}
+
+\subsection{Choix de la niche : Cybersécurité}
+\begin{itemize}
+    \item Thématique d'actualité et essentielle face aux menaces numériques
+    \item Permet une mission éducative de sensibilisation
+    \item Respecte le cadre éthique de l'investigation
+    \item Aborde des sujets variés : mots de passe, données personnelles, arnaques en ligne
+\end{itemize}
+
+\subsection{Stratégie de contenu}
+\begin{itemize}
+    \item Approche éducative et engageante avec ton léger et humoristique
+    \item Thématiques accessibles : sécurité des mots de passe, Wi-Fi public, phishing
+    \item Visuels attractifs (bandes dessinées, messages interactifs)
+    \item Respect des règles de la plateforme sans manipulation
+\end{itemize}
+
+\subsection{Outils utilisés}
+\begin{itemize}
+    \item TikTok Analytics pour le suivi des performances
+    \item ChatGPT pour la génération de contenu
+    \item Canva pour la création des visuels
+    \item Temp Mail pour l'anonymat
+    \item Tableau de bord personnel pour les observations
+\end{itemize}
+
+\subsection{Contenus publiés}
+\begin{itemize}
+    \item 6 publications orientées cybersécurité :
+    \begin{itemize}
+        \item Bonnes pratiques des mots de passe
+        \item Dangers du Wi-Fi public
+        \item Détection des arnaques de phishing (faux lien Orange Money)
+        \item Protection des informations personnelles
+        \item Gestion de l'empreinte numérique
+    \end{itemize}
+    \item Résultats : Plus de 100 likes, jusqu'à 310 vues par publication
+\end{itemize}
+
+\subsection{Analyse et observations}
+\begin{itemize}
+    \item Stratégie pertinente : contenu éducatif + ton ludique + visuels accrocheurs
+    \item Thématiques proches du quotidien facilitent l'engagement
+    \item Bio percutante essentielle pour l'attractivité
+    \item Limites éthiques de la création de faux profils même à but pédagogique
+\end{itemize}
+
+\subsection{Recommandations}
+\begin{itemize}
+    \item Renforcer l'éducation à la cybersécurité dès le secondaire
+    \item Encadrer l'usage des faux profils pédagogiques dans un cadre légal
+    \item Promouvoir la collaboration interdisciplinaire
+    \item Intégrer des exercices pratiques dans les programmes académiques
+\end{itemize}
+
+\subsection{Conclusion}
+L'expérience démontre l'efficacité des réseaux sociaux pour la sensibilisation à la cybersécurité, tout en soulignant l'importance d'une approche éthique et encadrée dans ce type d'investigation numérique pédagogique.
+
+\end{document}
