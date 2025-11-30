@@ -1,0 +1,445 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[french]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{titlesec}
+\usepackage{tocloft}
+\usepackage{enumitem}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{titlepic}
+\usepackage{lmodern}
+\usepackage{amsmath}  % Pour \mathrm, \dfrac, etc.
+\usepackage{amssymb}  % Pour les symboles mathématiques
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+% Configuration de la page
+\geometry{left=3cm, right=2.5cm, top=2.5cm, bottom=2.5cm}
+
+% Style des titres
+\titleformat{\section}
+{\normalfont\Large\bfseries}{\thesection}{1em}{}
+\titleformat{\subsection}
+{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+
+% Style de la table des matières
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+\begin{document}
+
+% Page de titre
+\begin{titlepage}
+    \centering
+
+\begin{tabular}{p{0.45\linewidth} p{0.45\linewidth}}
+\centering
+\textbf{RÉPUBLIQUE DU CAMEROUN}\\
+******\\
+Paix -- Travail -- Patrie\\
+******\\
+\textbf{UNIVERSITÉ DE YAOUNDÉ I}\\
+******\\
+\textbf {École Nationale Supérieure\\
+Polytechnique de Yaoundé}\\
+******\\
+\textbf {Département de Génie Informatique}\\
+****** &
+\centering
+\textbf{REPUBLIC OF CAMEROON}\\
+******\\
+Peace -- Work -- Fatherland\\
+******\\
+\textbf{UNIVERSITY OF YAOUNDÉ I}\\
+******\\
+\textbf {National Advanced School\\
+Engineering of Yaounde}\\
+******\\
+\textbf {Computers Engineering Department}\\
+****** \\
+\end{tabular}
+\vspace{2cm}
+
+    \begin{LARGE}
+
+    \textbf{INTRODUCTION AUX TECHNIQUES D'INVESTIGATION NUMERIQUE}
+    \end{LARGE}
+
+    \vspace{2cm}
+
+    \begin{Large}
+    \textbf{THEME: RESOLUTION DES EXERCICES DU CHAP 2}
+    \end{Large}
+    
+    \vspace{5cm}
+	
+	
+	
+	\begin{flushleft}
+	\textbf{PAR:}
+	\end{flushleft}
+    \begin{tabular}{|>{\centering\arraybackslash}p{7cm}|>{\centering\arraybackslash}p{4cm}|>{\centering\arraybackslash}p{3cm}|}
+        \hline
+        \textbf{NOMS \& PRENOMS} & \textbf{FILIERE  } & \textbf{MATRICULE} \\
+        \hline
+        WANSI GILLES GILDAS & \textbf{HN-CIN-L4} & \textbf{22P037} \\
+        \hline
+    \end{tabular}
+
+    \vspace{1cm}
+	\begin{Large}
+	Sous la supervision de Ing THIERRY MINKA
+	\end{Large}
+    
+    \vspace{1cm}
+	\begin{large}
+	Année Académique 2025/2026
+	\end{large}
+\end{titlepage}
+
+\tableofcontents
+\clearpage
+
+\section{Introduction}
+Ce corrigé s'appuie sur le Chapitre 2 (« Histoire de l'Investigation Numérique ») et le Guide de correction (Guide1). Les objets principaux sont les vecteurs de dominance des régimes de vérité numérique, l'analyse foucaldienne d'une affaire historique (Enron), la formalisation d'un modèle d'évolution variant dans le temps et l'analyse du trilemme Confidentialité--Fiabilité--Opposabilité (CRO).
+
+\section{Partie 1 — Analyse historique et épistémologique}
+
+\subsection{1.1 Choix des périodes et vecteurs de dominance}
+Nous comparons deux périodes :
+\begin{itemize}
+  \item \textbf{1990--2000} : professionnalisation et institutionnalisation.
+  \item \textbf{2010--2020} : ère computationnelle (big data, cloud).
+\end{itemize}
+
+On représente chaque régime par un vecteur convexe
+\[
+\mathbf{R} = ( \alpha_T,\; \alpha_J,\; \alpha_S,\; \alpha_P )
+\]
+avec $\alpha_i \ge 0$ et $\sum_i \alpha_i = 1$, où
+\begin{description}
+  \item[$\alpha_T$] dominance technologique,
+  \item[$\alpha_J$] dominance juridique / normative,
+  \item[$\alpha_S$] dominance sociale / culturelle,
+  \item[$\alpha_P$] dominance des pratiques professionnelles.
+\end{description}
+
+\paragraph{Vecteurs choisis (justification en texte) :}
+\begin{table}[h]
+  \centering
+  \caption{Vecteurs de dominance choisis}
+  \begin{tabular}{l c c c c}
+    \toprule
+    Période & $\alpha_T$ & $\alpha_J$ & $\alpha_S$ & $\alpha_P$ \\
+    \midrule
+    1990--2000 & 0.20 & 0.40 & 0.20 & 0.20 \\
+    2010--2020 & 0.50 & 0.10 & 0.20 & 0.20 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Justification synthétique}
+\begin{itemize}
+  \item \textbf{1990--2000} : émergence d'institutions, de la chaîne de custody et de règles procédurales (poids élevé de $\alpha_J$).
+  \item \textbf{2010--2020} : montée en puissance des techniques d'analyse algorithmique et du cloud (poids élevé de $\alpha_T$).
+\end{itemize}
+
+\subsection{1.2 Discontinuités épistémologiques (Foucault)}
+Selon la méthode foucaldienne, une \emph{épistémè} est reconfigurée lorsque les conditions d'énonciation et d'opposabilité changent. On identifie plusieurs ruptures :
+\begin{itemize}
+  \item Passage d'une épistémè fondée sur l'expertise technique individuelle à une épistémè juridique/institutionnelle (normes, procédures).
+  \item Transition vers une épistémè computationnelle : l'algorithme devient producteur d'énoncés probants (``vérité algorithmique'').
+  \item Ces ruptures changent ce qui est \emph{dicible} (ce qui peut être présenté comme preuve) et \emph{pensable} (ce qui est concevable comme preuve).
+\end{itemize}
+
+\subsection{1.3 Explication sociotechnique des ruptures}
+Les ruptures résultent d'interactions non-linéaires entre :
+\begin{enumerate}
+  \item l'évolution technologique (capacité de stockage, calcul, cryptographie),
+  \item la pression institutionnelle (lois, normes, cas juridiques),
+  \item les transformations sociales (massification des usages numériques),
+  \item la professionnalisation (standardisation, guides).
+\end{enumerate}
+
+\paragraph{Nature de la transition}
+La transition est \emph{mixte} : lente accumulation des capacités techniques avec des événements ponctuels (scandales, grandes opérations) produisant des bascules rapides — phénomène proche du \emph{punctuated equilibrium}.
+
+\subsection{2 — Étude de cas foucaldienne : \emph{Enron} (2001)}
+\subsubsection{2.1 Contexte et raisons du choix}
+L'affaire Enron illustre l'émergence de l'analyse algorithmique (e-discovery) et la transformation de la preuve documentaire en preuve algorithmique admise par la procédure.
+
+\subsubsection{2.2 Analyse comme formation discursive}
+\begin{itemize}
+  \item \textbf{Conditions de possibilité} : masses documentaires électroniques, outils d'indexation et d'analyse automatique.
+  \item \textbf{Acteurs} : experts forensiques, avocats, juges, journalistes.
+  \item \textbf{Discours dominant} : l'algorithme et l'indexation documentaire produisent des énoncés admissibles comme preuve si la méthode est reproduite.
+  \item \textbf{Régime d'énonciation} : transformation du statut de la preuve (du document isolé à l'ensemble corrélé et analysé).
+\end{itemize}
+
+\subsubsection{2.3 Dicible / pensable à l'époque}
+\begin{itemize}
+  \item \emph{Dicible} : corrélations entre documents, correspondances électroniques, motifs de fraude identifiés par des outils d'analyse.
+  \item \emph{Non-pensable ou problématique} : perte d'information liée aux métadonnées détruites, limites d'opposabilité des résultats d'algorithmes non-transparent.
+\end{itemize}
+
+\subsubsection{2.4 Comparaison (Enron vs Silk Road)}
+\begin{description}
+  \item[Enron (2001)] : preuve textuelle et documentaire, e-discovery, méthodes d'analyse textuelle.
+  \item[Silk Road (2013)] : multi-couches (blockchain, Tor, métadonnées), corrélation blockchain + réseau, forte dépendance computationnelle.
+\end{description}
+La différence clé : Silk Road exige une investigation transverse (cryptographie + réseau + application), tandis qu'Enron reposait principalement sur l'analyse documentaire.
+
+\clearpage
+\section{Partie 2 — Modélisation mathématique et prospective}
+
+\subsection{ Modèle mathématique proposé}
+Reprenons la formalisation proposée dans le chapitre :
+\[
+\mathbf{R}_{t+1} = F\big(\mathbf{R}_t,\; \Delta Tech_t,\; \Delta Legal_t,\; I_t\big)
+\]
+Pour construire un modèle simple, on choisit une dynamique additive suivie d'une normalisation convexe :
+\[
+\mathbf{R}_{t+1} = \mathrm{Normalize}\Big(\mathbf{R}_t + \beta \Delta Tech_t + \gamma \Delta Legal_t + \varepsilon_t \Big),
+\]
+avec :
+\begin{itemize}
+  \item $\mathrm{Normalize}(\mathbf{v}) = \dfrac{\max(\mathbf{v},0)}{\sum_i \max(v_i,0)}$ pour obtenir un vecteur convexe,
+  \item $\Delta Tech_t$ vecteur qui pousse l'état vers la dominance technologique (ex. $(1,0,0,0)$ normalisé),
+  \item $\Delta Legal_t$ vecteur qui pousse vers la dominance juridique (ex. $(0,1,0,0)$),
+  \item $\varepsilon_t$ choc stochastique (incident : scandale, attaque), modélisé par une variable aléatoire à faible probabilité annuelle.
+\end{itemize}
+
+\paragraph{Commentaires sur le modèle}
+Ce modèle demeure pédagogique ; il est extensible en :
+\begin{itemize}
+  \item modélisation non-linéaire (effets seuils) : $F$ non-linéaire,
+  \item modèle markovien caché (HMM) pour capter états latents,
+  \item couplage entre composantes (retro-action), ou formulation différentielle stochastique.
+\end{itemize}
+
+\subsection{Simulation numérique (50 ans)}
+Une simulation simple a été exécutée (paramètres pédagogiques) en prenant pour point de départ $\mathbf{R}_{2020}=\mathbf{R}_{2010-2020}$.
+
+\paragraph{Paramètres illustratifs}
+\begin{itemize}
+  \item dérive technologique $\beta = 0.025$ (annuelle, faible),
+  \item dérive légale $\gamma = 0.007$,
+  \item probabilité d'incident annuel $p=0.08$,
+  \item simulation : 50 pas (2020 à 2070).
+\end{itemize}
+
+
+
+\subsection{4 — Vérification de la loi d'accélération}
+La loi proposée dans le chapitre est :
+\[
+\Delta t_{n+1} = k \cdot \Delta t_n, \quad 0<k<1.
+\]
+
+\paragraph{Données élémentaires (Chap.2)} Périodes et durées :
+\[
+\begin{array}{ll}
+1970\text{--}1990: & \Delta t_1 = 20 \\
+1990\text{--}2000: & \Delta t_2 = 10 \\
+2000\text{--}2010: & \Delta t_3 = 10 \\
+2010\text{--}2020: & \Delta t_4 = 10 \\
+\end{array}
+\]
+
+\paragraph{Calcul des ratios}
+\[
+\left\{ \frac{\Delta t_{2}}{\Delta t_1},\; \frac{\Delta t_3}{\Delta t_2},\; \frac{\Delta t_4}{\Delta t_3} \right\}
+=
+\{0.5,\;1.0,\;1.0\}.
+\]
+Estimation simple par moyenne :
+\[
+\hat{k} = \frac{0.5+1+1}{3} \approx 0.8333.
+\]
+Prédiction grossière :
+\[
+\Delta t_5 \approx \hat{k}\cdot \Delta t_4 = 0.8333 \times 10 \approx 8.33 \ \text{ans},
+\]
+donc changement estimé vers $2020 + 8.33 \approx 2028.3$.
+
+\paragraph{Remarques statistiques}
+Cette estimation est indicative. Pour une vérification rigoureuse il faudrait :
+\begin{itemize}
+  \item collecter des dates précises d'événements (telles que définitions de normes, opérations majeures, scandales),
+  \item appliquer une régression non-linéaire sur une série temporelle plus longue,
+  \item tester la significativité statistique (p-valeurs, intervalles de confiance).
+\end{itemize}
+
+\subsection{5 — Analyse du trilemme CRO historique}
+On considère le triplet $(C,R,O)$ dans $[0,1]^3$ (Confidentialité, Fiabilité, Opposabilité).
+
+\begin{table}[h]
+  \centering
+  \caption{Estimation indicative des scores CRO par période}
+  \begin{tabular}{l c c c}
+    \toprule
+    Période & Confidentialité (C) & Fiabilité (R) & Opposabilité (O) \\
+    \midrule
+    1970--1990 & 0.25 & 0.70 & 0.60 \\
+    1990--2000 & 0.35 & 0.80 & 0.65 \\
+    2000--2010 & 0.55 & 0.75 & 0.70 \\
+    2010--2020 & 0.70 & 0.60 & 0.50 \\
+    2020--...  & 0.85 & 0.55 & 0.45 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\paragraph{Interprétation}
+\begin{itemize}
+  \item La confidentialité augmente avec les avancées cryptographiques et les pratiques de protection des données.
+  \item La fiabilité a connu une hausse à la professionnalisation, mais peut décliner si les systèmes deviennent opaques (black-box IA).
+  \item L'opposabilité est contrainte lorsque la vérification demandée entre en conflit avec la confidentialité : difficulté à prouver publiquement des résultats issus d'algorithmes non-expliqués.
+\end{itemize}
+
+\section{Conclusion et recommandations}
+\begin{itemize}
+  \item La méthode proposée (vecteur de dominance + modèle additif normalisé) fournit un cadre reproductible pour simuler l'évolution des régimes de vérité.
+  \item Les ruptures historiques sont en grande partie expliquées par l'interaction technologie / loi / société / pratiques ; toutefois, les événements ponctuels restent déterminants.
+  \item Pour une étude approfondie : collecter événements datés, réaliser des estimations statistiques robustes (régression non-linéaire, tests d'hypothèse), et développer un modèle stochastique plus riche.
+\end{itemize}
+\begin{LARGE}
+PARTIE 3
+\end{LARGE}
+\section{Exercice 6 : Reconstruction archéologique d’une investigation}
+\subsection{6.1 Choix de l’affaire : Kevin Mitnick (1995)}
+L’affaire Kevin Mitnick constitue un cas emblématique de la décennie 1990 : premier « super-hacker » médiatisé, il fut traqué et arrêté grâce à une collaboration entre autorités américaines et experts indépendants (notamment Tsutomu Shimomura).
+
+\subsection{6.2 Investigation avec les outils et méthodes de l’époque}
+\paragraph{Contexte technologique (1990–1995).}
+\begin{itemize}
+  \item Réseaux : dial-up, protocole TCP/IP rudimentaire, traçage limité aux logs ARPANET/ISP.
+  \item Outils forensiques : scripts Unix, \texttt{tcpdump}, \texttt{whois}, analyse manuelle des fichiers log.
+  \item Méthodologie : approche artisanale, expertise individuelle, absence de normalisation (pas de NIST SP 800–86 ni d’ISO 27037).
+\end{itemize}
+
+\paragraph{Chaîne de custody :}
+Pratiquement inexistante ; les preuves reposaient sur la crédibilité technique des experts.  
+La validité épistémique était garantie par l’autorité de l’expert (\emph{régime de vérité technique}).
+
+\subsection{6.3 Analyse moderne de la même affaire}
+\paragraph{Outils contemporains.}
+\begin{itemize}
+  \item Analyse automatisée de métadonnées ;
+  \item Corrélation temporelle multi-sources ;
+  \item Honeypots, détection comportementale, machine learning pour attribution ;
+  \item Archivage forensique normalisé (ISO 27037, RFC 3227).
+\end{itemize}
+
+\paragraph{Évolution du régime de vérité.}
+\begin{center}
+\begin{tabular}{l c c}
+\toprule
+Élément & 1995 : régime technique & 2020 : régime computationnel \\
+\midrule
+Preuve légitime & Logs systèmes & Corrélations algorithmiques \\
+Autorité & Expert individuel & Processus algorithmique + institution \\
+Chaîne de custody & Informelle & Normalisée et opposable \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{6.4 Impact des limitations technologiques}
+\begin{itemize}
+  \item \textbf{Fiabilité :} absence d’horodatage précis et d’intégrité cryptographique → fragilité juridique.  
+  \item \textbf{Confidentialité :} protection faible, exposition accrue des traces.  
+  \item \textbf{Opposabilité :} dépendance au témoignage d’experts ; absence de standard international.  
+\end{itemize}
+Ces contraintes expliquent pourquoi la vérité de l’époque était une « vérité d’autorité », non encore computationnelle.
+
+
+\section{Exercice 7 : Projet de recherche archéologique}
+\subsection{7.1 Identification d’un \og trou \fg{} historique}
+\paragraph{Sujet proposé :}
+\emph{L’émergence oubliée des pratiques forensiques dans les réseaux Unix (1980–1985).}  
+Les premiers administrateurs système ont développé des procédures implicites de collecte et d’interprétation de traces, sans formalisation.
+
+\subsection{7.2 Hypothèse historique testable}
+\[
+H_0 : Les premières pratiques forensiques Unix ont constitué une proto-archéologie de la preuve numérique, dont la formalisation ultérieure (1990–2000) n’a fait que codifier des pratiques déjà existantes.
+\]
+
+\subsection{7.3 Sources primaires à collecter}
+\begin{itemize}
+  \item \textbf{RFC historiques :} RFC 706 (1976), RFC 819 (1982) ; traces d’administrations réseau.  
+  \item \textbf{Publications techniques :} \emph{USENIX Proceedings}, \emph{Bell Labs Notes}, articles sur la sécurité système.  
+  \item \textbf{Archives Unix :} scripts shell, \texttt{syslog}, \texttt{auditd}.  
+\end{itemize}
+
+\subsection{7.4 Méthode foucaldienne appliquée}
+\begin{enumerate}
+  \item \textbf{Archéologie des pratiques} : identifier les conditions d’apparition du discours « trace numérique » ;
+  \item \textbf{Analyse des énoncés} : repérer dans les RFC et manuels les formulations « preuve », « sécurité », « intégrité » ;
+  \item \textbf{Cartographie du régime de vérité} : experts Unix ↔ machines ↔ procédures implicites ;
+  \item \textbf{Mise en relation avec les discontinuités ultérieures} : comment ces pratiques se sont institutionnalisées.
+\end{enumerate}
+
+\subsection{7.5 Structure d’article académique (suggestion)}
+\begin{itemize}
+  \item Introduction : problématique et justification du « trou » historique ;
+  \item Cadre théorique : Foucault, Latour, Kuhn ;
+  \item Méthodologie : analyse archéologique et comparative ;
+  \item Résultats : repérage des premières normes implicites ;
+  \item Discussion : institutionnalisation ultérieure ;
+  \item Conclusion : continuités et discontinuités épistémiques.
+\end{itemize}
+
+\clearpage
+\section{Exercice 8 : Analyse prospective des régimes futurs}
+\subsection{8.1 Scénario crédible pour 2030–2050}
+\paragraph{Scénario : le régime neuro-quantique}
+Entre 2030 et 2050, les interfaces cerveau–machine (BCI) et l’informatique quantique convergent.  
+Les enquêtes numériques impliquent alors des traces neuronales et quantiques, fusionnant données cognitives et logiques quantiques d’exécution.
+
+\subsection{8.2 Régime de vérité correspondant}
+\[
+\text{Régime de Vérité Neuro-Quantique} :
+\begin{cases}
+\text{Preuve : état quantique–neuronal (superposé)} \\
+\text{Autorité : protocole IA explicable et vérifié par ZK–quantique} \\
+\text{Institution : cour mixte techno–juridique}
+\end{cases}
+\]
+
+\subsection{8.3 Conditions de possibilité}
+\begin{itemize}
+  \item Maturité technologique : calcul quantique fiable, interfaces BCI sécurisées.  
+  \item Cadres légaux : normes post-quantiques, régulations bioéthiques.  
+  \item Infrastructures : réseaux quantiques fiables, protocoles ZK–STARKs universels.  
+\end{itemize}
+
+\subsection{8.4 Méthodologie d’investigation adaptée}
+\begin{enumerate}
+  \item Collecte : enregistrement d’états quantiques/neuraux via capteurs certifiés ;
+  \item Préservation : chaîne de custody quantique basée sur horodatages ZK–NR ;
+  \item Analyse : superposition de modèles probabilistes et décodage IA transparente ;
+  \item Vérification : preuve zero-knowledge quantique garantissant l’opposabilité sans divulgation.
+\end{enumerate}
+
+\subsection{8.5 Défis éthiques et épistémologiques}
+\begin{itemize}
+  \item \textbf{Confiance algorithmique :} l’enquête dépend d’IA autonomes, risque de biais inévitables.  
+  \item \textbf{Consentement cognitif :} l’investigation neuro-numérique nécessite un cadre bioéthique renforcé.  
+  \item \textbf{Opposabilité :} comment un tribunal humain peut-il comprendre une preuve qu’il ne peut observer ?  
+  \item \textbf{Persistance du trilemme CRO :} la confidentialité (états neuraux) entre en tension avec la fiabilité et l’opposabilité quantique.
+\end{itemize}
+
+\section{Conclusion}
+Les exercices 6–8 démontrent l’importance d’une approche archéologique et critique de l’investigation numérique.  
+Reconstituer les pratiques passées éclaire les ruptures présentes ; modéliser les futurs possibles permet d’anticiper les dilemmes éthiques et les régimes de vérité émergents.
+
+\end{document}

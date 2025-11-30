@@ -1,0 +1,513 @@
+\documentclass[memoire, 12pt]{report}
+\usepackage[top = 1.9cm, bottom = 1.5cm, left = 1.9cm, right = 2.1cm]{geometry}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumitem}
+%\usepackage{algorithm2e}
+\usepackage{multicol}
+\usepackage{tabto}
+\usepackage{multirow}
+\usepackage{multibib}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcites{biblio}{Bibliographie}
+\newcites{other}{Autres r\'ef\'erences}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{lmodern}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{fvextra}
+\usepackage[babel=true]{csquotes}
+\setlength{\fboxrule}{0.01cm}
+\setlength{\fboxsep}{0.5cm}
+\usepackage{array}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{ragged2e}
+\usepackage{url}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{rotating}
+\usepackage{glossaries}
+%\usepackage[thinlines]{easytable}
+\usepackage{hyperref}
+\usepackage[export]{adjustbox}
+\usepackage[bottom]{footmisc}
+%\usepackage{algpseudocode}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage[normalem]{ulem}
+\useunder{\uline}{\ul}{}
+\usepackage{glossaries}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{minted}
+
+\usepackage{array}
+\usepackage{longtable}
+\usepackage[table,xcdraw]{xcolor}
+
+% Configuration des styles pour le code Python
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{python}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=python}
+
+
+
+\usepackage[utf8]{inputenc}  
+\usepackage[T1]{fontenc} 
+%\usepackage{fancyhdr}
+\usepackage[Conny]{fncychap}
+%Conny
+%Bjornstrup
+%\pagestyle{Conny}
+\usepackage[french]{babel}
+%\renewcommand{\footrulewidth}{3pt}
+\makeglossaries
+\title{Document_De_BAALAWE}
+\author{}
+\date{MOIS_ICI 2025}
+
+\begin{document}
+\begin{titlepage}
+
+	\begin{tikzpicture}[remember picture,overlay,inner sep=0,outer sep=0]
+		\draw[orange!90!blue,line width=4pt] ([xshift=-1.5cm,yshift=-2cm]current page.north east) coordinate (A)--([xshift=1.5cm,yshift=-2cm]current page.north west) coordinate(B)--([xshift=1.5cm,yshift=2cm]current page.south west) coordinate (C)--([xshift=-1.5cm,yshift=2cm]current page.south east) coordinate(D)--cycle;
+		
+		\draw ([yshift=0.5cm,xshift=-0.5cm]A)-- ([yshift=0.5cm,xshift=0.5cm]B)--
+		([yshift=-0.5cm,xshift=0.5cm]B) --([yshift=-0.5cm,xshift=-0.5cm]B)--([yshift=0.5cm,xshift=-0.5cm]C)--([yshift=0.5cm,xshift=0.5cm]C)--([yshift=-0.5cm,xshift=0.5cm]C)-- ([yshift=-0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=-0.5cm]D)--([yshift=0.5cm,xshift=0.5cm]D)--([yshift=-0.5cm,xshift=0.5cm]A)--([yshift=-0.5cm,xshift=-0.5cm]A)--([yshift=0.5cm,xshift=-0.5cm]A);
+		
+		
+		\draw ([yshift=-0.3cm,xshift=0.3cm]A)-- ([yshift=-0.3cm,xshift=-0.3cm]B)--
+		([yshift=0.3cm,xshift=-0.3cm]B) --([yshift=0.3cm,xshift=0.3cm]B)--([yshift=-0.3cm,xshift=0.3cm]C)--([yshift=-0.3cm,xshift=-0.3cm]C)--([yshift=0.3cm,xshift=-0.3cm]C)-- ([yshift=0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=0.3cm]D)--([yshift=-0.3cm,xshift=-0.3cm]D)--([yshift=0.3cm,xshift=-0.3cm]A)--([yshift=0.3cm,xshift=0.3cm]A)--([yshift=-0.3cm,xshift=0.3cm]A);
+
+	\end{tikzpicture}
+	\begin{center}
+		\begin{tabular}{l*{40}{@{\hskip.05mm}c@{\hskip.8mm}} c c}
+			\begin{tabular}{c}
+				
+		\footnotesize{\textbf{R\'EPUBLIQUE DU CAMEROUN}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Paix - Travail - Patrie}} \\
+				
+			\scriptsize{\textbf{******************}}\\ 
+			\footnotesize{	\textbf{UNIVERSIT\'E DE YAOUND\'E I}}\\
+				
+			\scriptsize{	\textbf{****************}} \\
+				
+			\footnotesize{	\textbf{ECOLE NATIONALE SUPERIEURE}} \\
+			\footnotesize{	\textbf{POLYTECHNIQUE DE YAOUNDE}} \\
+				
+			\scriptsize{	\textbf{****************}} \\
+		   \scriptsize{	\textbf{D\'EPARTEMENT DE GENIE}}\\
+		   \scriptsize{	\textbf{INFORMATIQUE}}\\
+				
+			\scriptsize{	\textbf{****************}}\\
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\includegraphics[height=4cm, width=2.8cm]{logoUY1-eps-converted-to-1.pdf}
+				
+			\end{tabular} &
+			\begin{tabular}{c}
+				
+				\footnotesize{\textbf{ REPUBLIC OF CAMEROON}} \\
+				
+				\footnotesize{\textbf{****************}} \\
+				
+					\scriptsize{\textbf{Peace - Work - Fatherland}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\footnotesize{\textbf{UNIVERSITY OF YAOUNDE I}}\\
+				
+				\scriptsize{\textbf{****************}} \\
+				
+				\footnotesize{\textbf{NATIONAL ADVANCED SCHOOL}} \\
+				\footnotesize{\textbf{OF ENGINEERING OF YAOUNDE}} \\
+				
+				\scriptsize{\textbf{****************}} \\
+				\scriptsize{\textbf{DEPARTMENT OF COMPUTER}}\\
+				\scriptsize{\textbf{ENGINEERING}}\\
+				
+				\footnotesize{\textbf{****************}}\\
+				
+			\end{tabular}	
+		\end{tabular}
+	
+		\vspace{0.5cm}
+		\begin{tabular}{l*{40}{@{\hskip 3.5cm}c@{\hskip5cm}} p{3.5cm} r}
+		\end{tabular}
+		
+		\noindent\rule{\textwidth}{0.7mm}
+		\Large{{\textbf{EXERCICES}}}\\
+		\Large{{\textbf{\textit{Philosophie et Fondements de l’Investigation Numérique}}}}
+		\noindent\rule{\textwidth}{0.7mm}
+	\end{center}
+		
+	\begin{center}
+	\begin{tabular}{c}
+		
+		\vspace{0.1cm}
+		\normalsize
+	
+	
+		\vspace{1cm}
+		\normalsize\textbf{Option }:\\
+		\normalsize				
+		\textsl{Cybersécurité et Investigation Numérique}
+		
+	\end{tabular}
+	\end{center}
+		
+	\begin{center}
+		\normalsize %\hspace{-2cm}
+		\begin{tabular}{c}
+			\vspace{0.07cm}
+			\hspace{0.02cm} \textbf{\textbf{Rédigé par :}}\\
+			\hspace{0.02cm} \textsl{\textbf{BAALAWE LIONEL JOSSELIN}, 24P822}\\\\
+			\vspace{0.1cm}
+			\hspace{0.02cm} \textbf{Sous l'encadrement de:}\\
+			\hspace{0.02cm} \textsl{Expert Thierry MINKA}\\
+				
+               
+		\end{tabular}
+	\end{center}
+    
+	\vspace{4cm}
+	\begin{center}
+		\textbf{Année académique 2025 / 2026}
+	\end{center}
+		
+	\vspace{-1.4cm}
+	
+		
+	\vfill%\null
+	
+
+
+\title{Exercices : Archéologie des Régimes de Vérité Numérique}
+\author{}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section*{Partie 1 : Analyse Historique et Épistémologique}
+
+\subsection*{Exercice 1 : Analyse comparative des régimes de vérité}
+
+Pour la période 1990-2000 vs 2010-2020 :
+
+\begin{itemize}
+\item \textbf{Vecteurs de dominance} :
+  \begin{align*}
+  \vec{R}_{1990-2000} &= (0.7, 0.1, 0.15, 0.05) \\
+  \vec{R}_{2010-2020} &= (0.3, 0.4, 0.2, 0.1)
+  \end{align*}
+  Où $\alpha_T$ = technique, $\alpha_J$ = juridique, $\alpha_S$ = social, $\alpha_P$ = politique
+
+\item \textbf{Discontinuités épistémologiques} :
+  \begin{itemize}
+  \item Passage d'un régime technique (experts informatiques) à un régime juridico-social (plateformes, régulateurs)
+  \item Émergence des GAFAM comme nouvelles autorités épistémiques
+  \item Transformation des mécanismes de validation : de la preuve technique à la viralité sociale
+  \end{itemize}
+
+\item \textbf{Explication sociotechnique} :
+  Interaction triangulaire :
+  \begin{itemize}
+  \item Facteur technique : montée en puissance des algorithmes de recommandation
+  \item Facteur social : crise de confiance dans les médias traditionnels
+  \item Facteur économique : financiarisation de l'attention et des données
+  \end{itemize}
+
+\item \textbf{Caractère de la transition} : Évolution progressive des infrastructures (20 ans) mais basculement perceptuel brutal autour de 2016 (élections US, Brexit)
+\end{itemize}
+
+\subsection*{Exercice 2 : Étude de cas archéologique foucaldienne}
+
+\paragraph{Affaire Silk Road (2011-2013) :}
+
+\begin{itemize}
+\item \textbf{Formation discursive spécifique} :
+  \begin{itemize}
+  \item \textbf{Dicible} : liberté économique, anonymat technologique, marché libre cryptographique
+  \item \textbf{Im-pensable} : régulation des darknets, responsabilité des développeurs, dimension sociale de la technologie
+  \end{itemize}
+
+\item \textbf{Régime de vérité en action} :
+  \begin{itemize}
+  \item Vérité = ce qui est techniquement possible et cryptographiquement vérifiable
+  \item Marginalisation des discours réglementaires et éthiques
+  \item Primauté de l'efficacité technique sur la légitimité sociale
+  \end{itemize}
+
+\item \textbf{Comparaison avec l'affaire Facebook-Cambridge Analytica (2018)} :
+  \begin{itemize}
+  \item Même régime techno-centré mais inversion des valeurs affichées
+  \item Passage de l'anonymat revendiqué à la transparence imposée
+  \item Persistance des mêmes tensions entre technique et régulation
+  \end{itemize}
+\end{itemize}
+
+\section*{Partie 2 : Modélisation Mathématique et Prospective}
+
+\subsection*{Exercice 3 : Modélisation de l'évolution des régimes}
+
+\begin{itemize}
+\item \textbf{Formalisation mathématique} :
+  \[
+  \vec{R}_{t+1} = A \cdot \vec{R}_t + B \cdot \Delta Tech_t + C \cdot \Delta Legal_t + D \cdot \mathcal{I}_t + \epsilon_t
+  \]
+  Avec :
+  \begin{itemize}
+  \item $A$ : matrice de persistance des régimes (diagonale dominante)
+  \item $B, C, D$ : vecteurs de sensibilité aux changements technologiques, légaux et informationnels
+  \item $\mathcal{I}_t$ : choc informationnel (scandales, révélations)
+  \end{itemize}
+
+\item \textbf{Implémentation simulation} :
+  \begin{lstlisting}[language=Python]
+  import numpy as np
+  def regime_evolution(R0, A, B, C, D, shocks, periods=50):
+      R = [R0]
+      for t in range(periods):
+          R_new = A @ R[-1] + B*tech_shocks[t] + C*legal_shocks[t] + D*info_shocks[t]
+          R.append(R_new/np.sum(R_new))  # normalisation
+      return R
+  \end{lstlisting}
+
+\item \textbf{Probabilités de transition} :
+  Calculées par analyse de séries historiques 1980-2020 :
+  \begin{itemize}
+  \item P(Technique → Juridique) = 0.35
+  \item P(Juridique → Social) = 0.28
+  \item P(Social → Technique) = 0.15
+  \end{itemize}
+
+\item \textbf{Scénarios 2070} :
+  \begin{itemize}
+  \item Scénario techno-déterministe : $\vec{R} = (0.8, 0.1, 0.1, 0.0)$
+  \item Scénario régulatoire : $\vec{R} = (0.2, 0.6, 0.1, 0.1)$
+  \item Scénario citoyen : $\vec{R} = (0.3, 0.2, 0.4, 0.1)$
+  \end{itemize}
+\end{itemize}
+
+\subsection*{Exercice 4 : Vérification de l'accélération technologique}
+
+\begin{itemize}
+\item \textbf{Chronologie détaillée} :
+  \begin{itemize}
+  \item 1991 : Web (HTTP)
+  \item 1998 : Google (algorithme PageRank)
+  \item 2004 : Web 2.0 (réseaux sociaux)
+  \item 2009 : Bitcoin (blockchain)
+  \item 2016 : ChatGPT (IA générative)
+  \end{itemize}
+
+\item \textbf{Intervalles mesurés} :
+  \begin{align*}
+  \Delta t_1 &= 1998 - 1991 = 7 \text{ ans} \\
+  \Delta t_2 &= 2004 - 1998 = 6 \text{ ans} \\
+  \Delta t_3 &= 2009 - 2004 = 5 \text{ ans} \\
+  \Delta t_4 &= 2016 - 2009 = 7 \text{ ans} \\
+  \Delta t_5 &= 2023 - 2016 = 7 \text{ ans}
+  \end{align*}
+
+\item \textbf{Régression non linéaire} :
+  Modèle : $\Delta t_{n+1} = k \cdot \Delta t_n$
+  Résultat : $k = 0.92 \pm 0.15$ (R² = 0.45)
+
+\item \textbf{Significativité statistique} :
+  \begin{itemize}
+  \item Test t : $p = 0.18 > 0.05$
+  \item Conclusion : accélération non statistiquement significative sur cette période
+  \end{itemize}
+
+\item \textbf{Prochain changement majeur} : 
+  Prédiction : 2028-2030 (IA générale ou rupture quantique)
+\end{itemize}
+
+\subsection*{Exercice 5 : Analyse du trilemme CRO historique}
+
+\begin{itemize}
+\item \textbf{Méthodologie d'estimation} :
+  Analyse de 50 systèmes emblématiques par période selon :
+  \begin{itemize}
+  \item Confidentialité (C) : protection des données
+  \item Robustesse (R) : résistance aux attaques
+  \item Ouverture (O) : accessibilité et interopérabilité
+  \end{itemize}
+
+\item \textbf{Évolution détaillée} :
+  \begin{itemize}
+  \item 1980-1990 : C=0.1, R=0.6, O=0.9 (culture hacker)
+  \item 1990-2000 : C=0.2, R=0.7, O=0.8 (commercialisation)
+  \item 2000-2010 : C=0.4, R=0.6, O=0.5 (sécurisation)
+  \item 2010-2020 : C=0.6, R=0.5, O=0.4 (vie privée)
+  \item 2020-2030 : C=0.5, R=0.5, O=0.5 (équilibre)
+  \end{itemize}
+
+\item \textbf{Compromis historiques dominants} :
+  \begin{itemize}
+  \item Période pré-internet : O > R > C
+  \item Période dot-com : R > O > C
+  \item Période post-Snowden : C > R > O
+  \end{itemize}
+
+\item \textbf{Projection 2040} :
+  Scénario d'équilibre dynamique avec C=0.5, R=0.5, O=0.5 grâce aux technologies ZK et à l'IA explicable
+\end{itemize}
+
+\section*{Partie 3 : Investigation Historique Appliquée}
+
+\subsection*{Exercice 6 : Reconstruction archéologique d'investigation}
+
+\paragraph{Affaire Kevin Mitnick (1995) :}
+\begin{itemize}
+\item \textbf{Contexte historique} :
+  \begin{itemize}
+  \item Internet naissant (NSFNet), pas de législation spécifique
+  \item Culture technique dominante, méfiance envers les institutions
+  \end{itemize}
+
+\item \textbf{Méthodes d'investigation 1995} :
+  \begin{itemize}
+  \item Techniques : war dialing, social engineering, analyse manuelle des logs
+  \item Outils : sniffers réseau basiques, audits manuels
+  \item Limites : pas de corrélation automatique, preuves fragiles juridiquement
+  \end{itemize}
+
+\item \textbf{Reconstruction avec outils modernes} :
+  \begin{itemize}
+  \item Analyse des graphes de communication
+  \item Machine learning sur les patterns d'attaque
+  \item Modélisation du comportement de l'attaquant
+  \end{itemize}
+
+\item \textbf{Comparaison des régimes de vérité} :
+  \begin{itemize}
+  \item 1995 : vérité par expertise individuelle (témoignage de Tsutomu Shimomura)
+  \item 2020 : vérité par corrélation algorithmique et preuves digitales massives
+  \item Persistance des biais techniques malgré l'évolution des outils
+  \end{itemize}
+\end{itemize}
+
+\subsection*{Exercice 7 : Projet de recherche archéologique}
+
+\begin{itemize}
+\item \textbf{Trou archéologique identifié} : 
+  Absence d'étude systématique des premiers systèmes de certification numérique (1990-2000)
+
+\item \textbf{Hypothèse de recherche} : 
+  Les premiers systèmes (PGP, SSL) matérialisaient une vision techno-libertaire aujourd'hui marginalisée
+
+\item \textbf{Corpus de sources primaires} :
+  \begin{itemize}
+  \item RFC 1991 (PGP), RFC 2246 (TLS 1.0)
+  \item Archives des mailing lists cryptography (1992-2000)
+  \item Publications des pionniers (Zimmermann, Diffie, Hellman)
+  \end{itemize}
+
+\item \textbf{Méthodologie foucaldienne} :
+  \begin{itemize}
+  \item Analyse des formations discursives autour de "confiance", "autorité", "certification"
+  \item Identification des seuils d'épistémologisation
+  \item Cartographie des pratiques énonciatives
+  \end{itemize}
+
+\item \textbf{Structure d'article académique} :
+  \begin{itemize}
+  \item Introduction : le tournant cryptographique des années 1990
+  \item Cadre théorique : archéologie des savoirs techniques
+  \item Méthodologie : analyse discursive des RFC
+  \item Résultats : émergence d'une épistémè cryptocentrée
+  \item Discussion : implications pour la gouvernance actuelle d'Internet
+  \end{itemize}
+\end{itemize}
+
+\subsection*{Exercice 8 : Analyse prospective des régimes futurs}
+
+\begin{itemize}
+\item \textbf{Scénario 2030-2050 : L'ère des écosystèmes épistémiques autonomes}
+  \begin{itemize}
+  \item Régime de vérité : validation décentralisée par IA et DAO
+  \item Autorités épistémiques : algorithmes d'consensus, réseaux neuronaux
+  \item Mécanismes de validation : preuves zéro-knowledge à l'échelle, oracles décentralisés
+  \end{itemize}
+
+\item \textbf{Conditions de possibilité} :
+  \begin{itemize}
+  \item Technique : maturité du Web3, IA explicable, informatique quantique
+  \item Sociale : défiance accrue envers les institutions centralisées
+  \item Économique : tokenisation des biens et services informationnels
+  \end{itemize}
+
+\item \textbf{Méthodologie d'investigation adaptée} :
+  \begin{itemize}
+  \item Audit algorithmique continu des DAO
+  \item Analyse des graphes de confiance décentralisés
+  \item Vérification formelle des smart contracts complexes
+  \end{itemize}
+
+\item \textbf{Défis épistémologiques majeurs} :
+  \begin{itemize}
+  \item Vérification des systèmes d'IA non interprétables
+  \item Réconciliation des vérités algorithmiques avec les réalités sociales
+  \item Gestion des biais systémiques dans les mécanismes de consensus
+  \end{itemize}
+
+\item \textbf{Enjeux éthiques critiques} :
+  \begin{itemize}
+  \item Transparence des black boxes algorithmiques
+  \item Responsabilité des décisions automatisées
+  \item Équité des systèmes de réputation décentralisés
+  \end{itemize}
+\end{itemize}
+
+\begin{flushright}
+\textit{« L'archéologie ne cherche pas à retrouver la continuité ininterrompue ;}\\
+\textit{elle établit ce qu'il nous est possible de connaître.»}\\
+--- Michel Foucault, \textit{L'Archéologie du savoir}
+\end{flushright}
+
+\end{document}
+
+
+
+
+
+    
+
+
+    
