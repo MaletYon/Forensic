@@ -1,0 +1,126 @@
+\documentclass[12pt,a4paper]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{geometry}
+\geometry{hmargin=2.5cm,vmargin=2.5cm}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% Couleurs personnalisées
+\definecolor{titrebleu}{RGB}{0,51,102}
+\definecolor{accent}{RGB}{178,34,34}
+
+% Style des titres
+\titleformat{\chapter}[display]
+  {\normalfont\bfseries\color{titrebleu}\Huge}
+  {\chaptertitlename\ \thechapter}{20pt}{\Huge}
+\titleformat{\section}
+  {\normalfont\Large\bfseries\color{accent}}{}{0em}{}
+
+% En-tête et pied de page
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textcolor{gray}{\small Investigation numérique – Affaire Martinez ZOGO}}
+\lhead{\textcolor{gray}{\small Polytech Yaoundé}}
+\cfoot{\thepage}
+
+\begin{document}
+
+% ==================== PAGE DE GARDE ====================
+\begin{titlepage}
+    \centering
+    \vspace*{2cm}
+    
+    {\scshape\LARGE Université de Yaoundé I \par}
+    \vspace{0.5cm}
+    {\scshape\Large École Nationale Supérieure Polytechnique \par}
+    \vspace{1.5cm}
+    
+    % ←←← ICI TU METS LE LOGO POLYTECH (hauteur 4cm)
+    \includegraphics[height=4cm]{enspy.png}  
+    \vspace{2cm}
+    
+    {\huge\bfseries Investigation numérique\par}
+    \vspace{0.5cm}
+    {\LARGE\bfseries Affaire Martinez ZOGO \par}
+    \vspace{1cm}
+    
+    {\LARGE Trois hypothèses explicatives de la mort \par}
+    \vspace{2cm}
+    
+    \begin{tabular}{ll}
+        \textbf{Nom :NDJEBAYI} &  \\[10pt]
+        \textbf{Prénom :PATRICK NATANAEL}  &  \\[10pt]
+        \textbf{Filière :CIN-4}   & \ \\[20pt]
+        \textbf{Supervisé par :M.MINKA Thierry} 
+    \end{tabular}
+    
+    \vfill
+    {\large Année académique 2025--2026 \par}
+\end{titlepage}
+
+
+\tableofcontents
+
+% ==================== INTRODUCTION ====================
+\chapter*{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+
+Dans le cadre du cours d’\textbf{Investigation numérique}, et à partir de l’ordonnance de renvoi du Tribunal Militaire de Yaoundé (30/01/2025), nous formulons trois hypothèses crédibles expliquant la mort de M. \textsc{Martinez ZOGO}, journaliste assassiné en janvier 2023.
+
+Ces hypothèses sont construites à partir des éléments techniques, des déclarations contradictoires et des traces numériques mentionnées dans le dossier judiciaire.
+
+\chapter{Hypothèses d’investigation numérique}
+
+\section{Hypothèse 1~: Exécution planifiée avec géolocalisation en temps réel (hypothèse principale)}
+
+La mort de Martinez ZOGO résulte d’une opération ciblée coordonnée par la DGRE, utilisant la \textbf{géolocalisation active} de son téléphone portable et des véhicules de la brigade.
+
+\begin{itemize}[leftmargin=*]
+    \item Le Colonel \textsc{Danwe Justin} a reconnu avoir reçu l’ordre de localiser le téléphone de Martinez ZOGO via les outils de la Surveillance Électronique de la DGRE (pages 4--6 de l’ordonnance).
+    \item Le véhicule PRADO utilisé pour l’enlèvement a été géolocalisé en temps réel grâce à un traceur GPS ou à la triangulation cellulaire.
+    \item Les appels répétés entre \textsc{Ebobisse}, \textsc{Danwe}, \textsc{Amougou Belinga} et \textsc{Maxime Eko Eko} le 17 janvier 2023 montrent une coordination en temps réel.
+    \item L’exploitation des données CDR (Call Detail Records) et des logs IMSI-catcher aurait permis de reconstituer le trajet exact de la victime jusqu’au lieu de l’exécution.
+\end{itemize}
+
+\textbf{Preuve numérique attendue~:} journaux de géolocalisation DGRE + données WhatsApp/Telegram chiffrées récupérées via extraction forensic (UFED/ Cellebrite).
+
+\section{Hypothèse 2~: Erreur d’exécution ayant dégénéré en meurtre (thèse de la « mission qui a mal tourné »)}
+
+Initialement, l’opération visait uniquement l’enlèvement et l’intimidation, mais elle a dégénéré en assassinat à la suite d’une perte de contrôle des exécutants.
+
+\begin{itemize}[leftmargin=*]
+    \item Plusieurs mis en cause (\textsc{Léopold Maxime Eko Eko}, \textsc{Danwe Justin}) parlent d’une « mission d’intimidation » qui n’était pas censée aboutir à la mort.
+    \item Les sévices corporels (coupures, brûlures, membre sectionné) suggèrent une séance de torture prolongée ayant mal tourné.
+    \item Le corps a été déplacé après la mort (transport de Zoatoupsi vers SOA), ce qui indique une tentative de dissimulation post-mortem.
+    \item Les échanges WhatsApp entre membres du commando montrent des messages paniqués après la mort (« on sera sans pitié pour lui » → peur des conséquences).
+\end{itemize}
+
+\textbf{Preuve numérique attendue~:} messages WhatsApp/Telegram non supprimés correctement (récupérables via artefacts SQLite), horodatage des photos prises sur le lieu de torture.
+
+\section{Hypothèse 3~: Règlement de comptes interne au sein du « Groupe l’Anecdote » avec utilisation détournée des moyens de la DGRE}
+
+Martinez ZOGO représentait une menace financière et médiatique pour le groupe de presse d’Amougou Belinga, qui a détourné les capacités techniques de la DGRE à des fins privées.
+
+\begin{itemize}[leftmargin=*]
+    \item Martinez ZOGO enquêtait sur des détournements présumés de plus de 2 milliards FCFA au sein du groupe l’Anecdote.
+    \item \textsc{Amougou Belinga Jean-Pierre} a reconnu avoir demandé à \textsc{Maxime Eko Eko} de « faire taire » le journaliste.
+    \item Des officiers de la DGRE (\textsc{Danwe}, \textsc{Bidjang}, \textsc{Bakaiwe}) ont utilisé des outils d’État pour une opération privée.
+    \item Des paiements en espèces et des promesses de promotion ont été faits aux exécutants.
+\end{itemize}
+
+\textbf{Preuve numérique attendue~:} flux financiers via mobile money (Orange Money/MoMo), messages compromettants sur téléphones personnels des mis en cause, métadonnées de photos prises par les bourreaux.
+
+\chapter*{Conclusion}
+\addcontentsline{toc}{chapter}{Conclusion}
+
+Les trois hypothèses ne sont pas exclusives~: l’opération a très probablement commencé comme un règlement de comptes privé (hypothèse 3), utilisant les moyens étatiques de surveillance et de géolocalisation (hypothèse 1), avant de dégénérer en meurtre par excès de violence (hypothèse 2).
+
+L’investigation numérique (extraction des téléphones, récupération des chats chiffrés, analyse des logs de géolocalisation DGRE) permettra de départager définitivement ces scénarios.
+
+\end{document}
